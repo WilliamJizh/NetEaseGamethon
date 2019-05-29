@@ -21,8 +21,9 @@ public class CharacterMovement : MonoBehaviour
     string horizontalinput = "Horizontal";
     [SerializeField]
     string verticalinput = "Vertical";
-    
 
+    [SerializeField]
+    float turntime = 0.1f; 
 
 
     // Start is called before the first frame update
@@ -48,7 +49,8 @@ public class CharacterMovement : MonoBehaviour
         }
 
         if (movedirection.x != 0 || movedirection.z != 0) {
-            transform.rotation = Quaternion.LookRotation(movedirection) ;
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(movedirection), turntime);
         }
 
         movedirection.y -= gravity * Time.deltaTime;
