@@ -30,6 +30,7 @@ public class ItemMananger : MonoBehaviour
                     var icon = img.AddComponent(typeof(Image));
                     icon.GetComponent<Image>().sprite = items[i].icon;
 
+                    //让图标的位置并排列开
 
                     Instantiate(icon, imagePos, Quaternion.identity, cv);
                     if(i ==items.Count-1)
