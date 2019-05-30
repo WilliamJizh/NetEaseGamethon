@@ -31,6 +31,7 @@ public class SpeedBoost : ItemClass
         if (collected)
         {
             IncreaseSpeed();
+            collected = false;
         }
     }
     void IncreaseSpeed()
