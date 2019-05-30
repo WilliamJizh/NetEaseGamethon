@@ -10,6 +10,8 @@ public class BasicRangeAttack : MonoBehaviour
     [SerializeField]
     string rangeattackinput = "Fire1";
 
+    public Joystick joystick;
+
     // Temp instantiate position modifier 
     [SerializeField]
     float offset = 1;
@@ -19,7 +21,11 @@ public class BasicRangeAttack : MonoBehaviour
     float firearate = 0.1f;
     [SerializeField]
     float nextfire = 0;
+    [SerializeField]
+    float turntime = 0.1f;
 
+    Vector3 lookdir;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +35,27 @@ public class BasicRangeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetDir();
         Fire();
+    }
+
+    void GetDir() {
+        lookdir.x = joystick.Horizontal;
+        lookdir.z = joystick.Vertical;
     }
 
     void Fire()
     {
-        if (Input.GetButton(rangeattackinput) && Time.time > nextfire)
+        if (lookdir != Vector3.zero)
         {
-            Debug.Log("Fire");
-            Instantiate(projectileprefeb,transform.position + Vector3.forward*offset,Quaternion.identity);
-            nextfire = Time.time + firearate;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
+
+            if (Time.time > nextfire)
+            {
+                Debug.Log("Fire");
+                Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation);
+                nextfire = Time.time + firearate;
+            }
         }
     }
 }

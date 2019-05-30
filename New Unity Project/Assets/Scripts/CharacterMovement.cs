@@ -13,14 +13,11 @@ public class CharacterMovement : MonoBehaviour
     float speed = 10;
     [SerializeField]
     float gravity = 10;
+
+
+    public Joystick joystick;
+
     
-
-
-
-    [SerializeField]
-    string horizontalinput = "Horizontal";
-    [SerializeField]
-    string verticalinput = "Vertical";
 
     [SerializeField]
     float turntime = 0.1f; 
@@ -41,17 +38,14 @@ public class CharacterMovement : MonoBehaviour
     void Movement()
     {
         if (charactercontroller.isGrounded) {
-            movedirection.x = Input.GetAxis(horizontalinput);
-            movedirection.z = Input.GetAxis(verticalinput);
+            movedirection.x = joystick.Horizontal;
+            movedirection.z = joystick.Vertical;
             movedirection.y = 0;
             movedirection *= speed;
             
         }
 
-        if (movedirection.x != 0 || movedirection.z != 0) {
-            
-            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(movedirection), turntime);
-        }
+       
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);
