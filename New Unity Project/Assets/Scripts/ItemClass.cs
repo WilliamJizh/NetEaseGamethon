@@ -7,11 +7,15 @@ public abstract class ItemClass : MonoBehaviour
     [SerializeField]
     string names;
     [SerializeField]
-    Sprite icon;
+   public  Sprite icon;
 
     public void SetIcon()
     {
         this.GetComponent<SpriteRenderer>().sprite = icon;
+    }
+    public Sprite GetIcon()
+    {
+        return icon;
     }
     public void Collect()
     {
@@ -24,8 +28,10 @@ public abstract class ItemClass : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<ItemMananger>().recieveItem(this);
-            this.gameObject.SetActive(false);
+            other.GetComponent<ItemMananger>().RecieveItem(this);
+
+           this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 

@@ -1,24 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemMananger : MonoBehaviour
 {
-    List<ItemClass> items;
+  public  List<ItemClass> items;
+    public Transform cv;
+     Vector2 imagePos;
+    bool refresh;
     // Start is called before the first frame update
     void Start()
     {
-        List<ItemClass> items = new List<ItemClass> ();
+        items = new List<ItemClass> ();
+        imagePos = new Vector2(150, 500);
+        cv = GameObject.Find("Canvas").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (refresh)
+        {
+            if (items.Capacity > 0)
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    GameObject img = new GameObject();
+                    var icon = img.AddComponent(typeof(Image));
+                    icon.GetComponent<Image>().sprite = items[i].icon;
+
+
+                    Instantiate(icon, imagePos, Quaternion.identity, cv);
+                    if(i ==items.Count-1)
+                    {
+                        refresh = false;
+                    }
+
+                }
+            }
+        }
     }
 
     public void RecieveItem(ItemClass item) 
     {
+
+        refresh=true;
         items.Add(item);
+       
     }
 }
