@@ -19,7 +19,6 @@ public class ItemMananger : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-<<<<<<< HEAD
     {
         if (refresh)
         {
@@ -40,27 +39,6 @@ public class ItemMananger : MonoBehaviour
                     }
 
                 }
-=======
-    {
-        if (refresh)
-        {
-            if (items.Capacity > 0)
-            {
-                for (int i = 0; i < items.Count; i++)
-                {
-                    GameObject img = new GameObject();
-                    var icon = img.AddComponent(typeof(Image));
-                    icon.GetComponent<Image>().sprite = items[i].icon;
-
-
-                    Instantiate(icon, imagePos, Quaternion.identity, cv);
-                    if(i ==items.Count-1)
-                    {
-                        refresh = false;
-                    }
-
-                }
->>>>>>> 9e3a0a52a70970f6747f4a96b897d700cd03bd49
             }
         }
     }

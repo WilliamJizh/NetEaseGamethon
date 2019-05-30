@@ -5,27 +5,18 @@ using UnityEngine;
 public abstract class ItemClass : MonoBehaviour
 {
     [SerializeField]
-<<<<<<< HEAD
-   public  Sprite icon;
-
+    public Sprite icon;
+    public bool collected = false;
     public void SetIcon()
     {
-        this.GetComponent<SpriteRenderer>().sprite = icon;
+        this.GetComponent<SpriteRenderer>().sprite = this.icon;
     }
     public void SetIcon(Sprite spt)
     {
-        this.GetComponent<SpriteRenderer>().sprite = spt;
-=======
+        this.GetComponent<SpriteRenderer>().sprite = spt; 
+        }
     public string names;
-    [SerializeField]
-    public  Sprite icon;
-    public bool collected = false;
-    
-    public void SetIcon()
-    {
-        this.GetComponent<SpriteRenderer>().sprite = icon;
->>>>>>> 9e3a0a52a70970f6747f4a96b897d700cd03bd49
-    }
+   
     public Sprite GetIcon()
     {
         return icon;
@@ -41,20 +32,16 @@ public abstract class ItemClass : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-<<<<<<< HEAD
-            other.GetComponent<ItemMananger>().RecieveItem(this);
+            other.GetComponent<ItemMananger>().ReceiveItem(this);
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         }
-=======
             collected = true;
             other.GetComponent<ItemMananger>().ReceiveItem(this);
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        }
->>>>>>> 9e3a0a52a70970f6747f4a96b897d700cd03bd49
     }
-
 }
+
