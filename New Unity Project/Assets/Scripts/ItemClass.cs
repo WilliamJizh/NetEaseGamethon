@@ -13,6 +13,10 @@ public abstract class ItemClass : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().sprite = icon;
     }
+    public void SetIcon(Sprite spt)
+    {
+        this.GetComponent<SpriteRenderer>().sprite = spt;
+    }
     public Sprite GetIcon()
     {
         return icon;
@@ -29,9 +33,9 @@ public abstract class ItemClass : MonoBehaviour
         if(other.tag == "Player")
         {
             other.GetComponent<ItemMananger>().RecieveItem(this);
-
-           this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
         }
     }
 
