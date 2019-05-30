@@ -11,7 +11,9 @@ public class EasterEggItem : ItemClass
         //如果要从文件读取sprite
         //使用 SetIcon(路径/“文件名”)；
 
-        SetIcon();
+
+
+            SetIcon();
         Collect();
 
     }
