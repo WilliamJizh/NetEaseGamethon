@@ -6,13 +6,13 @@ public class SpeedBoost : ItemClass
 {
  
     public GameObject player;
-    private CharacterMovement characterMovement;
+    private PlayerStats characterMovement;
     private ItemMananger itemMananger;
   
 
     void Awake()
     {
-        characterMovement = player.GetComponent<CharacterMovement>();
+        characterMovement = player.GetComponent<PlayerStats>();
         itemMananger = player.GetComponent<ItemMananger>();
 
     }
@@ -28,18 +28,18 @@ public class SpeedBoost : ItemClass
     // Update is called once per frame
     void Update()
     {
-        if (collected)
+        if (collected==true)
         {
             IncreaseSpeed();
-            collected = false;
+
         }
     }
     void IncreaseSpeed()
     {
         //increase player's movement speed by 10%
-        float speed = 1.001f * characterMovement.speed;
+        float speed = 1.1f * characterMovement.speed;
         characterMovement.speed = speed;
-
+        collected = false;
 
 
     }

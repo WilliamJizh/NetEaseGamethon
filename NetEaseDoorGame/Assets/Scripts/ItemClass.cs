@@ -6,16 +6,19 @@ public abstract class ItemClass : MonoBehaviour
 {
     [SerializeField]
     public Sprite icon;
-    public bool collected = false;
+    public string names;
+    public bool collected;
+
     public void SetIcon()
     {
         this.GetComponent<SpriteRenderer>().sprite = this.icon;
     }
+
     public void SetIcon(Sprite spt)
     {
         this.GetComponent<SpriteRenderer>().sprite = spt; 
         }
-    public string names;
+   
    
     public Sprite GetIcon()
     {
@@ -32,16 +35,14 @@ public abstract class ItemClass : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<ItemMananger>().ReceiveItem(this);
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
-        }
             collected = true;
             other.GetComponent<ItemMananger>().ReceiveItem(this);
-
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+           
+        }
+           
+          
     }
 }
 

@@ -13,7 +13,7 @@ public class ItemMananger : MonoBehaviour
     void Start()
     {
         items = new List<ItemClass> ();
-        imagePos = new Vector2(150, 500);
+        imagePos = new Vector2(0, 0);
         cv = GameObject.Find("Canvas").transform;
     }
 
@@ -28,11 +28,12 @@ public class ItemMananger : MonoBehaviour
                 {
                     GameObject img = new GameObject();
                     var icon = img.AddComponent(typeof(Image));
-                    icon.GetComponent<Image>().sprite = items[i].icon;
-
+                    img.GetComponent<Image>().sprite = items[i].icon;
                     //让图标的位置并排列开
+                    Instantiate(img, imagePos, Quaternion.identity, cv);
+                   
 
-                    Instantiate(icon, imagePos, Quaternion.identity, cv);
+
                     if(i ==items.Count-1)
                     {
                         refresh = false;
