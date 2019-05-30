@@ -42,7 +42,7 @@ public class ItemMananger : MonoBehaviour
         }
     }
 
-    public void RecieveItem(ItemClass item) 
+    public void ReceiveItem(ItemClass item) 
     {
 
         refresh=true;

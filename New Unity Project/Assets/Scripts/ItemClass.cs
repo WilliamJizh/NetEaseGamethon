@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class ItemClass : MonoBehaviour
 {
     [SerializeField]
-    string names;
+    public string names;
     [SerializeField]
-   public  Sprite icon;
-
+    public  Sprite icon;
+    public bool collected = false;
+    
     public void SetIcon()
     {
         this.GetComponent<SpriteRenderer>().sprite = icon;
@@ -28,9 +29,10 @@ public abstract class ItemClass : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<ItemMananger>().RecieveItem(this);
+            collected = true;
+            other.GetComponent<ItemMananger>().ReceiveItem(this);
 
-           this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }

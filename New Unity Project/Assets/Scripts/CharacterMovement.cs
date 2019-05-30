@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 movedirection;
 
     [SerializeField]
-    float speed = 10;
+    public float speed = 10;
     [SerializeField]
     float gravity = 10;
 
