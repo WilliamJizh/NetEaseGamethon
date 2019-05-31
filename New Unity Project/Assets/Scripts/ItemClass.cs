@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ItemClass : MonoBehaviour
 {
     [SerializeField]
-    public string names;
+    string names;
     [SerializeField]
     public  Sprite icon;
     public bool collected = false;

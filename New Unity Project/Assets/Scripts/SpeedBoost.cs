@@ -7,19 +7,19 @@ public class SpeedBoost : ItemClass
  
     public GameObject player;
     private CharacterMovement characterMovement;
-    private ItemMananger itemMananger;
+
   
 
     void Awake()
     {
         characterMovement = player.GetComponent<CharacterMovement>();
-        itemMananger = player.GetComponent<ItemMananger>();
+
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        names = "speedboost";
+    
         SetIcon();
         Collect();
 
@@ -31,13 +31,15 @@ public class SpeedBoost : ItemClass
         if (collected)
         {
             IncreaseSpeed();
+            //If player collected speedboost, then set the logic to false.
+            collected = false;
         }
     }
     void IncreaseSpeed()
     {
-        //increase player's movement speed by 10%
-        float speed = 1.001f * characterMovement.speed;
-        characterMovement.speed = speed;
+        //increase player's movement speed by 2 when player picks up this itemf
+        characterMovement.speed += 2;
+        
 
 
 
