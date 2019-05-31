@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AddHealth
-  - MiusHealth
+  - MinusHealth
   layers:
   - Default
   - TransparentFX

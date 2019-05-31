@@ -12,24 +12,24 @@ public class healthPlus : MonoBehaviour
     void Start()
     {
         playerstat = GetComponent<PlayerStats>();
+        healthGen = playerstat.initialHealth;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        playerstat.currentHealth = healthGen;
     }
    
    
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("AddHealth"))
         {
-            healthGen = healthGen + 20;
-            GetComponent<PlayerStats>().currentHealth = healthGen;
-           Destroy(this.gameObject);
+           healthGen = healthGen + 20;
            Debug.Log(healthGen);
+           Destroy(col.gameObject);
         }
     }
 
