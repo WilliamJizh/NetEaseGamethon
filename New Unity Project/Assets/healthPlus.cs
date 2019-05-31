@@ -28,7 +28,6 @@ public class healthPlus : MonoBehaviour
         if (col.gameObject.CompareTag("AddHealth"))
         {
            healthGen = healthGen + 20;
-           Debug.Log(healthGen);
            Destroy(col.gameObject);
         }
     }

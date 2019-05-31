@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AddHealth
   - MinusHealth
+  - Mushroom
   layers:
   - Default
   - TransparentFX
