@@ -18,7 +18,7 @@ public class BasicRangeAttack : MonoBehaviour
 
     // Fire rate package
     [SerializeField]
-    float firearate = 0.1f;
+    public float firearate = 0.1f;
     [SerializeField]
     float nextfire = 0;
     [SerializeField]
