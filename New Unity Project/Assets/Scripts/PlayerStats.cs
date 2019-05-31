@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    bool death = false;
-    float health;
-    float speed;
+    public bool death = false;
+    public float initialHealth;
+    public float maxHealth;
+    public float currentHealth;
+    public float speed;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+       initialHealth = 100;
+
     }
 
     // Update is called once per frame
@@ -23,9 +28,13 @@ public class PlayerStats : MonoBehaviour
 
     public void DeathDetection()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             death = true;
         }
     }
+
+
 }
+
+
