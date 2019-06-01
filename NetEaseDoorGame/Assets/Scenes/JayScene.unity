@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: initialHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: -3862370650280626436, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: d5c8ea4d-af19-4c06-bf6d-d2081c2bae75
+      objectReference: {fileID: 0}
     - target: {fileID: 882727138278709387, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: healthG
@@ -891,6 +896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5621682475080897314, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 69092e69-3a56-4ae2-a3d8-e18e7bbbe0fd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489702f8e3d99024dafaa78290111057, type: 3}
