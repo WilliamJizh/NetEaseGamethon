@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
+
 {
     CharacterController charactercontroller;
 
@@ -20,13 +21,23 @@ public class CharacterMovement : MonoBehaviour
     
 
     [SerializeField]
-    float turntime = 0.1f; 
+    float turntime = 0.1f;
+
+    GameObject ui;
+
+    private void Awake()
+    {
+        joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
+
+        charactercontroller = GetComponent<CharacterController>();
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        charactercontroller = GetComponent<CharacterController>();
+        
     }
 
     // Update is called once per frame
