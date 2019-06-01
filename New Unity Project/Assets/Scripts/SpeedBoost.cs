@@ -38,7 +38,7 @@ public class SpeedBoost : ItemClass
     void IncreaseSpeed()
     {
         //increase player's movement speed by 2 when player picks up this itemf
-        characterMovement.speed += 2;
+        characterMovement.speed += 0.2f;
         
 
 
