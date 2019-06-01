@@ -5,24 +5,29 @@ using UnityEngine;
 public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
 {
     [SerializeField]
-    GameObject projectileprefeb;
+    public GameObject projectileprefeb;
 
     [SerializeField]
     string rangeattackinput = "Fire1";
 
     public Joystick joystick;
-
     // Temp instantiate position modifier 
     [SerializeField]
     float offset = 1;
 
     // Fire rate package
     [SerializeField]
-    float firearate = 0.1f;
+    public float firearate = 0.1f;
     [SerializeField]
     float nextfire = 0;
     [SerializeField]
     float turntime = 0.1f;
+<<<<<<< HEAD
+    
+    Vector3 lookdir;
+
+  
+=======
 
     Vector3 lookdir;
 
@@ -36,6 +41,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
         if (joystick != null) Debug.Log("found!");
     }
 
+>>>>>>> 4c9d2e031c0d409324e157031a6f2d26e6d9cb26
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +54,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
     {
         GetDir();
         Fire();
+        
     }
 
     void GetDir() {
@@ -65,7 +72,12 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
 
                 BoltNetwork.Instantiate(BoltPrefabs.Sphere, transform.position + transform.forward * offset, transform.rotation);
                 nextfire = Time.time + firearate;
+<<<<<<< HEAD
+                
+                
+=======
 
+>>>>>>> 4c9d2e031c0d409324e157031a6f2d26e6d9cb26
             }
 
         }

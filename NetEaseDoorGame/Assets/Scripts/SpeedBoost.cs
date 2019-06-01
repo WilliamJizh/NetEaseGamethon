@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpeedBoost : ItemClass
 {
- 
+
     public GameObject player;
     private PlayerStats characterMovement;
     private ItemMananger itemMananger;
-  
+
 
     void Awake()
     {
@@ -19,7 +19,7 @@ public class SpeedBoost : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "speedboost";
+       
         SetIcon();
         Collect();
 
@@ -28,10 +28,10 @@ public class SpeedBoost : ItemClass
     // Update is called once per frame
     void Update()
     {
-        if (collected==true)
+        if (collected == true)
         {
             IncreaseSpeed();
-
+            collected = false;
         }
     }
     void IncreaseSpeed()
@@ -39,7 +39,7 @@ public class SpeedBoost : ItemClass
         //increase player's movement speed by 10%
         float speed = 1.1f * characterMovement.speed;
         characterMovement.speed = speed;
-        collected = false;
+
 
 
     }

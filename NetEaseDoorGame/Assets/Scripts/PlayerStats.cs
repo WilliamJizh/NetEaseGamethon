@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField]
-    bool death = false;
-    [SerializeField]
-    float health;
-    [SerializeField]
-   public float speed;
+    public bool death = false;
+    public float initialHealth;
+    public float maxHealth;
+    public float currentHealth;
+    public float speed;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        speed = 10;
-        health = 100;
+       initialHealth = 100;
+       currentHealth = initialHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        speed = 6;
         GetComponent<CharacterMovement>().speed = this.speed;
         DeathDetection();
     }
 
     public void DeathDetection()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             death = true;
         }
     }
+
+
 }
+
+

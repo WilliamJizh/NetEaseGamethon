@@ -5,21 +5,15 @@ using UnityEngine;
 public abstract class ItemClass : MonoBehaviour
 {
     [SerializeField]
-    public Sprite icon;
-    public string names;
-    public bool collected;
-
+    string names;
+    [SerializeField]
+    public  Sprite icon;
+    public bool collected = false;
+    
     public void SetIcon()
     {
-        this.GetComponent<SpriteRenderer>().sprite = this.icon;
+        this.GetComponent<SpriteRenderer>().sprite = icon;
     }
-
-    public void SetIcon(Sprite spt)
-    {
-        this.GetComponent<SpriteRenderer>().sprite = spt; 
-        }
-   
-   
     public Sprite GetIcon()
     {
         return icon;
@@ -37,12 +31,10 @@ public abstract class ItemClass : MonoBehaviour
         {
             collected = true;
             other.GetComponent<ItemMananger>().ReceiveItem(this);
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-           
-        }
-           
-          
-    }
-}
 
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+}
