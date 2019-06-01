@@ -127,16 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5621682475080897314, guid: 489702f8e3d99024dafaa78290111057,
-        type: 3}
-      propertyPath: _serializerGuid
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -5621682475080897314, guid: 489702f8e3d99024dafaa78290111057,
-        type: 3}
-      propertyPath: _sceneGuid
-      value: 49047fd2-534e-4561-b96a-9fbe4783d5bd
-      objectReference: {fileID: 0}
     - target: {fileID: 22113990416540373, guid: 489702f8e3d99024dafaa78290111057,
         type: 3}
       propertyPath: m_Name
@@ -202,8 +192,72 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -5621682475080897314, guid: 489702f8e3d99024dafaa78290111057, type: 3}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1032
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152286567637465, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229152287744704900, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 118
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489702f8e3d99024dafaa78290111057, type: 3}
 --- !u!1 &1220200965
 GameObject:
@@ -298,7 +352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8440cc491e98ea46ab33d2846de858b, type: 2}
+  - {fileID: 2100000, guid: 2f44f9252345b4c19a398b491727c19a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,7 +635,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e4facf81e4dcf4a2f87c103e8158b5e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

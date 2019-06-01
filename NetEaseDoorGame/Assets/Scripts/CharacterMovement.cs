@@ -32,19 +32,12 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
         if (joystick != null) Debug.Log("found!");
 
         charactercontroller = GetComponent<CharacterController>();
+        state.SetTransforms(state.CubeTransform, transform);
     }
 
     public override void SimulateOwner()
     {
         Movement();
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     void Movement()
@@ -56,8 +49,6 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
             movedirection *= speed;
             
         }
-
-       
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 260048849028624725}
   - component: {fileID: 260048849028624726}
   - component: {fileID: 260048849028624727}
+  - component: {fileID: 1548961877177971161}
   - component: {fileID: 260048849028624720}
-  - component: {fileID: 260048849028624746}
   - component: {fileID: -2806427484712519452}
   - component: {fileID: 1003950014730910321}
   - component: {fileID: -3862370650280626436}
@@ -116,6 +116,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1548961877177971161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260048849028624721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de2fdb77b58c214daac7a424ac7090f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileprefeb: {fileID: 0}
+  rangeattackinput: Fire1
+  joystick: {fileID: 0}
+  offset: 1
+  firearate: 0.1
+  nextfire: 0
+  turntime: 0.1
 --- !u!114 &260048849028624720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,26 +150,6 @@ MonoBehaviour:
   speed: 10
   gravity: 10
   joystick: {fileID: 0}
-  turntime: 0.1
---- !u!114 &260048849028624746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260048849028624721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de2fdb77b58c214daac7a424ac7090f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileprefeb: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
-    type: 3}
-  rangeattackinput: Fire1
-  joystick: {fileID: 0}
-  offset: 1
-  firearate: 0.5
-  nextfire: 0
   turntime: 0.1
 --- !u!114 &-2806427484712519452
 MonoBehaviour:
@@ -179,7 +178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  health: 0
+  initialHealth: 0
+  maxHealth: 0
+  currentHealth: 0
   speed: 0
 --- !u!114 &-3862370650280626436
 MonoBehaviour:
@@ -204,7 +205,7 @@ MonoBehaviour:
   _sceneObjectDestroyOnDetach: 1
   _sceneObjectAutoAttach: 1
   _alwaysProxy: 0
-  _detachOnDisable: 1
+  _detachOnDisable: 0
   _allowFirstReplicationWhenFrozen: 0
   _autoRemoveChildEntities: 0
   _entityBehaviourQueryOption: 0

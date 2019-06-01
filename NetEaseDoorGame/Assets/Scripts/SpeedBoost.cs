@@ -12,6 +12,8 @@ public class SpeedBoost : ItemClass
 
     void Awake()
     {
+        //temp implementation (player should get from collision)
+        player = GameObject.Find("Player");
         characterMovement = player.GetComponent<PlayerStats>();
         itemMananger = player.GetComponent<ItemMananger>();
 

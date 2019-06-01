@@ -10,31 +10,29 @@ public class BasicProjectile : Bolt.EntityBehaviour<IProjectileState>
     float speed = 30;
 
   
-    [SerializeField]
+   
     //set a timer to control the fire range
-    float existtime = 3;
+   public float existtime = 3;
 
     public override void Attached()
     {
         
         rb = GetComponent<Rigidbody>();
+        state.SetTransforms(state.ProjectilePosition, transform);
     }
 
 
-    public override void SimulateOwner()
+    public void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         // Projectile destroy timer
-        StartCoroutine(ExistTimer());
+        entity.DestroyDelayed(existtime);
     }
+    
 
-    IEnumerator ExistTimer() {
-        
-        yield return new WaitForSecondsRealtime(existtime);
-        Destroy(this.gameObject);
 
-    }
+    
 
     
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
+public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
 {
     [SerializeField]
     public GameObject projectileprefeb;
@@ -32,14 +32,17 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
     
 
 
-    private void Awake()
+    public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
 
-
-
+    public override void SimulateOwner()
+    {
+        GetDir();
+        Fire();
+    }
     void GetDir() {
         lookdir.x = joystick.Horizontal;
         lookdir.z = joystick.Vertical;
@@ -47,7 +50,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
 
     void Fire()
     {
-        if (lookdir != Vector3.zero && entity.IsOwner)
+        if (lookdir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
             if (Time.time > nextfire)
@@ -61,8 +64,5 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
         }
     }
 
-    public override void OnEvent(RangeAttack evnt)
-    {
-        //
-    }
+
 }
