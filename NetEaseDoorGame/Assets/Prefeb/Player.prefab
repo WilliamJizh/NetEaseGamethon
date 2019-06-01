@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: 260048849028624746}
   - component: {fileID: -2806427484712519452}
   - component: {fileID: 1003950014730910321}
-  - component: {fileID: 5794058879295508599}
-  - component: {fileID: 882727138278709387}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -65,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1f2ad96d6d85314aa577133f3692a08, type: 2}
+  - {fileID: 2100000, guid: 5f292bfcdb25049f8bec4edef9f18891, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,7 +71,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -177,35 +174,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1336b72f5ee498b9699f3216004650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  death: 0
-  initialHealth: 100
-  maxHealth: 0
-  currentHealth: 100
-  speed: 0
---- !u!114 &5794058879295508599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260048849028624721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25421fdc61af4ea6bf4cb4fa5d5d8a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthGen: 0
---- !u!114 &882727138278709387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260048849028624721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c77306fa873a49a9a03bf2a5e18ff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
