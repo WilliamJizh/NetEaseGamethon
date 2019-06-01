@@ -34,6 +34,6 @@ public class Eye : ItemClass
     //increase player's attack range after collecting eye item
     void IncreaseAttackRange()
     {
-        basicProjectile.timeModifier += 0.3f;
+        basicProjectile.existtime += 0.3f;
     }
 }
