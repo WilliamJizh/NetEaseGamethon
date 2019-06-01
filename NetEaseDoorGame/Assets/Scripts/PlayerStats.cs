@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : Bolt.EntityBehaviour
 {
     public bool death = false;
-    public float initialHealth;
+    public float initialHealth = 100;
     public float maxHealth;
     public float currentHealth;
-    public float speed;
+    public float speed = 6;
+    public SimpleHealthBar healthBar;
 
-   
-    // Start is called before the first frame update
-    void Start()
+
+    public override void Attached()
     {
-       initialHealth = 100;
-       currentHealth = initialHealth;
+        currentHealth = initialHealth;
+        maxHealth = initialHealth;
+        healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
+        if (healthBar != null) Debug.Log("bar found!");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void SimulateOwner()
     {
-        speed = 6;
-        GetComponent<CharacterMovement>().speed = this.speed;
+        healthBar.UpdateBar(currentHealth, maxHealth);
         DeathDetection();
     }
+
 
     public void DeathDetection()
     {

@@ -23,6 +23,8 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
     [SerializeField]
     float turntime = 0.1f;
 
+    PlayerStats playerstats;
+
     GameObject ui;
 
 
@@ -32,19 +34,13 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
         if (joystick != null) Debug.Log("found!");
 
         charactercontroller = GetComponent<CharacterController>();
+        state.SetTransforms(state.CubeTransform, transform);
+        playerstats = GetComponent<PlayerStats>();
     }
 
     public override void SimulateOwner()
     {
         Movement();
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     void Movement()
@@ -53,11 +49,9 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
             movedirection.x = joystick.Horizontal;
             movedirection.z = joystick.Vertical;
             movedirection.y = 0;
-            movedirection *= speed;
+            movedirection *= playerstats.speed;
             
         }
-
-       
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);

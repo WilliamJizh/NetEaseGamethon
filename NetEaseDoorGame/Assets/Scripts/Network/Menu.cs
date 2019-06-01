@@ -30,7 +30,7 @@ public class Menu : Bolt.GlobalEventListener
             string matchName = Guid.NewGuid().ToString();
 
             BoltNetwork.SetServerInfo(matchName, null);
-            BoltNetwork.LoadScene("KLDMS Scene");
+            BoltNetwork.LoadScene("MasterScene");
         }
     }
 
