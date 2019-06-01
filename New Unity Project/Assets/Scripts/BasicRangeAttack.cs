@@ -5,13 +5,12 @@ using UnityEngine;
 public class BasicRangeAttack : MonoBehaviour
 {
     [SerializeField]
-    GameObject projectileprefeb;
+    public GameObject projectileprefeb;
 
     [SerializeField]
     string rangeattackinput = "Fire1";
 
     public Joystick joystick;
-
     // Temp instantiate position modifier 
     [SerializeField]
     float offset = 1;
@@ -23,9 +22,10 @@ public class BasicRangeAttack : MonoBehaviour
     float nextfire = 0;
     [SerializeField]
     float turntime = 0.1f;
-
-    Vector3 lookdir;
     
+    Vector3 lookdir;
+
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +37,7 @@ public class BasicRangeAttack : MonoBehaviour
     {
         GetDir();
         Fire();
+        
     }
 
     void GetDir() {
@@ -55,7 +56,10 @@ public class BasicRangeAttack : MonoBehaviour
                 Debug.Log("Fire");
                 Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation);
                 nextfire = Time.time + firearate;
+                
+                
             }
+
         }
     }
 }
