@@ -25,7 +25,8 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
 
     GameObject ui;
 
-    private void Awake()
+
+    public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
@@ -33,17 +34,17 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
         charactercontroller = GetComponent<CharacterController>();
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public override void SimulateOwner()
     {
-        
+        Movement();
     }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+       
     }
 
     void Movement()
