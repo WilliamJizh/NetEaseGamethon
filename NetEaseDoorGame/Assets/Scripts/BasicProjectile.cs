@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectile : MonoBehaviour
+public class BasicProjectile : Bolt.EntityBehaviour<IProjectileState>
 {
     Rigidbody rb;
     
@@ -14,17 +14,20 @@ public class BasicProjectile : MonoBehaviour
     //set a timeModifier so that we can change attack range by changing this modifier
     public float timeModifier = 0.3f;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    float existtime = 3;
+
+    public override void Attached()
     {
         
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void SimulateOwner()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+<<<<<<< HEAD
         timer += 1.0f * Time.deltaTime;
         //if timer is larger than the default time: 0.3f, then destroy projectile
         if (timer > timeModifier)
@@ -32,5 +35,18 @@ public class BasicProjectile : MonoBehaviour
             GameObject.Destroy(this.gameObject);
         }
        
+=======
+        // Projectile destroy timer
+        StartCoroutine(ExistTimer());
     }
+
+    IEnumerator ExistTimer() {
+        
+        yield return new WaitForSecondsRealtime(existtime);
+        Destroy(this.gameObject);
+>>>>>>> 4c9d2e031c0d409324e157031a6f2d26e6d9cb26
+    }
+
+    
+
 }
