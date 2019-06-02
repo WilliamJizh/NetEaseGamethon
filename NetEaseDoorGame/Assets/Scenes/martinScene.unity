@@ -192,12 +192,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a191d26e77cc4706ea1799a7534fd5ec285aa0b2
     - target: {fileID: 5229152286151378232, guid: 489702f8e3d99024dafaa78290111057,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f353d42d1db27ff42b78b28efd86b316,
         type: 3}
+<<<<<<< HEAD
+=======
+    - target: {fileID: -5621682475080897314, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 1555bcf7-d97d-4260-8fb6-6f80d3694178
+      objectReference: {fileID: 0}
+>>>>>>> 8c82af6759015f6cb8ab4c23b2af548d0fc464d1
+=======
+>>>>>>> a191d26e77cc4706ea1799a7534fd5ec285aa0b2
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489702f8e3d99024dafaa78290111057, type: 3}
 --- !u!114 &126874477 stripped
