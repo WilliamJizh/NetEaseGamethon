@@ -29,7 +29,6 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
         if(foundPlayer == true)
         {
             state.SetTransforms(state.PlayerTransform, playerTrans.gameObject.GetComponent<Transform>());
-            Teleport(playerTrans);
         }
 
     }
@@ -46,26 +45,9 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
                 other.gameObject.GetComponent<CharacterMovement>().teleportPosition = TeleportPosition;
                 other.gameObject.GetComponent<CharacterMovement>().teleported =true;
                
-             
-              
-               // Teleport(other.gameObject);
                 }
         }
     }
 
-    private void Teleport(GameObject player) {
-
-        //把玩家传送到另一个门
-
-        state.SetTransforms(state.PlayerTransform, transform);
-        Vector3 pos = player.GetComponent<Transform>().position;
-        pos.x = TeleportPosition.position.x;
-        pos.z = TeleportPosition.position.z;
-        player.GetComponent<Transform>().position = pos;
-      
-
-
-
-
-    }
+    
 }

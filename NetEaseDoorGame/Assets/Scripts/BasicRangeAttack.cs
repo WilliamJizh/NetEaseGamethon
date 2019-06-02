@@ -47,6 +47,8 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
 
     public override void SimulateOwner()
     {
+        if (!entity.IsOwner) return;
+
         GetDir();
         Fire();
     }
