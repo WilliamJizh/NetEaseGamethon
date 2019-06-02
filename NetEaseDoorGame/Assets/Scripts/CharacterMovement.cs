@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
+
 {
     CharacterController charactercontroller;
 
@@ -20,17 +21,24 @@ public class CharacterMovement : MonoBehaviour
     
 
     [SerializeField]
-    float turntime = 0.1f; 
+    float turntime = 0.1f;
+
+    PlayerStats playerstats;
+
+    GameObject ui;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Attached()
     {
+        joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
+
         charactercontroller = GetComponent<CharacterController>();
+        state.SetTransforms(state.CubeTransform, transform);
+        playerstats = GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void SimulateOwner()
     {
         Movement();
     }
@@ -41,11 +49,9 @@ public class CharacterMovement : MonoBehaviour
             movedirection.x = joystick.Horizontal;
             movedirection.z = joystick.Vertical;
             movedirection.y = 0;
-            movedirection *= speed;
+            movedirection *= playerstats.speed;
             
         }
-
-       
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : MonoBehaviour
+public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
 {
     [SerializeField]
     public GameObject projectileprefeb;
@@ -22,24 +22,27 @@ public class BasicRangeAttack : MonoBehaviour
     float nextfire = 0;
     [SerializeField]
     float turntime = 0.1f;
-    
-    Vector3 lookdir;
+
 
   
-    // Start is called before the first frame update
-    void Start()
+
+    Vector3 lookdir;
+
+    GameObject ui;
+    
+
+
+    public override void Attached()
     {
-        
+        joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void SimulateOwner()
     {
         GetDir();
         Fire();
-        
     }
-
     void GetDir() {
         lookdir.x = joystick.Horizontal;
         lookdir.z = joystick.Vertical;
@@ -50,16 +53,16 @@ public class BasicRangeAttack : MonoBehaviour
         if (lookdir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
-
             if (Time.time > nextfire)
             {
-                Debug.Log("Fire");
-                Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation);
+
+                BoltNetwork.Instantiate(BoltPrefabs.Sphere, transform.position + transform.forward * offset, transform.rotation);
                 nextfire = Time.time + firearate;
-                
-                
+
             }
 
         }
     }
+
+
 }
