@@ -12,7 +12,7 @@ public abstract class ItemClass : MonoBehaviour
     // bool for collected or not
     public bool collected = false;
     //player gameobject
-    private GameObject player;
+    private GameObject playerObject;
 
     //set the icon for item
     public void SetIcon()
@@ -36,14 +36,14 @@ public abstract class ItemClass : MonoBehaviour
     //return the player object
     public GameObject getPlayer()
     {
-        return player;
+        return playerObject;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            player = other.gameObject;
+            playerObject = other.gameObject;
             collected = true;
             other.GetComponent<ItemMananger>().ReceiveItem(this);
 
