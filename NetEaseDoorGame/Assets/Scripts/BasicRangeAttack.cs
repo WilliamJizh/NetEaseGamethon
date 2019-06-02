@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
+public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
 {
     [SerializeField]
     public GameObject projectileprefeb;

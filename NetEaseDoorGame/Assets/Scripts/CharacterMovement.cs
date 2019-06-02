@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
+public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
 {
     CharacterController charactercontroller;
@@ -34,7 +34,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
         if (joystick != null) Debug.Log("found!");
 
         charactercontroller = GetComponent<CharacterController>();
-        state.SetTransforms(state.CubeTransform, transform);
+        state.SetTransforms(state.PlayerTransform, transform);
         playerstats = GetComponent<PlayerStats>();
     }
 
