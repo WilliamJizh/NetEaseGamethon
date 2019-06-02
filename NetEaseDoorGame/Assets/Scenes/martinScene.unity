@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -192,6 +192,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5229152286151378232, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f353d42d1db27ff42b78b28efd86b316,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489702f8e3d99024dafaa78290111057, type: 3}
 --- !u!114 &126874477 stripped
@@ -295,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216551392}
   m_LocalRotation: {x: 0.33325872, y: 0.2759463, z: -0.102671765, w: 0.8956845}
-  m_LocalPosition: {x: -9.34, y: 7.25, z: -9.48}
+  m_LocalPosition: {x: -10.29, y: 10.62, z: -10.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -343,7 +349,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1240015447}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -388,7 +394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240015447}
   m_LocalRotation: {x: -0.004203402, y: 0.0068126055, z: 0.005432741, w: 0.99995327}
-  m_LocalPosition: {x: 0.89797306, y: 0.12000002, z: -0.53}
+  m_LocalPosition: {x: 0.9, y: -0.01, z: -0.53}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -409,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 260048849028624747, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.12
+      value: -8.95
       objectReference: {fileID: 0}
     - target: {fileID: 260048849028624747, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
@@ -419,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 260048849028624747, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.91
+      value: -4.35
       objectReference: {fileID: 0}
     - target: {fileID: 260048849028624747, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
