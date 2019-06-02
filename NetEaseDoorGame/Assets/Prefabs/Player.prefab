@@ -151,6 +151,9 @@ MonoBehaviour:
   gravity: 10
   joystick: {fileID: 0}
   turntime: 0.1
+  playerPosition: {x: 0, y: 0, z: 0}
+  teleportPosition: {fileID: 0}
+  teleported: 0
 --- !u!114 &-2806427484712519452
 MonoBehaviour:
   m_ObjectHideFlags: 0

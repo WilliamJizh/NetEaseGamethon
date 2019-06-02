@@ -29,6 +29,9 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     string leftjoystickx = "Horizontal";
     string leftjoysticky = "Vertical";
+    public Vector3 playerPosition;
+    public Transform teleportPosition;
+    public bool teleported;
     public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
@@ -50,12 +53,25 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     public override void SimulateOwner()
     {
+
+       
+
         Movement();
+        if (teleported == true)
+        {
+
+            Teleport(teleportPosition);
+            teleported = false;
+        }
+        //  Teleport();
     }
 
     private void Update()
     {
+   
+       
         Movement();
+        //Teleport();
     }
 
     void Movement()
@@ -78,4 +94,19 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);
     }
-}
+    public void Teleport(Transform TeleportPos)
+    {
+
+        //把玩家传送到另一个门
+
+        //state.SetTransforms(state.PlayerTransform, transform);
+        Vector3 pos = transform.position;
+        pos.x = TeleportPos.position.x;
+        pos.z = TeleportPos.position.z;
+        transform.position = pos;
+
+    }
+
+
+
+    }
