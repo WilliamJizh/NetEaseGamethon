@@ -29,8 +29,9 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
     Vector3 lookdir;
 
     GameObject ui;
-    
 
+    string rightjoystickx = "Mouse X";
+    string rightjoysticky = "Mouse Y";
 
     public override void Attached()
     {
@@ -56,8 +57,16 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
         Fire();
     }
     void GetDir() {
-        lookdir.x = joystick.Horizontal;
-        lookdir.z = joystick.Vertical;
+        
+        if (Mathf.Abs(Input.GetAxis(rightjoystickx)) < Mathf.Abs(joystick.Horizontal)) 
+            lookdir.x = joystick.Horizontal;
+            else lookdir.x = Input.GetAxis(rightjoystickx);
+        if (Mathf.Abs(Input.GetAxis(rightjoysticky)) < Mathf.Abs(joystick.Vertical))
+            lookdir.z = joystick.Vertical;
+            else lookdir.z = Input.GetAxis(rightjoysticky);
+
+
+
     }
 
     void Fire()

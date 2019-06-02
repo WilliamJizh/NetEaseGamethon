@@ -27,7 +27,8 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     GameObject ui;
 
-
+    string leftjoystickx = "Horizontal";
+    string leftjoysticky = "Vertical";
     public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
@@ -60,12 +61,19 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     void Movement()
     {
         if (charactercontroller.isGrounded) {
+
+            if(Mathf.Abs(Input.GetAxis(leftjoystickx))<Mathf.Abs(joystick.Horizontal))
             movedirection.x = joystick.Horizontal;
+            else movedirection.x = Input.GetAxis(leftjoystickx);
+            if (Mathf.Abs(Input.GetAxis(leftjoysticky)) < Mathf.Abs(joystick.Vertical))
             movedirection.z = joystick.Vertical;
+            else movedirection.z = Input.GetAxis(leftjoysticky);
             movedirection.y = 0;
-           movedirection *= playerstats.speed;
+            movedirection *= playerstats.speed;
             
         }
+
+        
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);
