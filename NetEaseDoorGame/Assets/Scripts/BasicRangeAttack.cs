@@ -53,11 +53,7 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
         Fire();
     }
 
-    private void Update()
-    {
-        GetDir();
-        Fire();
-    }
+
     void GetDir() {
         
         if (Mathf.Abs(Input.GetAxis(rightjoystickx)) < Mathf.Abs(joystick.Horizontal)) 
