@@ -38,7 +38,19 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
         if (joystick != null) Debug.Log("found!");
     }
 
+    private void Awake()
+    {
+        joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
+    }
+
     public override void SimulateOwner()
+    {
+        GetDir();
+        Fire();
+    }
+
+    private void Update()
     {
         GetDir();
         Fire();

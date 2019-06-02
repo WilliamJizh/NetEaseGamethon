@@ -38,7 +38,21 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
         playerstats = GetComponent<PlayerStats>();
     }
 
+    private void Awake()
+    {
+        joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
+
+        charactercontroller = GetComponent<CharacterController>();
+        playerstats = GetComponent<PlayerStats>();
+    }
+
     public override void SimulateOwner()
+    {
+        Movement();
+    }
+
+    private void Update()
     {
         Movement();
     }
