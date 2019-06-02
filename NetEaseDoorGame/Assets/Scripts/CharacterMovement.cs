@@ -49,7 +49,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<ICubeState>
             movedirection.x = joystick.Horizontal;
             movedirection.z = joystick.Vertical;
             movedirection.y = 0;
-            movedirection *= playerstats.speed;
+           movedirection *= playerstats.speed;
             
         }
 
