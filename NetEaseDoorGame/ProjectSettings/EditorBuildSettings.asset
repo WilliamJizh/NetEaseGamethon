@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ZaiyunScene.unity
     guid: 8bbe7ac59ef4747f1a26cbf328a8f295
+  - enabled: 1
+    path: Assets/Scenes/JayScene.unity
+    guid: 598d292e20de04a1cb34abed715f6642
   m_configObjects: {}
