@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mushroomHealth : MonoBehaviour
+public class mushroomHealth : ItemClass
 {
 
 
-
+    public GameObject Player;
     PlayerStats playerstat;
+    ItemMananger itemManager;
 
     public float mushroomHealthGen = 5f;
     float CountDownTimer = 5f;
@@ -24,7 +25,10 @@ public class mushroomHealth : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        Player = GameObject.Find("Player");
         playerPos = this.transform.position;
+        playerstat = Player.GetComponent<PlayerStats>();
+        itemManager = Player.GetComponent<ItemMananger>();
     }
 
 
@@ -32,16 +36,10 @@ public class mushroomHealth : MonoBehaviour
 
     void Start()
     {
-        playerstat = GetComponent<PlayerStats>();
-
-     
+        SetIcon();
+        Collect();
 
         isTriggered = false;
-
-
-
-       
-        Debug.Log("Same Position Bruh");
     }
 
     // Update is called once per frame
@@ -52,7 +50,7 @@ public class mushroomHealth : MonoBehaviour
        
 
 
-        if (isTriggered == true) 
+        if (collected == true) 
         {
 
             CountDownTimer -= Time.deltaTime;
@@ -88,7 +86,7 @@ public class mushroomHealth : MonoBehaviour
 
             else if(CountDownTimer <= 0f) 
             {
-                isTriggered = false;
+                collected = false;
                 CountDownTimer = 5f; 
             }
         }
@@ -98,14 +96,5 @@ public class mushroomHealth : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("Mushroom")) 
-        {
-            isTriggered = true;
-            Destroy(col.gameObject);
-           
-        }
 
-    }
 }
