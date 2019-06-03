@@ -16,6 +16,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public Camera playercameraprefab;
     public override void Attached()
     {
+        if (!entity.IsOwner) return;
         currentHealth = initialHealth;
         maxHealth = initialHealth;
         state.Health = currentHealth;
