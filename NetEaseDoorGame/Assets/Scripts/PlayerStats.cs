@@ -12,6 +12,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public SimpleHealthBar healthBar;
     public float dmg = 5;
     public string attackeffect = "none";
+    public float initialArmour = 0;
+    public float currentArmour;
+    public float maxArmour = 40;
 
 
     public override void Attached()

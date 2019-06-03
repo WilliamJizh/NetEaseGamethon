@@ -13,7 +13,7 @@ public class DiscountDiamond : ItemClass
 
     void Awake()
     {
-        itemMananger = player.GetComponent<ItemMananger>();
+        itemMananger = GetComponent<ItemMananger>();
 
     }
     // Start is called before the first frame update
