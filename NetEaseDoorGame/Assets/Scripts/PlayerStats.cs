@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
     public bool death = false;
-    public float initialHealth = 100;
+    public float initialHealth = 50;
     public float maxHealth;
     public float currentHealth;
     

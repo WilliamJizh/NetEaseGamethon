@@ -10,8 +10,8 @@ public class mushroomHealth : ItemClass
     PlayerStats playerstat;
     ItemMananger itemManager;
 
-    public float mushroomHealthGen = 5f;
-    float CountDownTimer = 5f;
+    public float mushroomHealthGen = 1f;
+
 
   
 
@@ -25,7 +25,6 @@ public class mushroomHealth : ItemClass
     // Start is called before the first frame update
     private void Awake()
     {
-        Player = GameObject.Find("Player");
         playerPos = this.transform.position;
         playerstat = Player.GetComponent<PlayerStats>();
         itemManager = Player.GetComponent<ItemMananger>();
@@ -53,11 +52,9 @@ public class mushroomHealth : ItemClass
         if (collected == true) 
         {
 
-            CountDownTimer -= Time.deltaTime;
+           
 
 
-            if(CountDownTimer>0f && CountDownTimer< 5f) 
-            {
                 //here is the healthing part
 
                 if (playerPos.x < playerCurrentPos.x ||
@@ -82,13 +79,9 @@ public class mushroomHealth : ItemClass
                 playerPos = playerCurrentPos;
 
 
-            }
+           
 
-            else if(CountDownTimer <= 0f) 
-            {
-                collected = false;
-                CountDownTimer = 5f; 
-            }
+           
         }
 
 
