@@ -445,17 +445,27 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 1785214150}
+      objectReference: {fileID: 0}
     - target: {fileID: 260048849028624746, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 1466844257}
+      objectReference: {fileID: 0}
+    - target: {fileID: -3862370650280626436, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: d5c8ea4d-af19-4c06-bf6d-d2081c2bae75
+      objectReference: {fileID: 0}
     - target: {fileID: 260048849028624725, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 158c752c1ce8e4fc6bbab0c6c0aad336, type: 2}
+    - target: {fileID: -8190708396857538472, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 24febf45-d9ba-494b-b5f0-234388771733
+      objectReference: {fileID: 0}
     - target: {fileID: 1003950014730910321, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: healthCube
@@ -470,11 +480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: initialHealth
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -3862370650280626436, guid: 2c22f0aae189515459bd93cc9b7092c6,
-        type: 3}
-      propertyPath: _sceneGuid
-      value: d5c8ea4d-af19-4c06-bf6d-d2081c2bae75
       objectReference: {fileID: 0}
     - target: {fileID: 882727138278709387, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
@@ -572,18 +577,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8069839635698550681}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1466844257 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5229152286567637464, guid: 489702f8e3d99024dafaa78290111057,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094453625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1580324371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -653,18 +646,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77a3cb8f4e3d44af08128dddde994ba6, type: 3}
---- !u!114 &1785214150 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5229152286151378235, guid: 489702f8e3d99024dafaa78290111057,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094453625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1804711061
 PrefabInstance:
   m_ObjectHideFlags: 0

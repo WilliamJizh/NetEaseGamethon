@@ -8,11 +8,13 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float initialHealth = 100;
     public float maxHealth;
     public float currentHealth;
+    
     public float speed = 6;
     public SimpleHealthBar healthBar;
     public SimpleArmourBar armourBar;
     public float dmg = 5;
     public string attackeffect = "none";
+    
     public float initialArmour = 0;
     public float currentArmour;
     public float maxArmour = 40;
@@ -22,9 +24,12 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     {
         currentHealth = initialHealth;
         maxHealth = initialHealth;
+        
         currentArmour = initialArmour;
+        
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
+        
         armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
         if (armourBar != null) Debug.Log("bar found!");
     }
@@ -34,6 +39,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     {
         healthBar.UpdateBar(currentHealth, maxHealth);
         armourBar.UpdateBar(currentArmour, maxArmour);
+        
         DeathDetection();
     }
         
