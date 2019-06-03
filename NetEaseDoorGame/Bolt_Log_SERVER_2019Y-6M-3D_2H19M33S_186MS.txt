@@ -1,0 +1,96 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/3 2:19:33: >>>> [PUNCH] >>>> Create Socket
+2019/6/3 2:19:33: >>>> [PUNCH] >>>> Created Socket
+2019/6/3 2:19:33: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/3 2:19:33: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/3 2:19:33: Physical socket bound to 0.0.0.0:0
+2019/6/3 2:19:33: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/3 2:19:33: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/3 2:19:33: Connecting to Region Master us
+2019/6/3 2:19:33: >>>> Received Stun Info: 172.218.172.27:57796
+2019/6/3 2:19:34: Joined to Lobby 
+2019/6/3 2:19:34: Creating new room: 2eca59e6-b43f-4f21-909a-71ff558c78de
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/3 2:19:46: Player 2 joined. Sending PunchInfo
+2019/6/3 2:19:46: >>> LocalPunchInfo: 192.168.1.65:57796|172.218.172.27:57796
+2019/6/3 2:19:46: Received PunchInfo from Player 2
+2019/6/3 2:19:47: Incoming PING from Player 2
+2019/6/3 2:19:47: Sent PONG to Player 2 at 192.168.1.65:65382
+2019/6/3 2:19:47: Sent PING to Player 2 at 192.168.1.65:65382
+2019/6/3 2:19:47: Incoming PONG from Player 2
+2019/6/3 2:19:47: Incoming PING from Player 2
+2019/6/3 2:19:47: Sent PONG to Player 2 at 192.168.1.65:65382
+2019/6/3 2:19:47: [PUNCH SUCCESS] Local Player 1 with Remote Player 2
+2019/6/3 2:19:47: Added Player 2 to whitelist
+2019/6/3 2:19:47: [EndPoint 192.168.1.65:65382 | 65382] connected
+Created [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] on [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+2019/6/3 2:19:47: Incoming PING from Player 2
+2019/6/3 2:19:47: Incoming PONG from Player 2
+2019/6/3 2:19:47: Incoming PONG from Player 2
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] from [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+FRAME FORWARD: 12
+FRAME FORWARD: 10
+recv event [RangeAttackEvent Attackdirection=(-0.1, 0.0, 0.0)]
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-2] ProjectileState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-2-0-0-0-2] ProjectileState] from [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+Raising [RangeAttackEvent Attackdirection=(-0.1, 0.0, 0.0)]
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-1] ProjectileState] (Token: NULL)
+Created [Entity [NetworkId 0-0-0-2-0-0-0-1] ProjectileState] on [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+recv event [RangeAttackEvent Attackdirection=(-0.9, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-2] ProjectileState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-3-0-0-0-2] ProjectileState] from [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+Raising [RangeAttackEvent Attackdirection=(-0.9, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-1] ProjectileState] (Token: NULL)
+Created [Entity [NetworkId 0-0-0-3-0-0-0-1] ProjectileState] on [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+recv event [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-2] ProjectileState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-4-0-0-0-2] ProjectileState] from [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-1] ProjectileState] (Token: NULL)
+Created [Entity [NetworkId 0-0-0-4-0-0-0-1] ProjectileState] on [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+Raising [PlayerHitEvent HitTarget=]
+Raising [PlayerHitEvent HitTarget=]
+sending event [PlayerHitEvent HitTarget=]
+Raising [PlayerHitEvent HitTarget=]
+Raising [PlayerHitEvent HitTarget=]
+sending event [PlayerHitEvent HitTarget=]
+sending event [PlayerHitEvent HitTarget=]
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-2] ProjectileState]
+[Entity [NetworkId 0-0-0-2-0-0-0-1] ProjectileState] is being destroyed/disabled without being detached, forcing detach
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-1] ProjectileState]
+recv event [PlayerHitEvent HitTarget=]
+recv event [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-2] ProjectileState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-5-0-0-0-2] ProjectileState] from [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.3)]
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-1] ProjectileState] (Token: NULL)
+Created [Entity [NetworkId 0-0-0-5-0-0-0-1] ProjectileState] on [Connection [EndPoint 192.168.1.65:65382 | 65382]]
+2019/6/3 2:19:50: [EndPoint 192.168.1.65:65382 | 65382] disconnected
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState]
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-2] ProjectileState]
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-2] ProjectileState]
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-2] ProjectileState]
+[Entity [NetworkId 0-0-0-3-0-0-0-1] ProjectileState] is being destroyed/disabled without being detached, forcing detach
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-1] ProjectileState]
+[Entity [NetworkId 0-0-0-4-0-0-0-1] ProjectileState] is being destroyed/disabled without being detached, forcing detach
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-1] ProjectileState]
+[Entity [NetworkId 0-0-0-5-0-0-0-1] ProjectileState] is being destroyed/disabled without being detached, forcing detach
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-1] ProjectileState]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/3 2:22:12: Changing Connect State: Idle => DisconnectPending
+2019/6/3 2:22:12: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

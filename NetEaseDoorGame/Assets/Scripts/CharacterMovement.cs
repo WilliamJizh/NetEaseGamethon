@@ -57,21 +57,9 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
        
 
         Movement();
-        if (teleported == true)
-        {
-
-            Teleport(teleportPosition);
-            teleported = false;
-        }
-        //  Teleport();
-    }
-
-    private void Update()
-    {
-   
-       
-        Movement();
-        //Teleport();
+        TeleportManager();
+        
+        
     }
 
     void Movement()
@@ -94,12 +82,20 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);
     }
+
+    void TeleportManager() {
+        if (teleported == true)
+        {
+
+            Teleport(teleportPosition);
+            teleported = false;
+        }
+    }
+
     public void Teleport(Transform TeleportPos)
     {
 
         //把玩家传送到另一个门
-
-        //state.SetTransforms(state.PlayerTransform, transform);
         Vector3 pos = transform.position;
         pos.x = TeleportPos.position.x;
         pos.z = TeleportPos.position.z;

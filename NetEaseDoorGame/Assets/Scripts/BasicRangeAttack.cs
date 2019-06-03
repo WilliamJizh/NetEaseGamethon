@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
+public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
     [SerializeField]
     public GameObject projectileprefeb;
@@ -39,11 +39,6 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
         if (joystick != null) Debug.Log("found!");
     }
 
-    private void Awake()
-    {
-        joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
-        if (joystick != null) Debug.Log("found!");
-    }
 
     public override void SimulateOwner()
     {
@@ -63,8 +58,6 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
             lookdir.z = joystick.Vertical;
             else lookdir.z = Input.GetAxis(rightjoysticky);
 
-
-
     }
 
     void Fire()
@@ -74,13 +67,30 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
             if (Time.time > nextfire)
             {
-
-                BoltNetwork.Instantiate(BoltPrefabs.Sphere, transform.position + transform.forward * offset, transform.rotation);
+                // create a range attack event
+                var shoot = RangeAttackEvent.Create(entity);
+                shoot.Attackdirection = lookdir;
+                shoot.Send();
                 nextfire = Time.time + firearate;
 
             }
 
         }
+    }
+
+    // on rangeattack event callback
+    public override void OnEvent(RangeAttackEvent evnt)
+    {
+        FireAction();
+    }
+
+
+    void FireAction()
+    {
+     Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
+            .GetComponent<BasicProjectile>().SetShooter(this.gameObject) ;
+
+       
     }
 
 
