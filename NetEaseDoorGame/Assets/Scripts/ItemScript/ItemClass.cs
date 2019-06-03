@@ -33,12 +33,12 @@ public abstract class ItemClass : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().size= new Vector3(1, 1, 1);
         this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
-    //return the player object
+    //Only use this after collected return the player object
     public GameObject getPlayer()
     {
         return playerObject;
     }
-
+ 
     public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
