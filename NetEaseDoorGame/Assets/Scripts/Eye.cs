@@ -16,6 +16,7 @@ public class Eye : ItemClass
     // Start is called before the first frame update
     void Start()
     {
+        names = "眼睛";
         SetIcon();
         Collect();
     }
