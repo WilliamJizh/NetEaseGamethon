@@ -9,12 +9,13 @@ public class mushroomHealth : MonoBehaviour
 
     PlayerStats playerstat;
 
-    public float mushroomHealthGen;
-    float CountDownTimer;
-    public float healthG;
+    public float mushroomHealthGen = 5f;
+    float CountDownTimer = 5f;
+
   
 
     bool isTriggered;
+    
 
     public Vector3 playerPos;
     public Vector3 playerCurrentPos;
@@ -32,8 +33,8 @@ public class mushroomHealth : MonoBehaviour
     void Start()
     {
         playerstat = GetComponent<PlayerStats>();
-        CountDownTimer = 5f;
-        healthG = playerstat.initialHealth;
+
+     
 
         isTriggered = false;
 
@@ -48,7 +49,7 @@ public class mushroomHealth : MonoBehaviour
     {
 
         playerCurrentPos = this.transform.position;
-        healthG = playerstat.currentHealth;  
+       
 
 
         if (isTriggered == true) 
@@ -68,14 +69,16 @@ public class mushroomHealth : MonoBehaviour
 
                 {
 
-                    playerstat.currentHealth = healthG;
+
                 }
                 else
                 {
-                    mushroomHealthGen = mushroomHealthGen + 5 * Time.deltaTime;
-                    healthG = healthG + mushroomHealthGen;
-                    
 
+                    playerstat.currentHealth += mushroomHealthGen * Time.deltaTime;
+                    if(playerstat.currentHealth >= playerstat.maxHealth)
+                    {
+                        playerstat.currentHealth = playerstat.maxHealth;
+                    }
                 }
 
                 playerPos = playerCurrentPos;
@@ -85,7 +88,6 @@ public class mushroomHealth : MonoBehaviour
 
             else if(CountDownTimer <= 0f) 
             {
-                mushroomHealthGen = 0;
                 isTriggered = false;
                 CountDownTimer = 5f; 
             }

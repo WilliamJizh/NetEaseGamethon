@@ -5,21 +5,21 @@ using UnityEngine;
 public class healthPlus : MonoBehaviour
 {
    
-    public float healthGen;
+
     PlayerStats playerstat;
 
     // Start is called before the first frame update
     void Start()
     {
         playerstat = GetComponent<PlayerStats>();
-        healthGen = playerstat.initialHealth;
+       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerstat.currentHealth = healthGen;
+
     }
    
    
@@ -27,8 +27,15 @@ public class healthPlus : MonoBehaviour
     {
         if (col.gameObject.CompareTag("AddHealth"))
         {
-           healthGen = healthGen + 20;
-           Destroy(col.gameObject);
+            playerstat.currentHealth += 20;
+            if(playerstat.currentHealth >= playerstat.maxHealth)
+            {
+                playerstat.currentHealth = playerstat.maxHealth;
+            }
+          
+
+         Destroy(col.gameObject);
+
         }
     }
 
