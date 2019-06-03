@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de2fdb77b58c214daac7a424ac7090f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileprefeb: {fileID: 0}
+  projectileprefeb: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
+    type: 3}
   rangeattackinput: Fire1
   joystick: {fileID: 0}
   offset: 1
@@ -186,6 +187,11 @@ MonoBehaviour:
   currentHealth: 0
   speed: 6
   healthBar: {fileID: 0}
+  dmg: 5
+  attackeffect: none
+  playercamera: {fileID: 0}
+  playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
+    type: 3}
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneGuid: 
-  _serializerGuid: 59c907e2-5a0e-4d64-a471-19b9fcbb8169
+  _serializerGuid: d9c5e788-3119-431f-a329-d0cf9b074721
   _prefabId: 1
   _updateRate: 1
   _autoFreezeProxyFrames: 0
