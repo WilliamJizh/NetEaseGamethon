@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using UdpKit;
 using System;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Menu : Bolt.GlobalEventListener
 {
+   
+    
     void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, Screen.width - 20, Screen.height - 20));
@@ -30,9 +34,17 @@ public class Menu : Bolt.GlobalEventListener
             string matchName = Guid.NewGuid().ToString();
 
             BoltNetwork.SetServerInfo(matchName, null);
-            BoltNetwork.LoadScene("MasterScene");
+            //BoltNetwork.LoadScene("MasterScene");
+            Scene scene = SceneManager.GetActiveScene();
+            Debug.Log(scene.name);
+            BoltNetwork.LoadScene(scene.name);
+            
+           
         }
     }
+
+ 
+
 
     public override void SessionListUpdated(Map<Guid, UdpSession> sessionList)
     {
