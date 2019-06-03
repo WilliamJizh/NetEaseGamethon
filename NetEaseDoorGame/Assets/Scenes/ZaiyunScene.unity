@@ -567,11 +567,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8190708396857538472, guid: 2c22f0aae189515459bd93cc9b7092c6,
-        type: 3}
-      propertyPath: _sceneGuid
-      value: 2b4f4df5-e56a-4e94-be53-acfdf54c2c8c
-      objectReference: {fileID: 0}
     - target: {fileID: 260048849028624721, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: m_Name
@@ -641,6 +636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8190708396857538472, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: fe7b7930-de4e-460d-b168-00e79e75452e
       objectReference: {fileID: 0}
     - target: {fileID: 260048849028624746, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
