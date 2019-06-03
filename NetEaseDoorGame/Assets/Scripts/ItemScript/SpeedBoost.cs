@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeedBoost : ItemClass
 {
 
-    public GameObject player;
+    public  GameObject player;
     private PlayerStats characterMovement;
     private ItemMananger itemMananger;
 
@@ -13,9 +13,7 @@ public class SpeedBoost : ItemClass
     void Awake()
     {
         //temp implementation (player should get from collision)
-        player = GameObject.Find("Player");
-        characterMovement = player.GetComponent<PlayerStats>();
-        itemMananger = player.GetComponent<ItemMananger>();
+
 
     }
     // Start is called before the first frame update
@@ -32,6 +30,8 @@ public class SpeedBoost : ItemClass
     {
         if (collected == true)
         {
+
+            setPlayer();
             IncreaseSpeed();
             collected = false;
         }
@@ -45,5 +45,11 @@ public class SpeedBoost : ItemClass
 
 
     }
-
+    //设置具体是哪个player拿到了，并且access那个player的stats
+  void setPlayer()
+    {
+        player = getPlayer();
+        characterMovement = player.GetComponent<PlayerStats>();
+        itemMananger = player.GetComponent<ItemMananger>();
+    }
 }
