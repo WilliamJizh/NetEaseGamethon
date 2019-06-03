@@ -57,6 +57,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  targetstat: {fileID: 0}
+  successfulhit: 0
   existtime: 0.3
 --- !u!23 &6686759295772125660
 MeshRenderer:
