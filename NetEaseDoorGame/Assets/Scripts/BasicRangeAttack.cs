@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
+public class BasicRangeAttack : Bolt.EntityBehaviour<IPlayerState>
 {
     [SerializeField]
     public GameObject projectileprefeb;
@@ -29,8 +29,9 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
     Vector3 lookdir;
 
     GameObject ui;
-    
 
+    string rightjoystickx = "Mouse X";
+    string rightjoysticky = "Mouse Y";
 
     public override void Attached()
     {
@@ -38,14 +39,32 @@ public class BasicRangeAttack : Bolt.EntityBehaviour<ICubeState>
         if (joystick != null) Debug.Log("found!");
     }
 
+    private void Awake()
+    {
+        joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
+        if (joystick != null) Debug.Log("found!");
+    }
+
     public override void SimulateOwner()
     {
+        if (!entity.IsOwner) return;
+
         GetDir();
         Fire();
     }
+
+
     void GetDir() {
-        lookdir.x = joystick.Horizontal;
-        lookdir.z = joystick.Vertical;
+        
+        if (Mathf.Abs(Input.GetAxis(rightjoystickx)) < Mathf.Abs(joystick.Horizontal)) 
+            lookdir.x = joystick.Horizontal;
+            else lookdir.x = Input.GetAxis(rightjoystickx);
+        if (Mathf.Abs(Input.GetAxis(rightjoysticky)) < Mathf.Abs(joystick.Vertical))
+            lookdir.z = joystick.Vertical;
+            else lookdir.z = Input.GetAxis(rightjoysticky);
+
+
+
     }
 
     void Fire()

@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 1548961877177971161}
   - component: {fileID: 260048849028624720}
   - component: {fileID: -2806427484712519452}
-  - component: {fileID: -3862370650280626436}
-  - component: {fileID: 5512725416364973843}
+  - component: {fileID: -5735542458275292438}
+  - component: {fileID: -8190708396857538472}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,6 +151,9 @@ MonoBehaviour:
   gravity: 10
   joystick: {fileID: 0}
   turntime: 0.1
+  playerPosition: {x: 0, y: 0, z: 0}
+  teleportPosition: {fileID: 0}
+  teleported: 0
 --- !u!114 &-2806427484712519452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +168,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   cv: {fileID: 0}
---- !u!114 &-3862370650280626436
+--- !u!114 &-5735542458275292438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260048849028624721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8f44a970f20c141b041f6dbec41d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  death: 0
+  initialHealth: 100
+  maxHealth: 0
+  currentHealth: 0
+  speed: 6
+  healthBar: {fileID: 0}
+--- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,27 +209,9 @@ MonoBehaviour:
   _sceneObjectDestroyOnDetach: 1
   _sceneObjectAutoAttach: 1
   _alwaysProxy: 0
-  _detachOnDisable: 0
+  _detachOnDisable: 1
   _allowFirstReplicationWhenFrozen: 0
   _autoRemoveChildEntities: 0
   _entityBehaviourQueryOption: 0
   _entityPriorityCalculatorQueryOption: 0
   _entityReplicationFilterQueryOption: 0
---- !u!114 &5512725416364973843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260048849028624721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8f44a970f20c141b041f6dbec41d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  death: 0
-  initialHealth: 100
-  maxHealth: 0
-  currentHealth: 0
-  speed: 6
-  healthBar: {fileID: 0}
