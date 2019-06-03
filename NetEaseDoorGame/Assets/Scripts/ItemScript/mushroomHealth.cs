@@ -7,8 +7,8 @@ public class mushroomHealth : ItemClass
 
 
     public GameObject Player;
-    PlayerStats playerstat;
-    ItemMananger itemManager;
+    private PlayerStats playerstat;
+    private ItemMananger itemManager;
 
     public float mushroomHealthGen = 1f;
 
@@ -26,8 +26,7 @@ public class mushroomHealth : ItemClass
     private void Awake()
     {
         playerPos = this.transform.position;
-        playerstat = Player.GetComponent<PlayerStats>();
-        itemManager = Player.GetComponent<ItemMananger>();
+       
     }
 
 
@@ -52,12 +51,12 @@ public class mushroomHealth : ItemClass
         if (collected == true) 
         {
 
-           
 
 
-                //here is the healthing part
+            setPlayer();
+            //here is the healthing part
 
-                if (playerPos.x < playerCurrentPos.x ||
+            if (playerPos.x < playerCurrentPos.x ||
                     playerPos.x > playerCurrentPos.x ||
                     playerPos.z < playerCurrentPos.z ||
                     playerPos.z > playerCurrentPos.z)
@@ -86,6 +85,13 @@ public class mushroomHealth : ItemClass
 
 
 
+    }
+
+    void setPlayer()
+    {
+        Player = getPlayer();
+        playerstat = Player.GetComponent<PlayerStats>();
+        itemManager = Player.GetComponent<ItemMananger>();
     }
 
 

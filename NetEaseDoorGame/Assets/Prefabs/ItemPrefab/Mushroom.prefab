@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   names: Mushroom
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0b5d755eb91897d4eb38385c4521bde0, type: 3}
   collected: 0
   Player: {fileID: 0}
   mushroomHealthGen: 5
