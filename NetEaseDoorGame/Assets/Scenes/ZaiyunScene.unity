@@ -567,10 +567,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8190708396857538472, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 2b4f4df5-e56a-4e94-be53-acfdf54c2c8c
+      objectReference: {fileID: 0}
     - target: {fileID: 260048849028624721, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 260048849028624721, guid: 2c22f0aae189515459bd93cc9b7092c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 260048849028624747, guid: 2c22f0aae189515459bd93cc9b7092c6,
         type: 3}
@@ -636,11 +646,6 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -8190708396857538472, guid: 2c22f0aae189515459bd93cc9b7092c6,
-        type: 3}
-      propertyPath: _sceneGuid
-      value: 17f11932-b82c-4ecb-9b65-0edc41dc69d4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c22f0aae189515459bd93cc9b7092c6, type: 3}

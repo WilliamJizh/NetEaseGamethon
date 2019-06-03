@@ -13,7 +13,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float dmg = 5;
     public string attackeffect = "none";
     public Camera playercamera;
-
+    public Camera playercameraprefab;
     public override void Attached()
     {
         currentHealth = initialHealth;
@@ -21,8 +21,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         state.Health = currentHealth;
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
-
-        playercamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
+        playercamera.transform.LookAt(Vector3.zero);
+        
         playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
     }
 

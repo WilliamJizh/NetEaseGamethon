@@ -6,6 +6,8 @@ public class CameraPosFollow : MonoBehaviour
 {
 
     GameObject player;
+    [SerializeField]
+    float height;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class CameraPosFollow : MonoBehaviour
             Vector3 camerapos = transform.position;
             camerapos.x = player.transform.position.x;
             camerapos.z = player.transform.position.z;
-            
+            camerapos.y = height;
             transform.position = camerapos;
         }
     }
