@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Network/Menu.unity
     guid: b81d246e174c6844ba27fa483773c22a
   - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+    guid: f98e3ec0fe4ce4d3684591ad0bfb274b
+  - enabled: 0
     path: Assets/Scenes/KLDMS Scene.unity
     guid: 480bde81cae3fa243a841dd61669b786
+  - enabled: 0
+    path: Assets/Scenes/ZaiyunScene.unity
+    guid: 8bbe7ac59ef4747f1a26cbf328a8f295
   m_configObjects: {}

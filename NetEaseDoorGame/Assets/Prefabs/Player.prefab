@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 260048849028624725}
   - component: {fileID: 260048849028624726}
   - component: {fileID: 260048849028624727}
+  - component: {fileID: 1548961877177971161}
   - component: {fileID: 260048849028624720}
-  - component: {fileID: 260048849028624746}
   - component: {fileID: -2806427484712519452}
-  - component: {fileID: 1003950014730910321}
-  - component: {fileID: -3862370650280626436}
+  - component: {fileID: -5735542458275292438}
+  - component: {fileID: -8190708396857538472}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -116,23 +116,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &260048849028624720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260048849028624721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fbcf52100db01c4db27ad9455ec218d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  gravity: 10
-  joystick: {fileID: 0}
-  turntime: 0.1
---- !u!114 &260048849028624746
+--- !u!114 &1548961877177971161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,9 +133,28 @@ MonoBehaviour:
   rangeattackinput: Fire1
   joystick: {fileID: 0}
   offset: 1
-  firearate: 0.5
+  firearate: 0.1
   nextfire: 0
   turntime: 0.1
+--- !u!114 &260048849028624720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260048849028624721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbcf52100db01c4db27ad9455ec218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  gravity: 10
+  joystick: {fileID: 0}
+  turntime: 0.1
+  playerPosition: {x: 0, y: 0, z: 0}
+  teleportPosition: {fileID: 0}
+  teleported: 0
 --- !u!114 &-2806427484712519452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   cv: {fileID: 0}
---- !u!114 &1003950014730910321
+--- !u!114 &-5735542458275292438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,13 +178,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 260048849028624721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1336b72f5ee498b9699f3216004650, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e8f44a970f20c141b041f6dbec41d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  health: 0
-  speed: 0
---- !u!114 &-3862370650280626436
+  initialHealth: 100
+  maxHealth: 0
+  currentHealth: 0
+  speed: 6
+  healthBar: {fileID: 0}
+  dmg: 5
+  attackeffect: none
+--- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

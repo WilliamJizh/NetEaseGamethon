@@ -1,0 +1,5 @@
+Loaded Project from JSON
+Assigned [PrefabId:1] to 'Assets/Prefabs/Player.prefab'
+Assigned [PrefabId:2] to 'Assets/Prefabs/Sphere.prefab'
+Importing user data from Assets\bolt\assemblies\bolt.user.dll
+BoltCompiler: Success!

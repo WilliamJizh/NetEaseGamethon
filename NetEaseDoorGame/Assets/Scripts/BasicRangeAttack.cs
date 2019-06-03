@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
+public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
     [SerializeField]
     public GameObject projectileprefeb;
@@ -29,31 +29,48 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
     Vector3 lookdir;
 
     GameObject ui;
-    
 
+    string rightjoystickx = "Mouse X";
+    string rightjoysticky = "Mouse Y";
 
-    private void Awake()
+    public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
 
 
+    public override void SimulateOwner()
+    {
+        if (!entity.IsOwner) return;
+
+        GetDir();
+        Fire();
+    }
+
 
     void GetDir() {
-        lookdir.x = joystick.Horizontal;
-        lookdir.z = joystick.Vertical;
+        
+        if (Mathf.Abs(Input.GetAxis(rightjoystickx)) < Mathf.Abs(joystick.Horizontal)) 
+            lookdir.x = joystick.Horizontal;
+            else lookdir.x = Input.GetAxis(rightjoystickx);
+        if (Mathf.Abs(Input.GetAxis(rightjoysticky)) < Mathf.Abs(joystick.Vertical))
+            lookdir.z = joystick.Vertical;
+            else lookdir.z = Input.GetAxis(rightjoysticky);
+
     }
 
     void Fire()
     {
-        if (lookdir != Vector3.zero && entity.IsOwner)
+        if (lookdir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
             if (Time.time > nextfire)
             {
-
-                BoltNetwork.Instantiate(BoltPrefabs.Sphere, transform.position + transform.forward * offset, transform.rotation);
+                // create a range attack event
+                var shoot = RangeAttackEvent.Create(entity);
+                shoot.Attackdirection = lookdir;
+                shoot.Send();
                 nextfire = Time.time + firearate;
 
             }
@@ -61,8 +78,20 @@ public class BasicRangeAttack : Bolt.EntityEventListener<ICubeState>
         }
     }
 
-    public override void OnEvent(RangeAttack evnt)
+    // on rangeattack event callback
+    public override void OnEvent(RangeAttackEvent evnt)
     {
-        //
+        FireAction();
     }
+
+
+    void FireAction()
+    {
+     Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
+            .GetComponent<BasicProjectile>().SetShooter(this.gameObject) ;
+
+       
+    }
+
+
 }
