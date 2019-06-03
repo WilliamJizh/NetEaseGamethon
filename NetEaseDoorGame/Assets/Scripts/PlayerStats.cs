@@ -5,21 +5,25 @@ using UnityEngine;
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
     public bool death = false;
-    public float initialHealth;
+    public float initialHealth = 100;
     public float maxHealth;
     public float currentHealth;
     public float speed = 6;
     public SimpleHealthBar healthBar;
     public float dmg = 5;
     public string attackeffect = "none";
-
+    public Camera playercamera;
 
     public override void Attached()
     {
         currentHealth = initialHealth;
-
+        maxHealth = initialHealth;
+        state.Health = currentHealth;
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
+
+        playercamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
     }
 
     public override void SimulateOwner()
