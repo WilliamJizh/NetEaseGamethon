@@ -7,6 +7,7 @@ public class MedicinePack : ItemClass
     public GameObject player;
     private ItemMananger itemMananger;
     private PlayerStats pstats;
+    public float diffHealth;
 
 
     void Awake()
@@ -27,9 +28,15 @@ public class MedicinePack : ItemClass
     // Update is called once per frame
     void Update()
     {
+    	  diffHealth = pstats.maxHealth - pstats.currentHealth;
         if (collected)
         {
+        	   if(diffHealth>20){
             IncreaseHealth();
+            }
+            else if(diffHealth<=20 && diffHealth>0){
+            FillHealth();
+            }
             collected = false;
         }
     }
@@ -37,6 +44,10 @@ public class MedicinePack : ItemClass
     {
         //increase player's health by 20
 			pstats.currentHealth += 20;
+    }
+    void FillHealth(){
+       // fill the blank
+       pstats.currentHealth = pstats.maxHealth;
     }
 
 }
