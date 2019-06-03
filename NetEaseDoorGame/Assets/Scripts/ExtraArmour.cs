@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MedicinePack : ItemClass
+public class ExtraArmour : ItemClass
 {
     public GameObject player;
     private ItemMananger itemMananger;
     private PlayerStats pstats;
-    public float diffHealth;
+    public float diffArmour;
 
 
     void Awake()
@@ -19,7 +19,7 @@ public class MedicinePack : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "抚灵丹";
+        names = "秋裤";
         SetIcon();
         Collect();
 
@@ -28,33 +28,33 @@ public class MedicinePack : ItemClass
     // Update is called once per frame
     void Update()
     {
-    	  diffHealth = pstats.maxHealth - pstats.currentHealth;
+    	  diffArmour = pstats.currentArmour - pstats.initialArmour;
     	  
         if (collected)
         {
-        	   if(diffHealth>20){
-            IncreaseHealth();
+        
+        	   if(diffArmour>20 && diffArmour<=40){
+            FillArmour();
             }
             
-            else if(diffHealth<=20 && diffHealth>0){
-            FillHealth();
+            else if(diffArmour<=20 && diffArmour>=0){
+            IncreaseArmour();
             }
             
-            if(pstats.currentHealth > pstats.maxHealth){
-            FillHealth();
+            if(pstats.currentArmour > pstats.maxArmour){
+            FillArmour();
             }
             
             collected = false;
         }
     }
-    void IncreaseHealth()
+    void IncreaseArmour()
     {
         //increase player's health by 20
-			pstats.currentHealth += 20;
+			pstats.currentArmour += 20;
     }
-    void FillHealth(){
+    void FillArmour(){
        // fill the blank
-       pstats.currentHealth = pstats.maxHealth;
+       pstats.currentArmour = pstats.maxArmour;
     }
-
 }
