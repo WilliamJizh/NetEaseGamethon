@@ -38,8 +38,7 @@ public class BasicProjectile : MonoBehaviour
             yield return new WaitForSecondsRealtime(existtime);
             Destroy(this.gameObject);
 
-        
-    }
+         }
 
     void OnTriggerEnter(Collider other)    {
 
@@ -56,8 +55,7 @@ public class BasicProjectile : MonoBehaviour
         */
 
         Debug.Log(other.gameObject.name);
-
-        other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg,effect);
+        if(other.gameObject.tag == "player")  other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg,effect);
 
     }
     

@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  initialHealth: 50
+  initialHealth: 100
   maxHealth: 100
   currentHealth: 0
   speed: 6

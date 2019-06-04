@@ -32,18 +32,16 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
         
-        armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
-        if (armourBar != null) Debug.Log("bar found!");
+        /*armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
+        if (armourBar != null) Debug.Log("bar found!");*/
         
          if (!entity.IsOwner) return;
         currentHealth = initialHealth;
         maxHealth = initialHealth;
         state.Health = currentHealth;
-        healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
-        if (healthBar != null) Debug.Log("bar found!");
+
         playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
         playercamera.transform.LookAt(Vector3.zero);
-        
         playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
 
     }
