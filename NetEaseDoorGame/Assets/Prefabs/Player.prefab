@@ -193,6 +193,9 @@ MonoBehaviour:
   initialArmour: 0
   currentArmour: 0
   maxArmour: 40
+  playercamera: {fileID: 0}
+  playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
+    type: 3}
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
