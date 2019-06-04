@@ -30,7 +30,6 @@ public class SpeedBoost : ItemClass
     {
         if (collected == true)
         {
-
             setPlayer();
             IncreaseSpeed();
             collected = false;

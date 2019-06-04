@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiscountDiamond : ItemClass
+public class DiscountTicket : ItemClass
 {
 
 
@@ -15,11 +15,12 @@ public class DiscountDiamond : ItemClass
     void Awake()
     {
 
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        names = "抵用钻石";
+        names = "冥府通";
         SetIcon();
         Collect();
 
@@ -44,8 +45,8 @@ public class DiscountDiamond : ItemClass
     }
     void ChangeRate()
     {
-        //30% off for next purchase.
-        DiscountRate = 0.7f;
+        //100% off for next purchase.
+        DiscountRate = 0.0f;
     }
         void setPlayer()
     {
@@ -53,4 +54,5 @@ public class DiscountDiamond : ItemClass
         playerstat = player.GetComponent<PlayerStats>();
         itemMananger = player.GetComponent<ItemMananger>();
     }
+
 }
