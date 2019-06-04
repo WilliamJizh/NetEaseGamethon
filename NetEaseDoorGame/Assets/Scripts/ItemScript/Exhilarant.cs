@@ -7,16 +7,18 @@ public class Exhilarant : ItemClass
 
     public GameObject player;
     private BasicRangeAttack basicRangeAttack;
+    
+
     void Awake()
     {
-        basicRangeAttack = player.GetComponent<BasicRangeAttack>();
+        
 
 
     }
     // Start is called before the first frame update
     void Start()
     {
-    	  names = "兴奋剂";
+    	names = "兴奋剂";
         SetIcon();
         Collect();
     }
@@ -26,6 +28,8 @@ public class Exhilarant : ItemClass
     {
         if (collected)
         {
+
+            setPlayer();
             IncreaseFireRate();
             collected = false;
         }
@@ -37,5 +41,13 @@ public class Exhilarant : ItemClass
         //So the smaller the firearate is, the faster the fire goes.
         
         basicRangeAttack.firearate *= 0.8f;
+    }
+
+    void setPlayer()
+    {
+        player = getPlayer();
+        
+        basicRangeAttack = player.GetComponent<BasicRangeAttack>();
+
     }
 }
