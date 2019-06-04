@@ -2,41 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class healthPlus : MonoBehaviour
+public class healthPlus : ItemClass
 {
-   
 
-    PlayerStats playerstat;
+    public GameObject Player;
+    private PlayerStats playerstat;
+    private ItemMananger itemManager;
 
     // Start is called before the first frame update
     void Start()
     {
         playerstat = GetComponent<PlayerStats>();
-       
+        collected = false;
 
+        SetIcon();
+        Collect();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-   
-   
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("AddHealth"))
+        if(collected == true)
         {
+            setPlayer();
             playerstat.currentHealth += 20;
-            if(playerstat.currentHealth >= playerstat.maxHealth)
+            if (playerstat.currentHealth >= playerstat.maxHealth)
             {
                 playerstat.currentHealth = playerstat.maxHealth;
             }
-          
 
-         Destroy(col.gameObject);
-
+            collected = false;
         }
     }
+   
+   
+   
+
+    void setPlayer()
+    {
+        Player = getPlayer();
+        playerstat = Player.GetComponent<PlayerStats>();
+        itemManager = Player.GetComponent<ItemMananger>();
+    }
+
 
 }

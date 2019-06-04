@@ -15,7 +15,7 @@ public class mushroomHealth : ItemClass
 
   
 
-    bool isTriggered;
+
     
 
     public Vector3 playerPos;
@@ -37,7 +37,7 @@ public class mushroomHealth : ItemClass
         SetIcon();
         Collect();
 
-        isTriggered = false;
+       
     }
 
     // Update is called once per frame
@@ -50,7 +50,6 @@ public class mushroomHealth : ItemClass
 
         if (collected == true) 
         {
-
 
 
             setPlayer();
@@ -76,15 +75,7 @@ public class mushroomHealth : ItemClass
                 }
 
                 playerPos = playerCurrentPos;
-
-
-           
-
-           
         }
-
-
-
     }
 
     void setPlayer()
@@ -93,7 +84,4 @@ public class mushroomHealth : ItemClass
         playerstat = Player.GetComponent<PlayerStats>();
         itemManager = Player.GetComponent<ItemMananger>();
     }
-
-
-
 }

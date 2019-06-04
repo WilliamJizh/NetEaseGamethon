@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
     public bool death = false;
-    public float initialHealth = 50;
+    public float initialHealth;
     public float maxHealth;
     public float currentHealth;
     
@@ -23,8 +23,6 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public override void Attached()
     {
         currentHealth = initialHealth;
-        maxHealth = initialHealth;
-        
         currentArmour = initialArmour;
         
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
