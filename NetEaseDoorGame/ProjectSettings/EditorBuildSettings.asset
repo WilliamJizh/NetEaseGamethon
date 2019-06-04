@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Network/Menu.unity
     guid: b81d246e174c6844ba27fa483773c22a
   - enabled: 1
@@ -21,9 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/ZaiyunScene.unity
     guid: 8bbe7ac59ef4747f1a26cbf328a8f295
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/JayScene.unity
     guid: 598d292e20de04a1cb34abed715f6642
   - enabled: 0
     path: Assets/Scenes/NewTestScene.unity
     guid: 9f5768f6e92b32a49941675ce7c3b092
+=======
+    path: Assets/Scenes/Louis Scene.unity
+    guid: 176b8c40aeb1c48a191eb2e1f410dee9
+>>>>>>> fd35d75f2dbf1ac1a18aa5ee89db58ad3d45536d
   m_configObjects: {}
