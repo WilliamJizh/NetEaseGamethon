@@ -11,8 +11,7 @@ public class MilkNBread : ItemClass
     {
 
         //temp implementation (player should get from collision)
-        player = GameObject.Find("Player");
-        playerStats = player.GetComponent<PlayerStats>();
+      
        
     }
     // Start is called before the first frame update
@@ -33,8 +32,16 @@ public class MilkNBread : ItemClass
         {
             
             playerStats.maxHealth += 15;
+            Debug.Log("Used Milk and Bread! Your max health increased by 15.");
             collected = false;
             
         }
+    }
+    void setPlayer()
+    {
+        player = getPlayer();
+
+        playerStats = player.GetComponent<PlayerStats>();
+        
     }
 }
