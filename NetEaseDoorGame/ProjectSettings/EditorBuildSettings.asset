@@ -14,10 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterScene.unity
     guid: f98e3ec0fe4ce4d3684591ad0bfb274b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/KLDMS Scene.unity
     guid: 480bde81cae3fa243a841dd61669b786
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ZaiyunScene.unity
     guid: 8bbe7ac59ef4747f1a26cbf328a8f295
+  - enabled: 1
+    path: Assets/Scenes/JayScene.unity
+    guid: 598d292e20de04a1cb34abed715f6642
+  - enabled: 0
+    path: Assets/Scenes/NewTestScene.unity
+    guid: 9f5768f6e92b32a49941675ce7c3b092
   m_configObjects: {}

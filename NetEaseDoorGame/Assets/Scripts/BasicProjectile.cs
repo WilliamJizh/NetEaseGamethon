@@ -10,9 +10,11 @@ public class BasicProjectile : MonoBehaviour
     float speed = 30;
 
     PlayerStats playerstat;
+    public PlayerStats targetstat;
 
     float dmg;
     string effect;
+    public bool successfulhit = false;
 
     //set a timer to control the fire range
     public float existtime = 0.5f;
@@ -47,7 +49,9 @@ public class BasicProjectile : MonoBehaviour
         }
         if (targetstat != null) {
             Debug.Log("Hit sent");
+            successfulhit = true;
             targetstat.Hitreaction(playerstat.dmg, playerstat.attackeffect);
+            successfulhit = false;
         }
         */
 

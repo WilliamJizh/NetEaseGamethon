@@ -182,13 +182,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  initialHealth: 100
-  maxHealth: 0
+  initialHealth: 50
+  maxHealth: 100
   currentHealth: 0
   speed: 6
   healthBar: {fileID: 0}
+  armourBar: {fileID: 0}
   dmg: 5
   attackeffect: none
+  initialArmour: 0
+  currentArmour: 0
+  maxArmour: 40
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneGuid: 
-  _serializerGuid: 59c907e2-5a0e-4d64-a471-19b9fcbb8169
+  _serializerGuid: d9c5e788-3119-431f-a329-d0cf9b074721
   _prefabId: 1
   _updateRate: 1
   _autoFreezeProxyFrames: 0
