@@ -6,8 +6,10 @@ public class Exhilarant : ItemClass
 {
 
     public GameObject player;
-    private BasicRangeAttack basicRangeAttack;
-    
+   
+    private PlayerStats playerStats;
+
+ 
 
     void Awake()
     {
@@ -39,15 +41,15 @@ public class Exhilarant : ItemClass
     {
         //the variable firearate is actually the pause time between two fires. 
         //So the smaller the firearate is, the faster the fire goes.
-        
-        basicRangeAttack.firearate *= 0.8f;
+      
+        playerStats.firearate *= 0.8f;
     }
 
     void setPlayer()
     {
         player = getPlayer();
         
-        basicRangeAttack = player.GetComponent<BasicRangeAttack>();
+        playerStats = player.GetComponent<PlayerStats>();
 
     }
 }

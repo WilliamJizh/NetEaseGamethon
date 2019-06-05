@@ -13,7 +13,7 @@ public class MedicinePack : ItemClass
     void Awake()
     {
     	  pstats = GetComponent<PlayerStats>();
-        itemMananger = GetComponent<ItemMananger>();
+
 
     }
     // Start is called before the first frame update
@@ -32,6 +32,8 @@ public class MedicinePack : ItemClass
     	  
         if (collected)
         {
+        
+        	setPlayer();
         	   if(diffHealth>20){
             IncreaseHealth();
             }
@@ -39,10 +41,10 @@ public class MedicinePack : ItemClass
             else if(diffHealth<=20 && diffHealth>0){
             FillHealth();
             }
-            
-            if(pstats.currentHealth > pstats.maxHealth){
-            FillHealth();
-            }
+            else{
+              FillHealth();
+             }
+           
             
             collected = false;
         }
@@ -56,5 +58,10 @@ public class MedicinePack : ItemClass
        // fill the blank
        pstats.currentHealth = pstats.maxHealth;
     }
-
+    void setPlayer()
+    {
+        player = getPlayer();
+        pstats = player.GetComponent<PlayerStats>();
+        itemMananger = player.GetComponent<ItemMananger>();
+    }
 }
