@@ -196,7 +196,9 @@ MonoBehaviour:
   playercamera: {fileID: 0}
   playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}
-  newTransform: {fileID: 0}
+  newProjectilePrefab: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
+    type: 3}
+  newProjectileSpeed: 0
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0

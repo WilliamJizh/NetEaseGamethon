@@ -20,16 +20,15 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float maxArmour = 40;
     public Camera playercamera;
     public Camera playercameraprefab;
-    public GameObject newTransform;
+   
+    public GameObject newProjectilePrefab;
+    public float newProjectileSpeed;
 
-    BasicRangeAttack basicRangeAttack;
+
 
     public override void Attached()
 
     {
-        basicRangeAttack = GetComponent<BasicRangeAttack>();
-        newTransform = basicRangeAttack.projectileprefeb;
-
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         

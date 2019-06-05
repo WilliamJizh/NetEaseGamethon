@@ -23,6 +23,7 @@ public class BasicProjectile : MonoBehaviour
         playerstat = shooter.GetComponent<PlayerStats>();
         dmg = playerstat.dmg;
         effect = playerstat.attackeffect;
+        playerstat.newProjectileSpeed = speed;
     }
 
 

@@ -25,7 +25,8 @@ public class BalancedBrain : ItemClass
         if(collected == true)
         {
            setPlayer();
-            playerstat.newTransform.transform.localScale = new Vector3(2, 2, 2);
+            playerstat.newProjectilePrefab.transform.localScale = new Vector3(2, 2, 2);
+            playerstat.newProjectileSpeed = 15f;
             
              
         }

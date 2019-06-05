@@ -23,6 +23,8 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
     [SerializeField]
     float turntime = 0.1f;
 
+    PlayerStats playerstat;
+
 
   
 
@@ -35,6 +37,12 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     public override void Attached()
     {
+        playerstat = GetComponent<PlayerStats>();
+        playerstat.newProjectilePrefab = projectileprefeb;
+
+
+
+
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
