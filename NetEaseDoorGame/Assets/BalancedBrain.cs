@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BalancedBrain : ItemClass
 {
-
+    [SerializeField]
+    float setSize = 2f;
+    [SerializeField]
+    float setSpeed = 15f;
 
     public GameObject Player;
     private PlayerStats playerstat;
@@ -25,8 +28,8 @@ public class BalancedBrain : ItemClass
         if(collected == true)
         {
            setPlayer();
-            playerstat.newProjectilePrefab.transform.localScale = new Vector3(2, 2, 2);
-            playerstat.newProjectileSpeed = 15f;
+            playerstat.projectileSize = setSize;
+            playerstat.projectileSpeed = setSpeed;
             
              
         }

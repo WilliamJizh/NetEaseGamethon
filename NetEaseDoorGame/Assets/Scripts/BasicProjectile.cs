@@ -14,7 +14,9 @@ public class BasicProjectile : MonoBehaviour
 
     float dmg;
     string effect;
+    float size;
     public bool successfulhit = false;
+    
 
     //set a timer to control the fire range
     public float existtime = 0.5f;
@@ -23,7 +25,9 @@ public class BasicProjectile : MonoBehaviour
         playerstat = shooter.GetComponent<PlayerStats>();
         dmg = playerstat.dmg;
         effect = playerstat.attackeffect;
-        playerstat.newProjectileSpeed = speed;
+        speed = playerstat.projectileSpeed;
+        size = playerstat.projectileSize;
+        transform.localScale = new Vector3(size, size, size);
     }
 
 

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
-    [SerializeField]
-    public GameObject projectileprefeb;
-
+   [SerializeField]
+    GameObject Projectileprefeb;
     [SerializeField]
     string rangeattackinput = "Fire1";
 
@@ -25,9 +24,6 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     PlayerStats playerstat;
 
-
-
-    PlayerStats playerStats;
     Vector3 lookdir;
 
     GameObject ui;
@@ -37,17 +33,9 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     public override void Attached()
     {
-<<<<<<< HEAD
-        playerStats= GetComponent<PlayerStats>();
-  
-=======
+ 
         playerstat = GetComponent<PlayerStats>();
-        playerstat.newProjectilePrefab = projectileprefeb;
 
-
-
-
->>>>>>> 22a0de39099dbce05893f6eb6b199b1f7976e335
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
@@ -84,7 +72,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
                 var shoot = RangeAttackEvent.Create(entity);
                 shoot.Attackdirection = lookdir;
                 shoot.Send();
-                nextfire = Time.time + playerStats.firearate;
+                nextfire = Time.time + playerstat.firearate;
 
             }
 
@@ -100,7 +88,8 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     void FireAction()
     {
-     Instantiate(projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
+       
+     Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<BasicProjectile>().SetShooter(this.gameObject) ;
 
        

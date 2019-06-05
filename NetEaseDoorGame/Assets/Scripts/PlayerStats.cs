@@ -35,9 +35,8 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public Camera playercamera;
     public Camera playercameraprefab;
    
-    public GameObject newProjectilePrefab;
-    public float newProjectileSpeed;
-
+    public float projectileSpeed;
+    public float projectileSize;
 
 
   
@@ -49,16 +48,14 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public override void Attached()
 
     {
-<<<<<<< HEAD
-        basicRangeAttack = GetComponent<BasicRangeAttack>();
-        newTransform = basicRangeAttack.projectileprefeb;
+
 
         if (!entity.IsOwner) return;
-=======
+
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         
->>>>>>> 22a0de39099dbce05893f6eb6b199b1f7976e335
+
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
 
