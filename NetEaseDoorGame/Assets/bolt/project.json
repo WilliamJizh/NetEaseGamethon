@@ -8,7 +8,6 @@
         {
           "Name": "PlayerTransform",
           "Enabled": true,
-          "Expanded": true,
           "Comment": "This is my transform! yay",
           "Priority": 2,
           "PropertyType": {

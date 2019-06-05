@@ -25,7 +25,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     {
 
-
+        if (!entity.IsOwner) return;
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         
@@ -35,7 +35,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         /*armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
         if (armourBar != null) Debug.Log("bar found!");*/
         
-         if (!entity.IsOwner) return;
+        
         currentHealth = initialHealth;
         maxHealth = initialHealth;
         state.Health = currentHealth;
@@ -50,7 +50,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public override void SimulateOwner()
     {
         healthBar.UpdateBar(currentHealth, maxHealth);
-        armourBar.UpdateBar(currentArmour, maxArmour);
+        //armourBar.UpdateBar(currentArmour, maxArmour);
         
         DeathDetection();
     }
