@@ -18,32 +18,22 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float initialArmour = 0;
     public float currentArmour;
     public float maxArmour = 40;
-<<<<<<< HEAD
+
     public Camera playercamera;
     public Camera playercameraprefab;
-=======
 
   
     
     public float firearate = 0.4f;
     public float existtime = 0.5f;
->>>>>>> 9b860e339348e0b9e3dc0c7553a108c96527dba7
+
 
     //Money that is used to buy items in shops and also could be collected as rewards.
     public int money = 0;
     public override void Attached()
 
     {
-<<<<<<< HEAD
-
-<<<<<<< HEAD
         if (!entity.IsOwner) return;
-=======
-
-=======
-        
->>>>>>> 9b860e339348e0b9e3dc0c7553a108c96527dba7
->>>>>>> e5c6be49ca0bd6673ba5638d4ef5761440444f78
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         
