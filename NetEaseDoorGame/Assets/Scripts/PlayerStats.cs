@@ -2,12 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum State {
+    Normal,
+    Roll,
+    Onhit,
+
+}
+
+
+
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
     public bool death = false;
     public float initialHealth;
     public float maxHealth;
     public float currentHealth;
+
+    public float maxStamina;
+    public float currStamina;
+
     
     public float speed = 6;
     public SimpleHealthBar healthBar;
@@ -34,19 +47,19 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     {
         if (!entity.IsOwner) return;
-        currentHealth = initialHealth;
-        currentArmour = initialArmour;
-        
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
-        
+
+        //currentArmour = initialArmour;
         /*armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
         if (armourBar != null) Debug.Log("bar found!");*/
-        
-        
+
+
         currentHealth = initialHealth;
         maxHealth = initialHealth;
         state.Health = currentHealth;
+
+        currStamina = maxStamina;
 
         playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
         playercamera.transform.LookAt(Vector3.zero);
