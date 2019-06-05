@@ -23,6 +23,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     
     public float firearate = 0.4f;
     public float existtime = 0.5f;
+
+    //Money that is used to buy items in shops and also could be collected as rewards.
+    public int money = 0;
     public override void Attached()
     {
         
