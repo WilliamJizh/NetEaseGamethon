@@ -34,18 +34,22 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public Camera playercamera;
     public Camera playercameraprefab;
+    public GameObject newTransform;
+
+    BasicRangeAttack basicRangeAttack;
 
   
     
     public float firearate = 0.4f;
     public float existtime = 0.5f;
 
-
-    //Money that is used to buy items in shops and also could be collected as rewards.
     public int money = 0;
     public override void Attached()
 
     {
+        basicRangeAttack = GetComponent<BasicRangeAttack>();
+        newTransform = basicRangeAttack.projectileprefeb;
+
         if (!entity.IsOwner) return;
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
         if (healthBar != null) Debug.Log("bar found!");
