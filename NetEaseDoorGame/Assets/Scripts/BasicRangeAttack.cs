@@ -17,7 +17,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     // Fire rate package
     [SerializeField]
-    public float firearate = 0.1f;
+    public float firearate = 0.4f;
     [SerializeField]
     float nextfire = 0;
     [SerializeField]

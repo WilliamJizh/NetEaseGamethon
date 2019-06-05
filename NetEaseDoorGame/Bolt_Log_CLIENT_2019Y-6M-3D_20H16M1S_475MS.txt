@@ -1,0 +1,73 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/3 20:16:01: >>>> [PUNCH] >>>> Create Socket
+2019/6/3 20:16:01: >>>> [PUNCH] >>>> Created Socket
+2019/6/3 20:16:01: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/3 20:16:01: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/3 20:16:01: Physical socket bound to 0.0.0.0:0
+2019/6/3 20:16:01: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+2019/6/3 20:16:01: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/3 20:16:01: Connecting to Region Master us
+2019/6/3 20:16:01: >>>> Received Stun Info: 172.218.172.27:55586
+2019/6/3 20:16:02: Joined to Lobby 
+2019/6/3 20:16:07: Changing Connect State: Idle => JoinRoomPending
+2019/6/3 20:16:07: Joining to room: bf99a5fd-41e0-4d5e-b9cf-2cd02372d3ce
+2019/6/3 20:16:07: Connecting to a Photon Session
+2019/6/3 20:16:07: Trying to connect via punch through
+2019/6/3 20:16:07: Changing Connect State: JoinRoomPending => DirectPending
+2019/6/3 20:16:07: Received PunchInfo from Player 1
+2019/6/3 20:16:07: >>> LocalPunchInfo: 192.168.1.65:55586|172.218.172.27:55586
+2019/6/3 20:16:08: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:08: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:09: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:09: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:10: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:10: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:11: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:11: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:12: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:12: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:13: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:13: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:14: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:14: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:15: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:15: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:16: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:16: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:17: Room Join failed due to exceeded max time to join
+2019/6/3 20:16:17: Changing Connect State: DirectPending => JoinRoomFailed
+2019/6/3 20:16:17: Failed to Join Room.
+2019/6/3 20:16:17: Changing Connect State: JoinRoomFailed => Idle
+2019/6/3 20:16:17: Joined to Lobby 
+2019/6/3 20:16:22: Changing Connect State: Idle => JoinRoomPending
+2019/6/3 20:16:22: Joining to room: bf99a5fd-41e0-4d5e-b9cf-2cd02372d3ce
+2019/6/3 20:16:22: Connecting to a Photon Session
+2019/6/3 20:16:22: Trying to connect via punch through
+2019/6/3 20:16:22: Changing Connect State: JoinRoomPending => DirectPending
+2019/6/3 20:16:22: Received PunchInfo from Player 1
+2019/6/3 20:16:23: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:23: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:24: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:24: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:25: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:25: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:26: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:26: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:27: Sent PING to Player 1 at 10.107.220.3:49481
+2019/6/3 20:16:27: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:28: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:29: Sent PING to Player 1 at 218.60.151.113:46617
+2019/6/3 20:16:29: Sent PING to Player 1 at 218.60.151.113:46617
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/3 20:16:29: Invalid transition of Connect State: DirectPending => DisconnectPending
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.
