@@ -8,12 +8,13 @@ public class DiscountTicket : ItemClass
 
     public GameObject player;
     private ItemMananger itemMananger;
+    private PlayerStats playerstat;
     public float DiscountRate;
 
 
     void Awake()
     {
-        itemMananger = GetComponent<ItemMananger>();
+
 
     }
     // Start is called before the first frame update
@@ -34,9 +35,11 @@ public class DiscountTicket : ItemClass
     {
         if (collected)
         {
+        		setPlayer();
             ChangeRate();
         }
         if(!collected){
+        		setPlayer();
         		ChangeBack();
         }
     }
@@ -44,6 +47,12 @@ public class DiscountTicket : ItemClass
     {
         //100% off for next purchase.
         DiscountRate = 0.0f;
+    }
+        void setPlayer()
+    {
+        player = getPlayer();
+        playerstat = player.GetComponent<PlayerStats>();
+        itemMananger = player.GetComponent<ItemMananger>();
     }
 
 }

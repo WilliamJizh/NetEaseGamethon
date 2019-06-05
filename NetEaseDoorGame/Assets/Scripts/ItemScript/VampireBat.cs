@@ -15,7 +15,7 @@ public class VampireBat : ItemClass
     void Awake()
     {
     	  pstats = GetComponent<PlayerStats>();
-        itemMananger = GetComponent<ItemMananger>();
+
         others = GetComponent<BasicProjectile>();
     }
     
@@ -32,6 +32,7 @@ public class VampireBat : ItemClass
     void Update()
     {
     	while(collected){
+    	   setPlayer();
     	   CountDownTimer -= Time.deltaTime;
     	   if(CountDownTimer>0f && CountDownTimer< 10f){
     	   		
@@ -59,5 +60,11 @@ public class VampireBat : ItemClass
     	}
     	}
         
+    }
+        void setPlayer()
+    {
+        player = getPlayer();
+        pstats = player.GetComponent<PlayerStats>();
+        itemMananger = player.GetComponent<ItemMananger>();
     }
 }

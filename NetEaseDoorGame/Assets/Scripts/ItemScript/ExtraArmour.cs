@@ -13,7 +13,6 @@ public class ExtraArmour : ItemClass
     void Awake()
     {
     	  pstats = GetComponent<PlayerStats>();
-        itemMananger = GetComponent<ItemMananger>();
 
     }
     // Start is called before the first frame update
@@ -32,7 +31,7 @@ public class ExtraArmour : ItemClass
     	  
         if (collected)
         {
-        
+       	 setPlayer();
         	   if(diffArmour>20 && diffArmour<=40){
             FillArmour();
             }
@@ -56,5 +55,11 @@ public class ExtraArmour : ItemClass
     void FillArmour(){
        // fill the blank
        pstats.currentArmour = pstats.maxArmour;
+    }
+        void setPlayer()
+    {
+        player = getPlayer();
+        pstats = player.GetComponent<PlayerStats>();
+        itemMananger = player.GetComponent<ItemMananger>();
     }
 }
