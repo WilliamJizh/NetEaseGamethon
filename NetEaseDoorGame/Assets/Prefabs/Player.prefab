@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: 0
-  initialHealth: 100
+  initialHealth: 50
   maxHealth: 100
   currentHealth: 0
   speed: 6
@@ -193,9 +193,8 @@ MonoBehaviour:
   initialArmour: 0
   currentArmour: 0
   maxArmour: 40
-  playercamera: {fileID: 0}
-  playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
-    type: 3}
+  firearate: 0.4
+  existtime: 0.5
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
