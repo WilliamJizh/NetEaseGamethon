@@ -6,12 +6,12 @@ public class Eye : ItemClass
 {
 
     public GameObject player;
-    private BasicRangeAttack basicRangeAttack;
-    private BasicProjectile basicProjectile;
+    private PlayerStats playerStats;
+
     void Awake()
     {
-        basicRangeAttack = player.GetComponent<BasicRangeAttack>();
-        basicProjectile = basicRangeAttack.projectileprefeb.GetComponent<BasicProjectile>();
+           
+           
     }
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class Eye : ItemClass
     {
         if (collected)
         {
+            setPlayer();
             IncreaseAttackRange();
             //If player collected eye, then set the boolean logic to false.
             collected = false;
@@ -35,6 +36,14 @@ public class Eye : ItemClass
     //increase player's attack range after collecting eye item
     void IncreaseAttackRange()
     {
-        basicProjectile.existtime += 0.3f;
+        playerStats.existtime += 0.3f;
+    }
+
+    //设置具体是哪个player拿到了，并且access那个player的stats
+    void setPlayer()
+    {
+        player = getPlayer();
+        playerStats = player.GetComponent<PlayerStats>();
+        
     }
 }

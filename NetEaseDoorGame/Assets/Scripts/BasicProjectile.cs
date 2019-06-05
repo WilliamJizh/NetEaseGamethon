@@ -35,7 +35,7 @@ public class BasicProjectile : MonoBehaviour
     }
 
         IEnumerator OutOfRange() {
-            yield return new WaitForSecondsRealtime(existtime);
+            yield return new WaitForSecondsRealtime(playerstat.existtime);
             Destroy(this.gameObject);
 
         

@@ -19,9 +19,13 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float currentArmour;
     public float maxArmour = 40;
 
-
+  
+    
+    public float firearate = 0.4f;
+    public float existtime = 0.5f;
     public override void Attached()
     {
+        
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         

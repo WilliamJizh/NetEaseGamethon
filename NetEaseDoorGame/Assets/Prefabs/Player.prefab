@@ -193,6 +193,8 @@ MonoBehaviour:
   initialArmour: 0
   currentArmour: 0
   maxArmour: 40
+  firearate: 0.4
+  existtime: 0.5
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0

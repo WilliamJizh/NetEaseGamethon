@@ -39,7 +39,7 @@ public class SpeedBoost : ItemClass
     void IncreaseSpeed()
     {
         //increase player's movement speed by 10%
-        float speed = 1.1f * characterMovement.speed;
+        float speed = 1.1f* characterMovement.speed;
         characterMovement.speed = speed;
 
 
@@ -48,8 +48,10 @@ public class SpeedBoost : ItemClass
     //设置具体是哪个player拿到了，并且access那个player的stats
   void setPlayer()
     {
+
         player = getPlayer();
         characterMovement = player.GetComponent<PlayerStats>();
         itemMananger = player.GetComponent<ItemMananger>();
+
     }
 }

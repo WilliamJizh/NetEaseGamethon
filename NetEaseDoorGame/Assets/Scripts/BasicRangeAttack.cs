@@ -24,8 +24,8 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
     float turntime = 0.1f;
 
 
-  
 
+    PlayerStats playerStats;
     Vector3 lookdir;
 
     GameObject ui;
@@ -35,6 +35,8 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     public override void Attached()
     {
+        playerStats= GetComponent<PlayerStats>();
+  
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
@@ -71,7 +73,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
                 var shoot = RangeAttackEvent.Create(entity);
                 shoot.Attackdirection = lookdir;
                 shoot.Send();
-                nextfire = Time.time + firearate;
+                nextfire = Time.time + playerStats.firearate;
 
             }
 
