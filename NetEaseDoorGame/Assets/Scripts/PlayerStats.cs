@@ -50,8 +50,8 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float existtime = 0.5f;
 
     public int money = 0;
-
-
+    
+    
     public override void Attached()
 
     {

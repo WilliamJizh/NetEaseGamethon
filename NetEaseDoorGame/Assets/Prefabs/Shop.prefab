@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3511104632624963010
 Transform:
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62e367139d4300b47a9d47c6134d35bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3511104632624963015}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -105,4 +105,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac17d3c83cccde54481a0b44eecc547c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
+  VampireBat: {fileID: 0}
+  Easter: {fileID: 2927583473054401093, guid: dd5f22fa3de524931ab3c64d81ba93d0, type: 3}
+  Exhilarant: {fileID: 3086124771364111310, guid: c2a39aa24599d2049952845c3a9dd307,
+    type: 3}
+  Eye: {fileID: 8208931416439554892, guid: 1cd81f8bf99d7654697379f1d59ff377, type: 3}
+  HealthPlus: {fileID: 5453789052397567560, guid: 4859fba90d5ef48e59e1318cefca5fe7,
+    type: 3}
+  MilkNBread: {fileID: 7775880336980538182, guid: c485e1cbfb1709b4cb86d1264a379955,
+    type: 3}
+  Mushroom: {fileID: 7674333315280096522, guid: 4cfab34b6337a4574a6bf47853ae9500,
+    type: 3}
+  SpeedBoost: {fileID: 2322076934832404865, guid: 73b2f612298454f9a8a49ec5c4a96925,
+    type: 3}
+  spawnRate: 2
+  arrived: 0

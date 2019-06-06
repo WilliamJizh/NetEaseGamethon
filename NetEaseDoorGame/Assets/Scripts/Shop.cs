@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     //initialize items
-    public GameObject Bomb, Easter, Exhilarant, Eye, HealthPlus, MilkNBread, Mushroom, SpeedBoost;
+    public GameObject VampireBat, Easter, Exhilarant, Eye, HealthPlus, MilkNBread, Mushroom, SpeedBoost;
   
     //temp position used to make it appear in front of the shop object
     Vector3 temPos;
@@ -26,6 +26,7 @@ public class Shop : MonoBehaviour
     GameObject player;
     PlayerStats playerStats;
     public bool arrived = false;
+    bool wantbuy = false;
     void Start()
     {
 
@@ -33,6 +34,7 @@ public class Shop : MonoBehaviour
         //adjust spawn position
         temPos = transform.position;
         temPos.z -= 3.5f;
+        temPos.y -= 3f;
     }
     
     // Update is called once per frame
@@ -43,8 +45,9 @@ public class Shop : MonoBehaviour
         {
            
             whatToSpawn = Random.Range(1, 8);
-            Interact();
 
+
+            SetCollider();
             arrived = false;
 
             //NEED TO REVISE PRICE FOR EACH ITEM 
@@ -53,7 +56,7 @@ public class Shop : MonoBehaviour
             switch (whatToSpawn)
             {
                 case 1:
-                    Instantiate(Bomb, temPos, Quaternion.identity);
+                    Instantiate(VampireBat, temPos, Quaternion.identity);
                     price = 1;
                     Debug.Log(price);
                     return;
@@ -100,26 +103,32 @@ public class Shop : MonoBehaviour
 
     //Interact with player if player arrives the shop
     
-    void Interact()
+    void SetCollider()
     {
-
+        
         this.gameObject.AddComponent<BoxCollider>();
         this.gameObject.GetComponent<BoxCollider>().size = new Vector3(1, 1, 1);
         this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
 
     }
     
+   
     void OnTriggerEnter(Collider other)
     {
 
         if(other.tag == "Player")
         {
+          
             arrived = true;
             player = other.gameObject;
             Debug.Log("Welcome to the shop. Would you like to buy this item?");
             playerStats = player.GetComponent<PlayerStats>();
-            if (Input.GetKeyDown("Y"))
+            
+            //If player gives Yes response, reduce player's money.
+            if (Input.GetKeyDown("space"))
             {
+                
+               
                 playerStats.money -= price;
             }
             
