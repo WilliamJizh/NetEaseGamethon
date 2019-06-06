@@ -66,7 +66,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
         if (lookdir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
-            if (Time.time > nextfire)
+            if (Time.time > nextfire && playerstat.currStamina >= playerstat.attackcost)
             {
                 // create a range attack event
                 var shoot = RangeAttackEvent.Create(entity);
@@ -88,7 +88,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     void FireAction()
     {
-       
+        playerstat.currStamina -= playerstat.attackcost;
      Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<BasicProjectile>().SetShooter(this.gameObject) ;
 

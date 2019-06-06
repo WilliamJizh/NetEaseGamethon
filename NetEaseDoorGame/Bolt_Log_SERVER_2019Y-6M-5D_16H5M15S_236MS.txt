@@ -1,0 +1,30 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 16:05:15: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 16:05:15: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 16:05:15: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 16:05:15: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 16:05:15: Physical socket bound to 0.0.0.0:0
+2019/6/5 16:05:15: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 16:05:15: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 16:05:15: Connecting to Region Master asia
+2019/6/5 16:05:15: >>>> Received Stun Info: 172.218.172.27:49823
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 16:05:16: Joined to Lobby 
+2019/6/5 16:05:16: Creating new room: eef7a1a6-1803-40ad-b291-3a096f935e82
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 16:05:37: Changing Connect State: Idle => DisconnectPending
+2019/6/5 16:05:37: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

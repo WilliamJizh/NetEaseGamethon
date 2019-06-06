@@ -194,6 +194,7 @@ MonoBehaviour:
   maxArmour: 40
   Speed: 6
   rolllasttime: 0.1
+  rollcost: 30
   playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}
   projectileSpeed: 30
