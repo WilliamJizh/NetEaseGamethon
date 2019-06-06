@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
         */
 
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && other.gameObject != this.gameObject)
         {
             other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
         }
