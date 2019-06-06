@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de2fdb77b58c214daac7a424ac7090f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileprefeb: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
+  Projectileprefeb: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
     type: 3}
   rangeattackinput: Fire1
   joystick: {fileID: 0}
@@ -181,21 +181,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f44a970f20c141b041f6dbec41d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currState: 0
   death: 0
   initialHealth: 50
   maxHealth: 100
   currentHealth: 0
-  speed: 6
-  healthBar: {fileID: 0}
-  armourBar: {fileID: 0}
-  dmg: 5
-  attackeffect: none
+  maxStamina: 100
+  currStamina: 0
+  staminaRegen: 5
   initialArmour: 0
   currentArmour: 0
   maxArmour: 40
-  playercamera: {fileID: 0}
+  Speed: 6
+  rolllasttime: 0.1
   playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}
+  projectileSpeed: 30
+  projectileSize: 0.5
+  dmg: 5
+  attackeffect: none
+  attackcost: 10
   firearate: 0.4
   existtime: 0.5
   money: 0

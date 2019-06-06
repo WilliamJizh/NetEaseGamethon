@@ -27,6 +27,7 @@ public class BasicProjectile : MonoBehaviour
         effect = playerstat.attackeffect;
         speed = playerstat.projectileSpeed;
         size = playerstat.projectileSize;
+        Debug.Log(size);
         transform.localScale = new Vector3(size, size, size);
     }
 

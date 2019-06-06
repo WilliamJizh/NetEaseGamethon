@@ -6,45 +6,52 @@ public enum State {
     Normal,
     Roll,
     Onhit,
-
 }
 
 
 
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
+    //character state
+    public State currState;
+
     public bool death = false;
     public float initialHealth;
     public float maxHealth;
     public float currentHealth;
 
-    public float maxStamina;
+    public float maxStamina = 100;
     public float currStamina;
+    public float staminaRegen = 5;
 
-    
-    public float speed = 6;
-    public SimpleHealthBar healthBar;
-    public SimpleArmourBar armourBar;
-    public float dmg = 5;
-    public string attackeffect = "none";
-    
     public float initialArmour = 0;
     public float currentArmour;
     public float maxArmour = 40;
 
-    public Camera playercamera;
+    public float Speed = 6;
+    SimpleHealthBar healthBar;
+    SimpleHealthBar armourBar;
+    SimpleHealthBar staminaBar;
+
+
+    public float rolllasttime = 1f;
+    public float rollcost = 30;
+    
+
+    Camera playercamera;
     public Camera playercameraprefab;
    
     public float projectileSpeed;
     public float projectileSize;
-
-
-  
-    
+    public float dmg = 5;
+    public string attackeffect = "none";
+    public float attackcost = 10;
     public float firearate = 0.4f;
     public float existtime = 0.5f;
 
     public int money = 0;
+
+
     public override void Attached()
 
     {
@@ -54,21 +61,22 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
         currentHealth = initialHealth;
         currentArmour = initialArmour;
-        
+        currStamina = maxStamina;
+        state.Health = currentHealth;
+
 
         healthBar = GameObject.Find("Healthbar Fill 01").GetComponent<SimpleHealthBar>();
-        if (healthBar != null) Debug.Log("bar found!");
+        if (healthBar != null) Debug.Log("healthbar found!");
 
+        staminaBar = GameObject.Find("Staminabar Fill 01").GetComponent<SimpleHealthBar>();
+        if (staminaBar != null) Debug.Log("staminabar found!");
         //currentArmour = initialArmour;
         /*armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
         if (armourBar != null) Debug.Log("bar found!");*/
 
 
-        currentHealth = initialHealth;
-        maxHealth = initialHealth;
-        state.Health = currentHealth;
+        
 
-        currStamina = maxStamina;
 
         playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
         playercamera.transform.LookAt(Vector3.zero);
@@ -76,17 +84,35 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     }
     
-
+    //Network Actions here
     public override void SimulateOwner()
     {
         healthBar.UpdateBar(currentHealth, maxHealth);
+        staminaBar.UpdateBar(currStamina, maxStamina);
         //armourBar.UpdateBar(currentArmour, maxArmour);
-        
+
         DeathDetection();
     }
-        
 
+    //Local Actions here
+    public void Update()
+    {
+        StaminaRegen();
+    }
+    void StaminaRegen() {
 
+        if (currStamina < 0) currStamina = 0;
+        if (currStamina > maxStamina) currStamina = maxStamina;
+
+        if (currStamina < maxStamina/3) {
+            currStamina += staminaRegen * Time.deltaTime;
+        }
+
+        //stamina restore more when it is not under 1/3 of the max
+        if (currStamina >= maxStamina / 3 && currStamina < maxStamina) {
+            currStamina += staminaRegen * Time.deltaTime * 3;
+        }
+    }
 
     public void DeathDetection()
     {

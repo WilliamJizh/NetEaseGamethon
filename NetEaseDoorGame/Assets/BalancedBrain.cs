@@ -27,7 +27,8 @@ public class BalancedBrain : ItemClass
     {
         if(collected == true)
         {
-           setPlayer();
+           
+            setPlayer();
             playerstat.projectileSize = setSize;
             playerstat.projectileSpeed = setSpeed;
             

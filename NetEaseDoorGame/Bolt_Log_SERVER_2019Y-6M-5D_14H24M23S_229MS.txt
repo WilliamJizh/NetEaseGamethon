@@ -1,0 +1,90 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 14:24:23: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 14:24:23: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 14:24:23: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 14:24:23: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 14:24:23: Physical socket bound to 0.0.0.0:0
+2019/6/5 14:24:23: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 14:24:23: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 14:24:23: Connecting to Region Master asia
+2019/6/5 14:24:23: >>>> Received Stun Info: 172.218.172.27:54995
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 14:24:24: Joined to Lobby 
+2019/6/5 14:24:24: Creating new room: e31aba71-08ed-4c50-a488-f429192c2d32
+Raising [RangeAttackEvent Attackdirection=(0.2, 0.0, 0.0)]
+User code threw exception when invoking [RangeAttackEvent Attackdirection=(0.2, 0.0, 0.0)]
+UnityEngine.UnassignedReferenceException: The variable Projectileprefeb of BasicRangeAttack has not been assigned.
+You probably need to assign the Projectileprefeb variable of the BasicRangeAttack script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43d5f9f0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at BasicRangeAttack.FireAction () [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:92 
+  at BasicRangeAttack.OnEvent (RangeAttackEvent evnt) [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:85 
+  at RangeAttackEvent_Meta.Bolt.IEventFactory.Dispatch (Bolt.Event ev, System.Object target) [0x00016] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Temp\bolt\project.cs:300 
+  at Bolt.EventDispatcher.Raise (Bolt.Event ev) [0x00113] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Raising [RangeAttackEvent Attackdirection=(0.5, 0.0, -0.7)]
+User code threw exception when invoking [RangeAttackEvent Attackdirection=(0.5, 0.0, -0.7)]
+UnityEngine.UnassignedReferenceException: The variable Projectileprefeb of BasicRangeAttack has not been assigned.
+You probably need to assign the Projectileprefeb variable of the BasicRangeAttack script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43d5f9f0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at BasicRangeAttack.FireAction () [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:92 
+  at BasicRangeAttack.OnEvent (RangeAttackEvent evnt) [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:85 
+  at RangeAttackEvent_Meta.Bolt.IEventFactory.Dispatch (Bolt.Event ev, System.Object target) [0x00016] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Temp\bolt\project.cs:300 
+  at Bolt.EventDispatcher.Raise (Bolt.Event ev) [0x00113] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Raising [RangeAttackEvent Attackdirection=(-0.1, 0.0, -1.0)]
+User code threw exception when invoking [RangeAttackEvent Attackdirection=(-0.1, 0.0, -1.0)]
+UnityEngine.UnassignedReferenceException: The variable Projectileprefeb of BasicRangeAttack has not been assigned.
+You probably need to assign the Projectileprefeb variable of the BasicRangeAttack script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43d5f9f0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at BasicRangeAttack.FireAction () [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:92 
+  at BasicRangeAttack.OnEvent (RangeAttackEvent evnt) [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:85 
+  at RangeAttackEvent_Meta.Bolt.IEventFactory.Dispatch (Bolt.Event ev, System.Object target) [0x00016] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Temp\bolt\project.cs:300 
+  at Bolt.EventDispatcher.Raise (Bolt.Event ev) [0x00113] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -0.2)]
+User code threw exception when invoking [RangeAttackEvent Attackdirection=(0.1, 0.0, -0.2)]
+UnityEngine.UnassignedReferenceException: The variable Projectileprefeb of BasicRangeAttack has not been assigned.
+You probably need to assign the Projectileprefeb variable of the BasicRangeAttack script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43d5f9f0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at BasicRangeAttack.FireAction () [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:92 
+  at BasicRangeAttack.OnEvent (RangeAttackEvent evnt) [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:85 
+  at RangeAttackEvent_Meta.Bolt.IEventFactory.Dispatch (Bolt.Event ev, System.Object target) [0x00016] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Temp\bolt\project.cs:300 
+  at Bolt.EventDispatcher.Raise (Bolt.Event ev) [0x00113] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Raising [RangeAttackEvent Attackdirection=(0.7, 0.0, -0.7)]
+User code threw exception when invoking [RangeAttackEvent Attackdirection=(0.7, 0.0, -0.7)]
+UnityEngine.UnassignedReferenceException: The variable Projectileprefeb of BasicRangeAttack has not been assigned.
+You probably need to assign the Projectileprefeb variable of the BasicRangeAttack script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43d5f9f0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at BasicRangeAttack.FireAction () [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:92 
+  at BasicRangeAttack.OnEvent (RangeAttackEvent evnt) [0x00001] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\BasicRangeAttack.cs:85 
+  at RangeAttackEvent_Meta.Bolt.IEventFactory.Dispatch (Bolt.Event ev, System.Object target) [0x00016] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Temp\bolt\project.cs:300 
+  at Bolt.EventDispatcher.Raise (Bolt.Event ev) [0x00113] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 14:24:34: Changing Connect State: Idle => DisconnectPending
+2019/6/5 14:24:34: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.
