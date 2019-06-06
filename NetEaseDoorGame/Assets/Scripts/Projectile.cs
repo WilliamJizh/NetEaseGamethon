@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     Rigidbody rb;
     
@@ -66,6 +66,13 @@ public class BasicProjectile : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
         }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<AiStates>().Hitreaction(dmg, effect);
+        }
+
+        Destroy(this.gameObject);
 
     }
     

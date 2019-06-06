@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
+public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
    [SerializeField]
     GameObject Projectileprefeb;
@@ -90,7 +90,7 @@ public class BasicRangeAttack : Bolt.EntityEventListener<IPlayerState>
     {
         playerstat.currStamina -= playerstat.attackcost;
      Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
-            .GetComponent<BasicProjectile>().SetShooter(this.gameObject) ;
+            .GetComponent<Projectile>().SetShooter(this.gameObject) ;
 
        
     }
