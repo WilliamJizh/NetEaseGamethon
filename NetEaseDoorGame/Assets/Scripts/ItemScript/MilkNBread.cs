@@ -28,9 +28,9 @@ public class MilkNBread : ItemClass
     {
         //if player uses the item, increase initial health.
         // NOTE: NEED TO CLEAR THE ITEM LIST AFTER PLAYER USED IT.
-        if (Input.GetKey(KeyCode.F) && collected)
+        if (collected)
         {
-            
+            setPlayer();
             playerStats.maxHealth += 15;
             Debug.Log("Used Milk and Bread! Your max health increased by 15.");
             collected = false;
