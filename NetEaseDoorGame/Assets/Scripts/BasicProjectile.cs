@@ -29,6 +29,7 @@ public class BasicProjectile : MonoBehaviour
         size = playerstat.projectileSize;
         Debug.Log(size);
         transform.localScale = new Vector3(size, size, size);
+        StartCoroutine(OutOfRange());
     }
 
 
@@ -36,17 +37,17 @@ public class BasicProjectile : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-        // Projectile destroy timer
-        StartCoroutine(OutOfRange());
+        
     }
-
-        IEnumerator OutOfRange() {
+    // Projectile destroy timer
+    IEnumerator OutOfRange() {
             yield return new WaitForSecondsRealtime(playerstat.existtime);
             Destroy(this.gameObject);
 
          }
+   
 
-    void OnTriggerEnter(Collider other)    {
+    private void OnTriggerEnter(Collider other)    {
 
         /*PlayerStats targetstat = null;
         if (other.gameObject.tag == "player") {
@@ -61,7 +62,10 @@ public class BasicProjectile : MonoBehaviour
         */
 
         Debug.Log(other.gameObject.name);
-        if(other.gameObject.tag == "player")  other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg,effect);
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
+        }
 
     }
     
