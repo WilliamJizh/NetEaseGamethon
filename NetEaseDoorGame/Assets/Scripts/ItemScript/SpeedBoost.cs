@@ -38,8 +38,8 @@ public class SpeedBoost : ItemClass
     void IncreaseSpeed()
     {
         //increase player's movement speed by 10%
-        float speed = 1.1f* characterMovement.speed;
-        characterMovement.speed = speed;
+        float speed = 1.1f* characterMovement.Speed;
+        characterMovement.Speed = speed;
 
 
 

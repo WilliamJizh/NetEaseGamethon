@@ -1,0 +1,34 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 15:47:41: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 15:47:41: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 15:47:41: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 15:47:41: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 15:47:41: Physical socket bound to 0.0.0.0:0
+2019/6/5 15:47:41: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 15:47:41: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 15:47:41: Connecting to Region Master asia
+2019/6/5 15:47:42: >>>> Received Stun Info: 172.218.172.27:58593
+BoltException: Bolt is already running, you must call BoltLauncher.Shutdown() before starting a new instance of Bolt.
+  at BoltCore.BeginStart (Bolt.ControlCommandStart cmd) [0x00028] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at Bolt.ControlCommandStart.Run () [0x00001] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at Bolt.ControlBehaviour.Update () [0x00062] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 15:47:43: Joined to Lobby 
+2019/6/5 15:47:43: Creating new room: b3e8c26e-7b35-4973-8d6d-4dd760d7f1db
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 15:47:54: Changing Connect State: Idle => DisconnectPending
+2019/6/5 15:47:54: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

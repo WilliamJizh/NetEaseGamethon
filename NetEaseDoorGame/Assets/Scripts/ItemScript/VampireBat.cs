@@ -7,7 +7,7 @@ public class VampireBat : ItemClass
     public GameObject player;
     private ItemMananger itemMananger;
     private PlayerStats pstats;
-    private BasicProjectile others;
+    private Projectile others;
     public float diffHealth;
     public float blood;
     float CountDownTimer;
@@ -16,7 +16,7 @@ public class VampireBat : ItemClass
     {
     	  pstats = GetComponent<PlayerStats>();
 
-        others = GetComponent<BasicProjectile>();
+        others = GetComponent<Projectile>();
     }
     
     // Start is called before the first frame update

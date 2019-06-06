@@ -1,0 +1,37 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/4 20:05:19: >>>> [PUNCH] >>>> Create Socket
+2019/6/4 20:05:19: >>>> [PUNCH] >>>> Created Socket
+2019/6/4 20:05:19: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/4 20:05:19: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/4 20:05:19: Physical socket bound to 0.0.0.0:0
+2019/6/4 20:05:19: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/4 20:05:19: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/4 20:05:19: Connecting to Region Master us
+2019/6/4 20:05:19: >>>> Received Stun Info: 172.218.172.27:63547
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/4 20:05:20: Joined to Lobby 
+2019/6/4 20:05:20: Creating new room: 29786305-41b8-423e-af3c-e7f47782fe45
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Project saved at Assets\bolt\project.json
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/4 20:14:28: Changing Connect State: Idle => DisconnectPending
+2019/6/4 20:14:28: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

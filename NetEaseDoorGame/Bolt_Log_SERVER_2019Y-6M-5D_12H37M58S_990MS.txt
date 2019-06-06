@@ -1,0 +1,39 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 12:37:59: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 12:37:59: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 12:37:59: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 12:37:59: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 12:37:59: Physical socket bound to 0.0.0.0:0
+2019/6/5 12:37:59: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 12:37:59: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 12:37:59: Connecting to Region Master asia
+2019/6/5 12:37:59: >>>> Received Stun Info: 172.218.172.27:63639
+Found 0 Scene Objects
+User code threw exception inside Attached callback
+UnityEngine.UnassignedReferenceException: The variable playercameraprefab of PlayerStats has not been assigned.
+You probably need to assign the playercameraprefab variable of the PlayerStats script in the inspector.
+  at (wrapper managed-to-native) UnityEngine.Object.Internal_InstantiateSingle_Injected(UnityEngine.Object,UnityEngine.Vector3&,UnityEngine.Quaternion&)
+  at UnityEngine.Object.Internal_InstantiateSingle (UnityEngine.Object data, UnityEngine.Vector3 pos, UnityEngine.Quaternion rot) <0x24c43bf20b0 + 0x00062> in <66c7d6d92a4f4c52b08c91150c4bea23>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00025] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:202 
+  at UnityEngine.Object.Instantiate[T] (T original, UnityEngine.Vector3 position, UnityEngine.Quaternion rotation) [0x00009] in C:\buildslave\unity\build\Runtime\Export\Scripting\UnityEngineObject.bindings.cs:276 
+  at PlayerStats.Attached () [0x0008a] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\PlayerStats.cs:51 
+  at Bolt.Entity.Attach () [0x000ce] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 12:38:00: Joined to Lobby 
+2019/6/5 12:38:00: Creating new room: 448a2e8d-e970-4dfd-a148-be64e5d79ee0
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 12:38:15: Changing Connect State: Idle => DisconnectPending
+2019/6/5 12:38:15: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

@@ -1,0 +1,34 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 15:16:06: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 15:16:06: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 15:16:06: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 15:16:06: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 15:16:06: Physical socket bound to 0.0.0.0:0
+2019/6/5 15:16:06: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 15:16:06: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 15:16:06: Connecting to Region Master asia
+2019/6/5 15:16:06: >>>> Received Stun Info: 172.218.172.27:55017
+Found 0 Scene Objects
+User code threw exception inside Attached callback
+System.NullReferenceException: Object reference not set to an instance of an object
+  at PlayerStats.Attached () [0x0007e] in C:\Users\kldms\Documents\NetEase\NetEaseDoorGame\Assets\Scripts\PlayerStats.cs:67 
+  at Bolt.Entity.Attach () [0x000ce] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 15:16:08: Joined to Lobby 
+2019/6/5 15:16:08: Creating new room: 0b9ad13d-fc87-4b71-91d5-ce4b0e69828c
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 15:16:14: Changing Connect State: Idle => DisconnectPending
+2019/6/5 15:16:14: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

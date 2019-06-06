@@ -1,0 +1,40 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/5 14:30:20: >>>> [PUNCH] >>>> Create Socket
+2019/6/5 14:30:20: >>>> [PUNCH] >>>> Created Socket
+2019/6/5 14:30:20: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/5 14:30:20: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/5 14:30:20: Physical socket bound to 0.0.0.0:0
+2019/6/5 14:30:20: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (MasterScene)
+2019/6/5 14:30:20: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/5 14:30:20: Connecting to Region Master asia
+2019/6/5 14:30:20: >>>> Received Stun Info: 172.218.172.27:62292
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+2019/6/5 14:30:21: Joined to Lobby 
+2019/6/5 14:30:21: Creating new room: 58889808-7bba-4baa-8387-a28efbb38ed6
+Raising [RangeAttackEvent Attackdirection=(0.2, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(0.3, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.1)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/5 14:30:32: Changing Connect State: Idle => DisconnectPending
+2019/6/5 14:30:32: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.
