@@ -38,7 +38,7 @@ public class mushroomHealth : ItemClass
     void Update()
     {
 
-        playerCurrentPos = this.transform.position;
+
        
 
 
@@ -47,7 +47,7 @@ public class mushroomHealth : ItemClass
 
 
             setPlayer();
-           
+            playerCurrentPos = Player.transform.position;
             //here is the healthing part
 
             if (playerPos.x < playerCurrentPos.x ||

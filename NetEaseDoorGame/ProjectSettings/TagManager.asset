@@ -9,6 +9,7 @@ TagManager:
   - Mushroom
   - FxTemporaire
   - Enemy
+  - GhostFriend
   layers:
   - Default
   - TransparentFX
