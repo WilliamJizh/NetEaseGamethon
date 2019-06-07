@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de2fdb77b58c214daac7a424ac7090f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectileprefeb: {fileID: 5108429715359328746, guid: b341302357d772c48842aca215aa4eab,
+  Projectileprefeb: {fileID: 4238879954283511785, guid: b341302357d772c48842aca215aa4eab,
     type: 3}
   rangeattackinput: Fire1
   joystick: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
   rollcost: 30
   playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}
-  projectileSpeed: 30
+  projectileSpeed: 15
   projectileSize: 0.5
   dmg: 5
   attackeffect: none

@@ -58,13 +58,13 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
         switch (playerstats.currState) {
 
-            case State.Normal:
+            case PlayerState.Normal:
                 Movement();
                 TeleportManager();
                 RollActivate();
                 break;
 
-            case State.Roll:
+            case PlayerState.Roll:
                 Roll();
                 break;
 
@@ -88,7 +88,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     void RollActivate() {
         if (Input.GetButtonDown(rollinput) && playerstats.currStamina> playerstats.rollcost) {
             Debug.Log("Roll!");
-            playerstats.currState = State.Roll;
+            playerstats.currState = PlayerState.Roll;
             speed = playerstats.Speed * 3;
             GetDir();
             StartCoroutine(ResetNormal());
@@ -99,7 +99,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     IEnumerator ResetNormal() {
         yield return new WaitForSecondsRealtime(playerstats.rolllasttime);
-        playerstats.currState = State.Normal;
+        playerstats.currState = PlayerState.Normal;
     }
 
     void Roll()
@@ -126,7 +126,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
             GetDir();
             movedirection.y = 0;
-            movedirection.Normalize();
+            movedirection.Normalize(); 
             movedirection *= playerstats.Speed;
             
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum State {
+public enum PlayerState {
     Normal,
     Roll,
     Onhit,
@@ -13,7 +13,7 @@ public enum State {
 public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 {
     //character state
-    public State currState;
+    public PlayerState currState;
 
     public bool death = false;
     public float initialHealth;
