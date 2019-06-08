@@ -36,8 +36,9 @@ public class Projectile : MonoBehaviour
     public void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+      
 
-        
+
     }
     // Projectile destroy timer
     IEnumerator OutOfRange() {
