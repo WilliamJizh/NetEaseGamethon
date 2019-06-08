@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - Enemy
   - GhostFriend
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

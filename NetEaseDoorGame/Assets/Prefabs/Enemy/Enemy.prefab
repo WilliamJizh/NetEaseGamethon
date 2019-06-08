@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2355217763060858785}
   - component: {fileID: 2355217763060858787}
   - component: {fileID: 2355217763060858786}
+  - component: {fileID: 3722858749453242077}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -108,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   currtarget: {fileID: 0}
-  ThreadModifier: 1
+  threatmodifier: 1
   alertrange: 10
   attackdistance: 3
   speed: 5
@@ -117,6 +118,7 @@ MonoBehaviour:
   health: 10
   dmg: 5
   effect: None
+  attackinterval: 3
 --- !u!54 &2355217763060858786
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,3 +135,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3722858749453242077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355217763060858780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -36112512, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneGuid: 
+  _serializerGuid: 17306457-c517-48cc-b21c-32a3ed65d676
+  _prefabId: 2
+  _updateRate: 1
+  _autoFreezeProxyFrames: 0
+  _clientPredicted: 1
+  _allowInstantiateOnClient: 1
+  _persistThroughSceneLoads: 0
+  _sceneObjectDestroyOnDetach: 1
+  _sceneObjectAutoAttach: 1
+  _alwaysProxy: 0
+  _detachOnDisable: 1
+  _allowFirstReplicationWhenFrozen: 0
+  _autoRemoveChildEntities: 0
+  _entityBehaviourQueryOption: 0
+  _entityPriorityCalculatorQueryOption: 0
+  _entityReplicationFilterQueryOption: 0

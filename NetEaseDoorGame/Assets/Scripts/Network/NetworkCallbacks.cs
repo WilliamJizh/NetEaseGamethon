@@ -13,5 +13,11 @@ public class NetworkCallbacks : Bolt.GlobalEventListener
         Debug.Log("instantiate player");
         BoltNetwork.Instantiate(BoltPrefabs.Player, spawnPosition, Quaternion.identity);
         GameObject.Find("Network").SetActive(false);
+
+        GameObject[] enemyspawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
+        foreach (GameObject es in enemyspawns) {
+            EnemySpawn e = es.GetComponent<EnemySpawn>();
+            e.Spawn();
+        }
     }
 }

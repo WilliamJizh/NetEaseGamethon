@@ -10,7 +10,7 @@ public enum AIstate
 
 }
 
-public class AiStates : MonoBehaviour
+public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 {
     
 
@@ -23,8 +23,8 @@ public class AiStates : MonoBehaviour
     GameObject currtarget;
 
 
-    [SerializeField]
-    float ThreadModifier = 1;
+ 
+    public float threatmodifier = 1;
 
     [SerializeField]
     float alertrange = 10;
@@ -36,8 +36,8 @@ public class AiStates : MonoBehaviour
     [SerializeField]
     float attackactionlast = 1;
 
-    [SerializeField]
-    Vector3 spawnposition = Vector2.zero;
+    
+    public Vector3 spawnposition = Vector2.zero;
 
 
     [SerializeField]
@@ -57,16 +57,25 @@ public class AiStates : MonoBehaviour
     float nextburst = 0;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Attached()
     {
         aicontroller = GetComponent<CharacterController>();
-        alertrange *= ThreadModifier;
-        speed *= ThreadModifier;
-        transform.localScale *= ThreadModifier;
-        health *= ThreadModifier ;
+        alertrange *= threatmodifier;
+        speed *= threatmodifier;
+        transform.localScale *= threatmodifier;
+        health *= threatmodifier ;
+
+        state.SetTransforms(state.EnemyTransform, transform);
+
     }
 
-    // Update is called once per frame
+
+
+    public override void SimulateOwner()
+    {
+        
+    }
+
     void Update()
     {
         
