@@ -531,9 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab95b97843f54d319d902fcf6cdc5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  littleFriend: {fileID: 1117238717323990306, guid: 41d808d70d3224a078cec6125e4d5aec,
+  littleFriendPrefab: {fileID: 1117238717323990306, guid: 41d808d70d3224a078cec6125e4d5aec,
     type: 3}
   followTarget: {fileID: 0}
+  littleFriend: {fileID: 0}
 --- !u!1 &1188000786
 GameObject:
   m_ObjectHideFlags: 0

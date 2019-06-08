@@ -4,30 +4,49 @@ using UnityEngine;
 
 public class GhostFriendMovement : MonoBehaviour
 {
-    public GameObject littleFriend;
+    public GameObject littleFriendPrefab;
     public GameObject followTarget;
+    public GameObject littleFriend;
+   
     float friendPos;
-    Vector3 ftPos;
+    float followSpeed;
+
+    Transform ftPos;
     Vector3 spawnPos;
-    Vector3 lfPos;
+    Transform lfPos;
 
    
     // Start is called before the first frame update
     void Start()
     {
-        ftPos = followTarget.transform.position;
-        lfPos = followTarget.transform.position;
+        ftPos = followTarget.transform;
 
-        spawnPos = new Vector3(ftPos.x -(ftPos.x - lfPos.x),
-                               ftPos.y - (ftPos.y - lfPos.y), 
-                               ftPos.z - (ftPos.z - lfPos.z));
+        spawnPos = new Vector3(ftPos.position.x - 2f,
+                               ftPos.position.y, 
+                               ftPos.position.z - 2f) ;
 
-        Instantiate(littleFriend, spawnPos, Quaternion.identity);
+       littleFriend = Instantiate(littleFriendPrefab, spawnPos, Quaternion.identity);
+       
+       lfPos = littleFriend.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
+        Movenemt();
+
+    }
+
+    void Movenemt()
+    {
+       
+        followSpeed = 5f;
+
+        lfPos.LookAt(followTarget.transform);
+        lfPos.position = Vector3.MoveTowards(lfPos.position,
+                                    ftPos.position,
+                                    followSpeed * Time.deltaTime);
+        Debug.Log(lfPos);
     }
 }

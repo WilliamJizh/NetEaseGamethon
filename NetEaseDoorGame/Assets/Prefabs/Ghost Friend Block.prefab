@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1117238717323990305}
   m_Layer: 0
   m_Name: Ghost Friend Block
-  m_TagString: MinusHealth
+  m_TagString: GhostFriend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117238717323990306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -0.39, z: -2.5262637}
+  m_LocalRotation: {x: 0.000000003772098, y: 0.61119986, z: -0.0000000029129186, w: 0.7914763}
+  m_LocalPosition: {x: -5.8908434, y: -0.38423905, z: -10.116903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
