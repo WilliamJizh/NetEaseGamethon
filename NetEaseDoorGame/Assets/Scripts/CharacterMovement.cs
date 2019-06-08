@@ -30,6 +30,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     string leftjoystickx = "Horizontal";
     string leftjoysticky = "Vertical";
     string rollinput = "Fire2";
+
     public Vector3 playerPosition;
     public Transform teleportPosition;
     public bool teleported;

@@ -91,8 +91,9 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
         playerstat.currStamina -= playerstat.attackcost;
      Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject) ;
-
-       
+     
+        
+        
     }
 
 
