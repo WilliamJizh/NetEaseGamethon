@@ -7,27 +7,38 @@ public class GhostFriendMovement : MonoBehaviour
     public GameObject littleFriendPrefab;
     public GameObject followTarget;
     public GameObject littleFriend;
-   
+
+
     float friendPos;
     float followSpeed;
+    float distance;
 
-    Transform ftPos;
+
+    Transform ftTran;
+    Transform lfTran;
+
     Vector3 spawnPos;
-    Transform lfPos;
 
-   
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        ftPos = followTarget.transform;
+        ftTran = followTarget.transform;
 
-        spawnPos = new Vector3(ftPos.position.x - 2f,
-                               ftPos.position.y, 
-                               ftPos.position.z - 2f) ;
+        spawnPos = new Vector3(ftTran.position.x - 2f,
+                               ftTran.position.y, 
+                               ftTran.position.z - 2f) ;
 
        littleFriend = Instantiate(littleFriendPrefab, spawnPos, Quaternion.identity);
        
-       lfPos = littleFriend.transform;
+       lfTran = littleFriend.transform;
+
+ 
+
+       
     }
 
     // Update is called once per frame
@@ -40,13 +51,48 @@ public class GhostFriendMovement : MonoBehaviour
 
     void Movenemt()
     {
-       
-        followSpeed = 5f;
 
-        lfPos.LookAt(followTarget.transform);
-        lfPos.position = Vector3.MoveTowards(lfPos.position,
-                                    ftPos.position,
-                                    followSpeed * Time.deltaTime);
-        Debug.Log(lfPos);
+       
+        followSpeed = 3f;
+        distance = 2f;
+
+        lfTran.LookAt(followTarget.transform);
+        //lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                                 //ftTran.position,
+                                                 //followSpeed * Time.deltaTime);
+
+
+        if (ftTran.position.x > lfTran.position.x && ftTran.position.z > lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x + distance, ftTran.position.y, ftTran.position.z + distance ),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x < lfTran.position.x && ftTran.position.z < lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x - distance, ftTran.position.y, ftTran.position.z - distance),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x > lfTran.position.x && ftTran.position.z < lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x - distance, ftTran.position.y, ftTran.position.z + distance),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x < lfTran.position.x && ftTran.position.z > lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x + distance, ftTran.position.y, ftTran.position.z - distance),
+                                                  followSpeed * Time.deltaTime);
+        }
+
+
+
+
+
+
+
     }
+
 }
