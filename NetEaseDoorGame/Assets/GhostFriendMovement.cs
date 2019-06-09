@@ -65,13 +65,13 @@ public class GhostFriendMovement : MonoBehaviour
         if (ftTran.position.x > lfTran.position.x && ftTran.position.z > lfTran.position.z)
         {
             lfTran.position = Vector3.MoveTowards(lfTran.position,
-                                      new Vector3(ftTran.position.x + distance, ftTran.position.y, ftTran.position.z + distance ),
+                                      new Vector3(ftTran.position.x - distance, ftTran.position.y, ftTran.position.z - distance ),
                                                   followSpeed * Time.deltaTime);
         }
         if (ftTran.position.x < lfTran.position.x && ftTran.position.z < lfTran.position.z)
         {
             lfTran.position = Vector3.MoveTowards(lfTran.position,
-                                      new Vector3(ftTran.position.x - distance, ftTran.position.y, ftTran.position.z - distance),
+                                      new Vector3(ftTran.position.x + distance, ftTran.position.y, ftTran.position.z + distance),
                                                   followSpeed * Time.deltaTime);
         }
         if (ftTran.position.x > lfTran.position.x && ftTran.position.z < lfTran.position.z)
@@ -87,10 +87,30 @@ public class GhostFriendMovement : MonoBehaviour
                                                   followSpeed * Time.deltaTime);
         }
 
-
-
-
-
+        if (ftTran.position.x == lfTran.position.x && ftTran.position.z > lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x, ftTran.position.y, ftTran.position.z + distance),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x == lfTran.position.x && ftTran.position.z < lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x, ftTran.position.y, ftTran.position.z - distance),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x > lfTran.position.x && ftTran.position.z == lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x - distance, ftTran.position.y, ftTran.position.z),
+                                                  followSpeed * Time.deltaTime);
+        }
+        if (ftTran.position.x > lfTran.position.x && ftTran.position.z == lfTran.position.z)
+        {
+            lfTran.position = Vector3.MoveTowards(lfTran.position,
+                                      new Vector3(ftTran.position.x + distance, ftTran.position.y, ftTran.position.z),
+                                                  followSpeed * Time.deltaTime);
+        }
 
 
     }
