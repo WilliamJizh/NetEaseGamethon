@@ -25,6 +25,9 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     PlayerStats playerstat;
 
     Vector3 lookdir;
+    Vector3 lookdir1;
+    Vector3 lookdir2;
+    Vector3 lookdir3;
 
     GameObject ui;
 
@@ -59,6 +62,8 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
             lookdir.z = joystick.Vertical;
             else lookdir.z = Input.GetAxis(rightjoysticky);
 
+        lookdir1.x = 0 - lookdir.x;
+        lookdir1.z = 0 - lookdir.z;
     }
 
     void Fire()
@@ -72,6 +77,9 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
                 var shoot = RangeAttackEvent.Create(entity);
                 shoot.Attackdirection = lookdir;
                 shoot.Send();
+
+                
+
                 nextfire = Time.time + playerstat.firearate;
 
             }
@@ -89,10 +97,15 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
+        
+
      Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject) ;
 
-       
+     
+        
+        
+
     }
 
 
