@@ -27,11 +27,16 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     public float threatmodifier = 1;
 
     [SerializeField]
-    float alertrange = 10;
+    float alertrange;
     [SerializeField]
-    float attackdistance = 2;
+    float attackdistance ;
     [SerializeField]
-    float speed = 2;
+    float speed;
+    [SerializeField]
+    float burstspeed;
+
+    float currspeed;
+
 
     [SerializeField]
     float attackactionlast = 1;
@@ -65,6 +70,8 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         transform.localScale *= threatmodifier;
         health *= threatmodifier ;
 
+
+        currspeed = speed;
         state.SetTransforms(state.EnemyTransform, transform);
 
     }
@@ -107,12 +114,14 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
 
     void EnemySearch() {
+        float mindis = 50;
         foreach (GameObject target in players) {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < alertrange) {
+            if (distance < alertrange && distance < mindis) {
+                mindis = distance;
                 currtarget = target;
                 aistate = AIstate.Chase;
-
+                
             }
         }
 
@@ -123,7 +132,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         if (currtarget != null)
         {
             float distance = Vector3.Distance(currtarget.transform.position, transform.position);
-            if (distance > alertrange) aistate = AIstate.Wander;
+            if (distance > alertrange) {
+                aistate = AIstate.Wander;
+                
+            }
+            
             if (distance < attackdistance && Time.time> nextburst) aistate = AIstate.Attack;
             else Movement(currtarget.transform.position);
         }
@@ -135,11 +148,12 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     }
 
+
     void Movement(Vector3 targetpos) {
 
         targetpos.y = transform.position.y;
-        //aicontroller.Move(Vector3.forward * speed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, targetpos, speed * Time.deltaTime);
+        //aicontroller.Move(Vector3.forward * currspeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetpos, currspeed * Time.deltaTime);
       
      
        
@@ -149,8 +163,10 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     void Attack() {
         Debug.Log("Burst!");
-        
+
         // attack action
+        currspeed = burstspeed;
+        Movement(currtarget.transform.position);
         
         StartCoroutine(Attacklast());
     }
@@ -158,9 +174,9 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     IEnumerator Attacklast()
     {
         yield return new WaitForSeconds(attackactionlast);
-        
+        currspeed = speed;
         nextburst = Time.time + attackinterval;
-        aistate = AIstate.Chase;
+        EnemySearch();
 
     }
 
@@ -182,6 +198,7 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
+            nextburst = Time.time + attackinterval;
         }
     }
 

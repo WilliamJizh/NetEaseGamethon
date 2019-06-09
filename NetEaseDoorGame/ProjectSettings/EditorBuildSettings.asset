@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/KLDMS Scene.unity
+    guid: 480bde81cae3fa243a841dd61669b786
+  - enabled: 1
     path: Assets/Scenes/Network/Menu.unity
     guid: b81d246e174c6844ba27fa483773c22a
   - enabled: 1
@@ -14,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterScene.unity
     guid: f98e3ec0fe4ce4d3684591ad0bfb274b
-  - enabled: 1
-    path: Assets/Scenes/KLDMS Scene.unity
-    guid: 480bde81cae3fa243a841dd61669b786
   m_configObjects: {}

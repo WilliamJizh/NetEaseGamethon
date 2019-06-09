@@ -40,11 +40,12 @@ public class EnemySpawn : Bolt.EntityBehaviour
 
     }
 
-
+    // Calculate a position that able to spawn (safety implemented to avoid infinate loop)
     Vector3 SpawnPos() {
         Vector3 spawnpos = transform.position;
         bool canspawn = false;
         int safety = 100;
+        // While loop ends with ratehr canspawn or reach safety limit
         while (!canspawn && safety > 0) {
             spawnpos.x = Random.Range(transform.position.x - radius, transform.position.x + radius);
             spawnpos.z = Random.Range(transform.position.z - radius, transform.position.z + radius);
@@ -57,7 +58,7 @@ public class EnemySpawn : Bolt.EntityBehaviour
 
     }
 
-
+    // return if ovelapped with other colliders
     bool Overlapped (Vector3 spawnpos) {
         colliders = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider collider in colliders) {
