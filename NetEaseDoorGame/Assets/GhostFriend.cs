@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalancedBrain : ItemClass
+public class GhostFriend : ItemClass
 {
-    [SerializeField]
-    float setSize = 1f;
-    [SerializeField]
-    float setSpeed = 15f;
+
 
     public GameObject Player;
     private PlayerStats playerstat;
     private ItemMananger itemManager;
 
-
+    public GhostFriendMovement ghostFriendMovement;
 
     // Start is called before the first frame update
     void Start()
     {
         SetIcon();
         Collect();
+
+        ghostFriendMovement = GetComponent<GhostFriendMovement>();
+        ghostFriendMovement.enabled = false;
     }
 
     // Update is called once per frame
@@ -27,12 +27,9 @@ public class BalancedBrain : ItemClass
     {
         if(collected == true)
         {
-           
             setPlayer();
-            playerstat.projectileSize = setSize;
-            playerstat.projectileSpeed = setSpeed;
-            
-             
+            ghostFriendMovement.enabled = true;
+            GetComponent<GhostFriendMovement>().followTarget = Player;
         }
     }
 
@@ -41,7 +38,5 @@ public class BalancedBrain : ItemClass
         Player = getPlayer();
         playerstat = Player.GetComponent<PlayerStats>();
         itemManager = Player.GetComponent<ItemMananger>();
-
-
     }
 }

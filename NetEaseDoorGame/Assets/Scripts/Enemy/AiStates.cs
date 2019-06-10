@@ -10,7 +10,7 @@ public enum AIstate
 
 }
 
-public class AiStates : MonoBehaviour
+public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 {
     
 
@@ -23,21 +23,26 @@ public class AiStates : MonoBehaviour
     GameObject currtarget;
 
 
-    [SerializeField]
-    float ThreadModifier = 1;
+ 
+    public float threatmodifier = 1;
 
     [SerializeField]
-    float alertrange = 10;
+    float alertrange;
     [SerializeField]
-    float attackdistance = 2;
+    float attackdistance ;
     [SerializeField]
-    float speed = 2;
+    float speed;
+    [SerializeField]
+    float burstspeed;
+
+    float currspeed;
+
 
     [SerializeField]
     float attackactionlast = 1;
 
-    [SerializeField]
-    Vector3 spawnposition = Vector2.zero;
+    
+    public Vector3 spawnposition = Vector2.zero;
 
 
     [SerializeField]
@@ -57,16 +62,27 @@ public class AiStates : MonoBehaviour
     float nextburst = 0;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Attached()
     {
         aicontroller = GetComponent<CharacterController>();
-        alertrange *= ThreadModifier;
-        speed *= ThreadModifier;
-        transform.localScale *= ThreadModifier;
-        health *= ThreadModifier ;
+        alertrange *= threatmodifier;
+        speed *= threatmodifier;
+        transform.localScale *= threatmodifier;
+        health *= threatmodifier ;
+
+
+        currspeed = speed;
+        state.SetTransforms(state.EnemyTransform, transform);
+
     }
 
-    // Update is called once per frame
+
+
+    public override void SimulateOwner()
+    {
+        
+    }
+
     void Update()
     {
         
@@ -98,12 +114,14 @@ public class AiStates : MonoBehaviour
 
 
     void EnemySearch() {
+        float mindis = 50;
         foreach (GameObject target in players) {
             float distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < alertrange) {
+            if (distance < alertrange && distance < mindis) {
+                mindis = distance;
                 currtarget = target;
                 aistate = AIstate.Chase;
-
+                
             }
         }
 
@@ -114,7 +132,11 @@ public class AiStates : MonoBehaviour
         if (currtarget != null)
         {
             float distance = Vector3.Distance(currtarget.transform.position, transform.position);
-            if (distance > alertrange) aistate = AIstate.Wander;
+            if (distance > alertrange) {
+                aistate = AIstate.Wander;
+                
+            }
+            
             if (distance < attackdistance && Time.time> nextburst) aistate = AIstate.Attack;
             else Movement(currtarget.transform.position);
         }
@@ -126,11 +148,12 @@ public class AiStates : MonoBehaviour
 
     }
 
+
     void Movement(Vector3 targetpos) {
 
         targetpos.y = transform.position.y;
-        //aicontroller.Move(Vector3.forward * speed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, targetpos, speed * Time.deltaTime);
+        //aicontroller.Move(Vector3.forward * currspeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetpos, currspeed * Time.deltaTime);
       
      
        
@@ -140,8 +163,10 @@ public class AiStates : MonoBehaviour
 
     void Attack() {
         Debug.Log("Burst!");
-        
+
         // attack action
+        currspeed = burstspeed;
+        Movement(currtarget.transform.position);
         
         StartCoroutine(Attacklast());
     }
@@ -149,9 +174,9 @@ public class AiStates : MonoBehaviour
     IEnumerator Attacklast()
     {
         yield return new WaitForSeconds(attackactionlast);
-        
+        currspeed = speed;
         nextburst = Time.time + attackinterval;
-        aistate = AIstate.Chase;
+        EnemySearch();
 
     }
 
@@ -173,6 +198,7 @@ public class AiStates : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
+            nextburst = Time.time + attackinterval;
         }
     }
 

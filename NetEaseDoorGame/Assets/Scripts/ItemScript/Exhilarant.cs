@@ -40,7 +40,7 @@ public class Exhilarant : ItemClass
     void IncreaseFireRate()
     {
         //the variable firearate is actually the pause time between two fires. 
-        //So the smaller the firearate is, the faster the fire goes.
+        //So the smaller the firearate is (0.8 times the original firerate), the faster the fire goes.
       
         playerStats.firearate *= 0.8f;
     }
@@ -52,4 +52,6 @@ public class Exhilarant : ItemClass
         playerStats = player.GetComponent<PlayerStats>();
 
     }
+
+    
 }

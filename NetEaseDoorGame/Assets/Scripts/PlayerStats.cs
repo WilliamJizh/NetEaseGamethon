@@ -123,7 +123,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     }
 
 
-    public void Hitreaction(float dmg, string effect) {
+    public void Hitreaction(float dmg, string effect ) {
         Debug.Log("Hit");
         if(currentArmour == 0){
         currentHealth -= dmg;
