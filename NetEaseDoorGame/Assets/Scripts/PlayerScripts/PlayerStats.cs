@@ -6,6 +6,7 @@ public enum PlayerState {
     Normal,
     Roll,
     Onhit,
+    OpenDoor,
 }
 
 
@@ -50,8 +51,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float existtime = 0.5f;
 
     public int money = 0;
-    
-    
+
+    public bool immune = false;
+
     public override void Attached()
 
     {
@@ -104,13 +106,10 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         if (currStamina < 0) currStamina = 0;
         if (currStamina > maxStamina) currStamina = maxStamina;
 
-        if (currStamina < maxStamina/3) {
-            currStamina += staminaRegen * Time.deltaTime;
-        }
 
-        //stamina restore more when it is not under 1/3 of the max
-        if (currStamina >= maxStamina / 3 && currStamina < maxStamina) {
-            currStamina += staminaRegen * Time.deltaTime * 3;
+      
+        if (currStamina < maxStamina) {
+            currStamina += staminaRegen * Time.deltaTime;
         }
     }
 
@@ -125,6 +124,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public void Hitreaction(float dmg, string effect ) {
         Debug.Log("Hit");
+
+        if (immune) return;
+
         if(currentArmour == 0){
         currentHealth -= dmg;
         }

@@ -113,7 +113,7 @@ MonoBehaviour:
   alertrange: 8
   attackdistance: 6
   speed: 4
-  burstspeed: 15
+  burstspeed: 10
   attackactionlast: 0.3
   spawnposition: {x: 0, y: 0, z: 0}
   health: 10

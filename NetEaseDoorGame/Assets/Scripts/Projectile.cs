@@ -46,11 +46,30 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
 
          }
-   
 
-    private void OnTriggerEnter(Collider other)    {
 
-        /*PlayerStats targetstat = null;
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Player" && collision.gameObject != this.gameObject)
+        {
+            if (collision.gameObject.GetComponent<PlayerStats>().currState == PlayerState.Roll) return;
+            collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<AiStates>().Hitreaction(dmg, effect);
+        }
+
+
+        Destroy(this.gameObject);
+    }
+
+
+    /*private void OnTriggerEnter(Collider other)    {
+
+        PlayerStats targetstat = null;
         if (other.gameObject.tag == "player") {
             targetstat = other.gameObject.GetComponent<PlayerStats>();
         }
@@ -60,22 +79,11 @@ public class Projectile : MonoBehaviour
             targetstat.Hitreaction(playerstat.dmg, playerstat.attackeffect);
             successfulhit = false;
         }
-        */
+        
 
-        Debug.Log(other.gameObject.name);
-        if (other.gameObject.tag == "Player" && other.gameObject != this.gameObject)
-        {
-            other.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
-        }
+        
 
-        if (other.gameObject.tag == "Enemy")
-        {
-            other.gameObject.GetComponent<AiStates>().Hitreaction(dmg, effect);
-        }
-
-        Destroy(this.gameObject);
-
-    }
+    }*/
     
 
 
