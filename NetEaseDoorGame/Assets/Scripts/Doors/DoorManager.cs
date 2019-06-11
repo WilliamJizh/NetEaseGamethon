@@ -28,11 +28,17 @@ public class DoorManager : MonoBehaviour
     void Update()
     {
        
+       
     }
 
-    IEnumerator DoorUnlock() {
+    public void SetDoorLock() {
+        doorlock = true;
+        StartCoroutine(DoorUnlock());
+    }
+
+    public IEnumerator DoorUnlock() {
 
         yield return new WaitForSeconds(doorlocktime);
-        doorlock = true;
+        doorlock = false;
     }
 }

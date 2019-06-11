@@ -178,14 +178,17 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         opendoortimer -= Time.deltaTime;
         if (opendoortimer <= 0) {
             teleported = true;
+            currdoor.SetDoorLock();
             playerstats.currState = PlayerState.Normal;
         }
     }
 
-    public void OpenDoor(float opentime, Transform targettransform) {
+    DoorManager currdoor;
+    public void OpenDoor(float opentime, Transform targettransform, DoorManager doormanager) {
         playerstats.currState = PlayerState.OpenDoor;
         opendoortimer = opentime;
         teleportPosition = targettransform;
+        currdoor = doormanager;
         
     }
 

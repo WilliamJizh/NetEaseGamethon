@@ -347,4 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59bf43f0801f314da867a0d5a0bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dooropentime: 0
+  dooropentime: 1
+  doorlocktime: 0
+  doorlock: 0

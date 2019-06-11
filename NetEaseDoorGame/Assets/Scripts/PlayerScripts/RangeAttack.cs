@@ -71,6 +71,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
         if (lookdir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookdir), turntime);
+            
             if (Time.time > nextfire && playerstat.currStamina >= playerstat.attackcost)
             {
                 // create a range attack event

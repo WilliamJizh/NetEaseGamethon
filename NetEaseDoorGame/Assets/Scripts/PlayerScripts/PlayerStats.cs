@@ -81,6 +81,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
 
         playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
+        
         playercamera.transform.LookAt(Vector3.zero);
         playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
 
@@ -141,6 +142,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         }
     }
 
+    
 }
 
 
