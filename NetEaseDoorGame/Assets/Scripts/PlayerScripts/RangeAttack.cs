@@ -38,7 +38,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     {
  
         playerstat = GetComponent<PlayerStats>();
-
+        
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
         if (joystick != null) Debug.Log("found!");
     }
@@ -97,15 +97,11 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
-        
 
-     Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
-            .GetComponent<Projectile>().SetShooter(this.gameObject) ;
 
-     
-        
-        
-
+        Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
+            .GetComponent<Projectile>().SetShooter(this.gameObject);
+  
     }
 
 
