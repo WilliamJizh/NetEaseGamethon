@@ -7,6 +7,9 @@ public class DoorManager : MonoBehaviour
 
 
     public float dooropentime;
+    public float doorlocktime;
+    public bool doorlock = false;
+
 
     DoorTeleport door1;
     DoorTeleport door2;
@@ -25,5 +28,11 @@ public class DoorManager : MonoBehaviour
     void Update()
     {
        
+    }
+
+    IEnumerator DoorUnlock() {
+
+        yield return new WaitForSeconds(doorlocktime);
+        doorlock = true;
     }
 }
