@@ -207,6 +207,7 @@ MonoBehaviour:
   firearate: 0.4
   existtime: 0.5
   money: 0
+  immune: 0
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0

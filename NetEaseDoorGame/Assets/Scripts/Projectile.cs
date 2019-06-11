@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "Player" && collision.gameObject != this.gameObject)
+        if (collision.gameObject.tag == "Player" && collision.gameObject != playerstat.gameObject)
         {
             if (collision.gameObject.GetComponent<PlayerStats>().currState == PlayerState.Roll) return;
             collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
