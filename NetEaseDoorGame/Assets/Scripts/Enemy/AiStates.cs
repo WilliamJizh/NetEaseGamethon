@@ -18,12 +18,13 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     AIstate aistate = AIstate.Wander;
     CharacterController aicontroller;
 
-    [SerializeField]
+   
     GameObject[] players;
     [SerializeField]
     GameObject currtarget;
 
-
+    [SerializeField]
+    int dropamount;
  
     public float threatmodifier = 1;
 
@@ -63,6 +64,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     float attackinterval = 3;
     float nextburst = 0;
 
+    [SerializeField]
+    GameObject bloodprefab;
+    [SerializeField]
+    GameObject moneyprefab;
+
     // Start is called before the first frame update
     public override void Attached()
     {
@@ -71,7 +77,7 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         speed *= threatmodifier;
         transform.localScale *= threatmodifier;
         health *= threatmodifier ;
-
+        dropamount = (int)Mathf.Ceil((float)dropamount* threatmodifier) ;
 
         currspeed = speed;
         state.SetTransforms(state.EnemyTransform, transform);
@@ -187,9 +193,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         health -= dmg;
         aistate = AIstate.OnHit;
         StartCoroutine(HitRecover());
-        if (health <= 0) {
+        if (health <= 0 && BoltNetwork.IsServer) {
+            Drop();
             Debug.Log("Enemy Down");
-            Destroy(this.gameObject);
+            BoltNetwork.Destroy(this.gameObject);
+            
         }
         
 
@@ -210,4 +218,20 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         }
     }
 
+    void Drop() {
+        int Droprandom =  Random.Range(0, 5);
+        if (Droprandom == 0)
+        {
+            DropBlood();
+        }
+        DropMoney();
+    }
+
+    void DropBlood() {
+        Instantiate(bloodprefab, transform.position, Quaternion.identity).GetComponent<BloodFire>().bloodamount = dropamount; 
+    }
+
+    void DropMoney() {
+        Instantiate(moneyprefab, transform.position, Quaternion.identity).GetComponent<SoulFire>().moneyamount = dropamount;
+    }
 }

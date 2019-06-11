@@ -1,0 +1,116 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/11 12:35:32: >>>> [PUNCH] >>>> Create Socket
+2019/6/11 12:35:32: >>>> [PUNCH] >>>> Created Socket
+2019/6/11 12:35:32: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/11 12:35:32: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/11 12:35:32: Physical socket bound to 0.0.0.0:0
+2019/6/11 12:35:32: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (KLDMS Scene)
+2019/6/11 12:35:32: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/11 12:35:32: Connecting to Region Master us
+2019/6/11 12:35:32: >>>> Received Stun Info: 172.218.172.27:58252
+2019/6/11 12:35:33: Joined to Lobby 
+2019/6/11 12:35:33: Creating new room: d604cbcb-f2e8-4d87-a33b-ab0a9df18cb1
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] (Token: NULL)
+2019/6/11 12:35:41: Player 2 joined. Sending PunchInfo
+2019/6/11 12:35:41: >>> LocalPunchInfo: 192.168.1.65:58252|172.218.172.27:58252
+2019/6/11 12:35:41: Received PunchInfo from Player 2
+2019/6/11 12:35:41: Incoming PING from Player 2
+2019/6/11 12:35:41: Sent PONG to Player 2 at 192.168.1.65:64470
+2019/6/11 12:35:42: Sent PING to Player 2 at 192.168.1.65:64470
+2019/6/11 12:35:42: Incoming PONG from Player 2
+2019/6/11 12:35:42: Incoming PING from Player 2
+2019/6/11 12:35:42: Sent PONG to Player 2 at 192.168.1.65:64470
+2019/6/11 12:35:42: [EndPoint 192.168.1.65:64470 | 64470] connected
+Created [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+Created [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+2019/6/11 12:35:42: [PUNCH SUCCESS] Local Player 1 with Remote Player 2
+2019/6/11 12:35:42: Added Player 2 to whitelist
+2019/6/11 12:35:42: Incoming PING from Player 2
+2019/6/11 12:35:42: Incoming PONG from Player 2
+2019/6/11 12:35:42: Incoming PONG from Player 2
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] from [Connection [EndPoint 192.168.1.65:64470 | 64470]]
+FRAME FORWARD: 11
+recv event [RangeAttackEvent Attackdirection=(0.0, 0.0, -0.2)]
+Raising [RangeAttackEvent Attackdirection=(0.0, 0.0, -0.2)]
+recv event [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.6)]
+Raising [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.6)]
+recv event [RangeAttackEvent Attackdirection=(0.8, 0.0, -0.6)]
+Raising [RangeAttackEvent Attackdirection=(0.8, 0.0, -0.6)]
+recv event [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.5)]
+recv event [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.5)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.0)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.2)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.2)]
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState]
+recv event [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.9)]
+Raising [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.9)]
+recv event [RangeAttackEvent Attackdirection=(0.2, 0.0, -0.9)]
+Raising [RangeAttackEvent Attackdirection=(0.2, 0.0, -0.9)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -0.9)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -0.9)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Detached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+recv event [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -1.0)]
+Detached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState]
+2019/6/11 12:35:53: [EndPoint 192.168.1.65:64470 | 64470] disconnected
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/11 12:36:01: Changing Connect State: Idle => DisconnectPending
+2019/6/11 12:36:01: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.
