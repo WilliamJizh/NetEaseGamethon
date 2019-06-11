@@ -33,19 +33,8 @@ public class BeamAttack : ItemClass
     {
 
         player = getPlayer();
-<<<<<<< HEAD
-=======
-        
      
 
     }
-        void CheckBarrier()
-    {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        /*if (Physics.Raycast(transform.position, fwd, out hit, 1))
-            Debug.DrawLine(transform.position, hit.point, Color.red);*/
->>>>>>> b1642c65d554f470a6553de1a2313bead1e05e34
 
-    }
- 
 }

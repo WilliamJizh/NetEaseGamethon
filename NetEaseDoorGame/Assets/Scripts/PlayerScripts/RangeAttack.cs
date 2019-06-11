@@ -97,23 +97,11 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
-<<<<<<< HEAD:NetEaseDoorGame/Assets/Scripts/RangeAttack.cs
+
 
         Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject);
-=======
-        
-
-     Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
-            .GetComponent<Projectile>().SetShooter(this.gameObject) ;
-
-     
-        
-        
->>>>>>> b1642c65d554f470a6553de1a2313bead1e05e34:NetEaseDoorGame/Assets/Scripts/PlayerScripts/RangeAttack.cs
-
-        
-       
+  
     }
 
 
