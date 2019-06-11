@@ -20,11 +20,14 @@ public class Shop : MonoBehaviour
     int whatToSpawn;
 
     //item price
-    int price;
+    public float price;
+    public float DiscountRate;
 
     //other variable that is needed
     GameObject player;
     PlayerStats playerStats;
+    DiscountDiamond diamond;
+    DiscountTicket ticket;
     public bool arrived = false;
     bool wantbuy = false;
     void Start()
@@ -57,42 +60,42 @@ public class Shop : MonoBehaviour
             {
                 case 1:
                     Instantiate(VampireBat, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 2:
                     Instantiate(Easter, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 3:
                     Instantiate(Exhilarant, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 4:
                     Instantiate(Eye, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 5:
                     Instantiate(HealthPlus, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 6:
                     Instantiate(MilkNBread, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 7:
                     Instantiate(Mushroom, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                 case 8:
                     Instantiate(SpeedBoost, temPos, Quaternion.identity);
-                    price = 1;
+                    price = 1*DiscountRate;
                     Debug.Log(price);
                     return;
                    
@@ -127,9 +130,14 @@ public class Shop : MonoBehaviour
             //If player gives Yes response, reduce player's money.
             if (Input.GetKeyDown("space"))
             {
-                
                
                 playerStats.money -= price;
+                if(ticket.collected){
+                	ticket.collected = false;
+                }
+                if(diamond.collected){
+                	diamond.collected = false;
+                }
             }
             
         }
