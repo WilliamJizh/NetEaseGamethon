@@ -19,11 +19,6 @@ public class GhostFriendMovement : MonoBehaviour
 
     Vector3 spawnPos;
 
-
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
         ftTran = followTarget.transform;
@@ -33,8 +28,9 @@ public class GhostFriendMovement : MonoBehaviour
                                ftTran.position.z - 2f) ;
 
        littleFriend = Instantiate(littleFriendPrefab, spawnPos, Quaternion.identity);
-       
-       lfTran = littleFriend.transform;
+
+  
+        lfTran = littleFriend.transform;
 
  
 
