@@ -5,7 +5,7 @@ using UnityEngine;
 public class BalancedBrain : ItemClass
 {
     [SerializeField]
-    float setSize = 2f;
+    float setSize = 1f;
     [SerializeField]
     float setSpeed = 15f;
 

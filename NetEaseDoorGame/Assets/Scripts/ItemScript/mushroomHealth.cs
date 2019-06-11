@@ -12,12 +12,6 @@ public class mushroomHealth : ItemClass
 
     public float mushroomHealthGen = 1f;
 
-
-  
-
-
-    
-
     public Vector3 playerPos;
     public Vector3 playerCurrentPos;
 
@@ -44,7 +38,7 @@ public class mushroomHealth : ItemClass
     void Update()
     {
 
-        playerCurrentPos = this.transform.position;
+
        
 
 
@@ -53,6 +47,7 @@ public class mushroomHealth : ItemClass
 
 
             setPlayer();
+            playerCurrentPos = Player.transform.position;
             //here is the healthing part
 
             if (playerPos.x < playerCurrentPos.x ||
@@ -62,7 +57,7 @@ public class mushroomHealth : ItemClass
 
                 {
 
-
+                Debug.Log("Not the same position");
                 }
                 else
                 {

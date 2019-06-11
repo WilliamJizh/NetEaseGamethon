@@ -30,9 +30,14 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     string leftjoystickx = "Horizontal";
     string leftjoysticky = "Vertical";
     string rollinput = "Fire2";
+
     public Vector3 playerPosition;
     public Transform teleportPosition;
     public bool teleported;
+
+    [SerializeField]
+    float opendoortimer;
+
     public override void Attached()
     {
         joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
@@ -68,6 +73,12 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
                 Roll();
                 break;
 
+            case PlayerState.OpenDoor:
+                
+                Opening();
+
+                break;
+
 
         }
    
@@ -89,7 +100,8 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         if (Input.GetButtonDown(rollinput) && playerstats.currStamina> playerstats.rollcost) {
             Debug.Log("Roll!");
             playerstats.currState = PlayerState.Roll;
-            speed = playerstats.Speed * 3;
+            playerstats.immune = true;
+            speed = playerstats.Speed * 5;
             GetDir();
             StartCoroutine(ResetNormal());
             playerstats.currStamina -= playerstats.rollcost;
@@ -100,6 +112,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     IEnumerator ResetNormal() {
         yield return new WaitForSecondsRealtime(playerstats.rolllasttime);
         playerstats.currState = PlayerState.Normal;
+        playerstats.immune = false;
     }
 
     void Roll()
@@ -122,13 +135,20 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     void Movement()
     {
+        GetDir();
+       
+
         if (charactercontroller.isGrounded) {
 
-            GetDir();
+            
             movedirection.y = 0;
             movedirection.Normalize(); 
             movedirection *= playerstats.Speed;
             
+        }
+        if (playerstats.currState == PlayerState.OpenDoor && movedirection != Vector3.zero)
+        {
+            playerstats.currState = PlayerState.Normal;
         }
 
         movedirection.y -= gravity * Time.deltaTime;
@@ -136,9 +156,10 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     }
 
     void TeleportManager() {
+
+
         if (teleported == true)
         {
-
             Teleport(teleportPosition);
             teleported = false;
         }
@@ -155,6 +176,20 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 
     }
 
+    void Opening() {
+        opendoortimer -= Time.deltaTime;
+        if (opendoortimer <= 0) {
+            teleported = true;
+            playerstats.currState = PlayerState.Normal;
+        }
+    }
+
+    public void OpenDoor(float opentime, Transform targettransform) {
+        playerstats.currState = PlayerState.OpenDoor;
+        opendoortimer = opentime;
+        teleportPosition = targettransform;
+        movedirection = Vector3.zero;
+    }
 
 
     }
