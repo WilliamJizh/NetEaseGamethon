@@ -377,6 +377,11 @@ PrefabInstance:
       propertyPath: ThreadModifier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3722858749453242077, guid: ffb775fa521a43a40878a4d447590ebc,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 21ea5c11-1ca8-4e7d-a64b-3d53ff89e61a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb775fa521a43a40878a4d447590ebc, type: 3}
 --- !u!1001 &716073537
@@ -762,6 +767,11 @@ PrefabInstance:
       propertyPath: ThreadModifier
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3722858749453242077, guid: ffb775fa521a43a40878a4d447590ebc,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: 5be7e535-4f9b-44ea-8f40-966428137c80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb775fa521a43a40878a4d447590ebc, type: 3}
 --- !u!1001 &1303094058
@@ -1011,6 +1021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ThreadModifier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722858749453242077, guid: ffb775fa521a43a40878a4d447590ebc,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: c782bcb9-1a36-473a-8617-789d31b0eed7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb775fa521a43a40878a4d447590ebc, type: 3}

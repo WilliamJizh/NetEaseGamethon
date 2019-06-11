@@ -13,11 +13,18 @@ public abstract class ItemClass : MonoBehaviour
     public bool collected = false;
     //player gameobject
     private GameObject playerObject;
-
+    private Vector3 setHeight;
     //set the icon for item
     public void SetIcon()
     {
         this.GetComponent<SpriteRenderer>().sprite = icon;
+        GetComponent<Transform>().eulerAngles = new Vector3(85, 0, 0);
+
+        setHeight = GetComponent<Transform>().position;
+
+        setHeight.y = 3;
+    
+        GetComponent<Transform>().position = setHeight;
     }
 
     //get the sprite of the icon

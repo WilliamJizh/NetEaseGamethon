@@ -6,7 +6,8 @@ public enum AIstate
 {
     Wander,
     Chase,
-    Attack
+    Attack,
+    OnHit,
 
 }
 
@@ -53,7 +54,8 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     [SerializeField]
     string effect = "None";
 
-
+    [SerializeField]
+    float onhitstun = 0.3f;
 
     
 
@@ -183,6 +185,8 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     public void Hitreaction(float dmg, string effect) {
         Debug.Log("Enemy hit " + dmg);
         health -= dmg;
+        aistate = AIstate.OnHit;
+        StartCoroutine(HitRecover());
         if (health <= 0) {
             Debug.Log("Enemy Down");
             Destroy(this.gameObject);
@@ -192,6 +196,10 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     }
 
+    IEnumerator HitRecover() {
+        yield return new WaitForSeconds(onhitstun);
+        aistate = AIstate.Attack;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
