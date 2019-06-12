@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public enum PlayerState {
     Normal,
@@ -55,9 +56,13 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public bool immune = false;
 
+    AudioSource PlayerHit;
+
     public override void Attached()
 
     {
+        GameObject PlayerHitReact = GameObject.Find("PlayerHitReact");
+        PlayerHit = PlayerHitReact.GetComponent<AudioSource>();
 
 
         if (!entity.IsOwner) return;
@@ -131,6 +136,8 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public void Hitreaction(float dmg, string effect ) {
         Debug.Log("Hit");
+
+        PlayerHit.Play();
 
         if (immune) return;
 
