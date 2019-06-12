@@ -22,6 +22,7 @@ public class NextScene : MonoBehaviour
         {
 
             SceneManager.LoadScene("MasterLevel2");
+
         }
     }
 }

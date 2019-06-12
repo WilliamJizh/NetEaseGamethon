@@ -56,6 +56,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public bool immune = false;
 
+
     public bool successfulhit;
     public GameObject lasthit;
 
@@ -64,6 +65,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public override void Attached()
 
     {
+
         GameObject PlayerHitReact = GameObject.Find("PlayerHitReact");
         PlayerHit = PlayerHitReact.GetComponent<AudioSource>();
 
