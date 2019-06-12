@@ -605,6 +605,13 @@
       "Name": "DoorOpen",
       "Guid": "471233c7-642a-44f1-a87d-7f2d54f0e60e",
       "Groups": []
+    },
+    {
+      "$type": "Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [],
+      "Name": "Aevent",
+      "Guid": "4045ce38-d208-49ac-bff1-3416edac8e82",
+      "Groups": []
     }
   ],
   "ActiveGroup": "Everything"
