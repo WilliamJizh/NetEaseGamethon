@@ -21,7 +21,6 @@ public class BloodFire : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") {
             other.gameObject.GetComponent<PlayerStats>().currentHealth += bloodamount;
-            Debug.Log("Collect Blood");
             Destroy(this.gameObject);
         }
     }

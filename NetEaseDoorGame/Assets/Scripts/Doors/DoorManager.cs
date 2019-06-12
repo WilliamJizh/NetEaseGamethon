@@ -11,7 +11,7 @@ public class DoorManager : MonoBehaviour
     public float doorlocktime;
     public bool doorlock = false;
 
-   
+    public float timer;
 
 
     DoorTeleport door1;
@@ -31,19 +31,26 @@ public class DoorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if (timer > 0) {
+            timer -= Time.deltaTime;
+        }
+        if (timer <= 0) {
+            doorlock = false;
+        }
        
     }
 
     public void SetDoorLock() {
         doorlock = true;
-        StartCoroutine(DoorUnlock());
+        timer = doorlocktime;
     }
 
-    public IEnumerator DoorUnlock() {
+    /*public IEnumerator DoorUnlock() {
 
         yield return new WaitForSeconds(doorlocktime);
 
         doorlock = false;
-    }
+    }*/
+
+
 }
