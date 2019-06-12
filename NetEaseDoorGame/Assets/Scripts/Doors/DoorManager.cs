@@ -56,6 +56,8 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
         timer = doorlocktime;
     }
 
+   
+
     /*public IEnumerator DoorUnlock() {
 
         yield return new WaitForSeconds(doorlocktime);
