@@ -12,9 +12,15 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
     DoorManager doormanager;
     
     public float opentime;
- 
+
+    AudioSource DoorOpenSource;
+
     void Awake()
     {
+        GameObject DoorSound = GameObject.Find("DoorOpen");
+        DoorOpenSource = DoorSound.GetComponent<AudioSource>();
+
+
         doormanager = transform.parent.gameObject.GetComponent<DoorManager>();
         opentime = doormanager.dooropentime;
 
@@ -50,10 +56,12 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
         if (other.gameObject.tag == "Player")
         {
 
-            if (Input.GetKeyUp(KeyCode.E) && !doormanager.doorlock)
+            if (Input.GetKeyDown(KeyCode.E) && !doormanager.doorlock)
             {
                 CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
                 player.OpenDoor(opentime, TeleportPosition,doormanager);
+
+                DoorOpenSource.Play();
             }
         }
     }
