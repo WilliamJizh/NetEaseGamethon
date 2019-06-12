@@ -270,6 +270,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: c7c12096-7cdd-4154-937b-ce2ccb85a77f
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: 1b244bad-44f7-4628-8e0a-9a6946e522cd
+      objectReference: {fileID: 0}
     - target: {fileID: 6321910712794871520, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: m_Name
@@ -339,6 +355,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: 8d08bed0-8c0e-4008-991a-083080726ec8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: bad8581e-079e-4960-a86b-43f5cad58f43
+      objectReference: {fileID: 0}
     - target: {fileID: 6321910712794871520, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: m_Name
@@ -408,6 +440,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: 087916c7-6cbf-4232-811b-edb12abe9e2d
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _sceneGuid
+      value: 04b36c3d-5ff9-4e46-add9-749b35b1f551
+      objectReference: {fileID: 0}
     - target: {fileID: 6321910712794871520, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: m_Name
