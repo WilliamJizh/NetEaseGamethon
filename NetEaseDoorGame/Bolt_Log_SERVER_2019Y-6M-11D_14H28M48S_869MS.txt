@@ -1,0 +1,78 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/11 14:28:48: >>>> [PUNCH] >>>> Create Socket
+2019/6/11 14:28:48: >>>> [PUNCH] >>>> Created Socket
+2019/6/11 14:28:48: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/11 14:28:48: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/11 14:28:48: Physical socket bound to 0.0.0.0:0
+2019/6/11 14:28:48: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (KLDMS Scene)
+2019/6/11 14:28:48: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/11 14:28:48: Connecting to Region Master us
+2019/6/11 14:28:49: >>>> Received Stun Info: 172.218.172.27:61524
+2019/6/11 14:28:49: Joined to Lobby 
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] (Token: NULL)
+2019/6/11 14:28:49: Creating new room: 4d700025-6dc0-4987-be09-c9dbd0aaf11c
+2019/6/11 14:28:56: Player 2 joined. Sending PunchInfo
+2019/6/11 14:28:56: >>> LocalPunchInfo: 192.168.1.65:61524|172.218.172.27:61524
+2019/6/11 14:28:56: Received PunchInfo from Player 2
+2019/6/11 14:28:57: Incoming PING from Player 2
+2019/6/11 14:28:57: Sent PONG to Player 2 at 192.168.1.65:55606
+2019/6/11 14:28:57: Sent PING to Player 2 at 192.168.1.65:55606
+2019/6/11 14:28:57: Incoming PONG from Player 2
+2019/6/11 14:28:57: [EndPoint 192.168.1.65:55606 | 55606] connected
+2019/6/11 14:28:57: [PUNCH SUCCESS] Local Player 1 with Remote Player 2
+2019/6/11 14:28:57: Added Player 2 to whitelist
+2019/6/11 14:28:57: Incoming PING from Player 2
+Created [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+Created [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] on [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+2019/6/11 14:28:57: Incoming PING from Player 2
+2019/6/11 14:28:57: Incoming PONG from Player 2
+2019/6/11 14:28:57: Incoming PONG from Player 2
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] from [Connection [EndPoint 192.168.1.65:55606 | 55606]]
+FRAME FORWARD: 11
+FRAME FORWARD: 10
+2019/6/11 14:29:45: [EndPoint 192.168.1.65:55606 | 55606] disconnected
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/11 14:29:46: Changing Connect State: Idle => DisconnectPending
+2019/6/11 14:29:46: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

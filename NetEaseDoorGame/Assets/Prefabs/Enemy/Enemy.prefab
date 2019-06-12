@@ -107,20 +107,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed96838b545e45478b17524d0342e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
   currtarget: {fileID: 0}
+  dropamount: 5
   threatmodifier: 1
-  alertrange: 8
-  attackdistance: 6
+  alertrange: 20
+  attackdistance: 7
   speed: 4
-  burstspeed: 10
+  burstspeed: 14
   attackactionlast: 0.3
   spawnposition: {x: 0, y: 0, z: 0}
   health: 20
-  dmg: 5
+  dmg: 4
   effect: None
   onhitstun: 0.3
-  attackinterval: 3
+  attackinterval: 4
+  bloodprefab: {fileID: 4889252870596419472, guid: 8654857874945934f91a86e800ad2e04,
+    type: 3}
+  moneyprefab: {fileID: 4889252870596419472, guid: bab3f1d61e674454183674b4d3ceb7ec,
+    type: 3}
 --- !u!54 &2355217763060858786
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneGuid: 
-  _serializerGuid: 17306457-c517-48cc-b21c-32a3ed65d676
+  _serializerGuid: bb9dbe49-228d-4cdb-b21e-a438b3d834a9
   _prefabId: 2
   _updateRate: 1
   _autoFreezeProxyFrames: 0

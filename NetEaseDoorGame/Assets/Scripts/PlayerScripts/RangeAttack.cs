@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
@@ -12,8 +13,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     public Joystick joystick;
     // Temp instantiate position modifier 
     [SerializeField]
-    float offset = 1;
-
+    float offset;
     // Fire rate package
     [SerializeField]
     public float firearate = 0.4f;
@@ -34,9 +34,15 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     string rightjoystickx = "Mouse X";
     string rightjoysticky = "Mouse Y";
 
+   AudioSource attackSound;
+
     public override void Attached()
     {
- 
+        GameObject Att = GameObject.Find("AttackSound");
+        attackSound = Att.GetComponent<AudioSource>();
+
+        offset = 1.6f;
+
         playerstat = GetComponent<PlayerStats>();
         
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();
@@ -79,6 +85,8 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
                 shoot.Attackdirection = lookdir;
                 shoot.Send();
 
+
+
                 
 
                 nextfire = Time.time + playerstat.firearate;
@@ -91,6 +99,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     // on rangeattack event callback
     public override void OnEvent(RangeAttackEvent evnt)
     {
+        attackSound.Play();
         FireAction();
     }
 
@@ -98,7 +107,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
-
+     
 
         Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject);

@@ -11,19 +11,23 @@ public enum AIstate
 
 }
 
-public class AiStates : Bolt.EntityBehaviour<IEnemyState>
+public class AiStates : Bolt.EntityEventListener<IEnemyState>
 {
     
 
     AIstate aistate = AIstate.Wander;
     CharacterController aicontroller;
 
-    [SerializeField]
+   
     GameObject[] players;
     [SerializeField]
     GameObject currtarget;
+    Vector3 currtargetLastPos;
+    //用来记录攻击开始的时候玩家的位置
+    bool flag;
 
-
+    [SerializeField]
+    int dropamount;
  
     public float threatmodifier = 1;
 
@@ -63,6 +67,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     float attackinterval = 3;
     float nextburst = 0;
 
+    [SerializeField]
+    GameObject bloodprefab;
+    [SerializeField]
+    GameObject moneyprefab;
+
     // Start is called before the first frame update
     public override void Attached()
     {
@@ -71,7 +80,7 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         speed *= threatmodifier;
         transform.localScale *= threatmodifier;
         health *= threatmodifier ;
-
+        dropamount = (int)Mathf.Ceil((float)dropamount* threatmodifier) ;
 
         currspeed = speed;
         state.SetTransforms(state.EnemyTransform, transform);
@@ -165,10 +174,14 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     void Attack() {
         Debug.Log("Burst!");
-
+        if (flag)
+        {
+            currtargetLastPos = currtarget.transform.position;
+            flag = false;
+        }
         // attack action
         currspeed = burstspeed;
-        Movement(currtarget.transform.position);
+        Movement(currtargetLastPos);
         
         StartCoroutine(Attacklast());
     }
@@ -176,6 +189,7 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     IEnumerator Attacklast()
     {
         yield return new WaitForSeconds(attackactionlast);
+        flag = true;
         currspeed = speed;
         nextburst = Time.time + attackinterval;
         EnemySearch();
@@ -188,8 +202,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         aistate = AIstate.OnHit;
         StartCoroutine(HitRecover());
         if (health <= 0) {
+
+            Drop();
             Debug.Log("Enemy Down");
-            Destroy(this.gameObject);
+            
+            
         }
         
 
@@ -203,11 +220,42 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player"&& aistate== AIstate.Attack)
         {
             collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
             nextburst = Time.time + attackinterval;
         }
     }
 
+    void Drop() {
+        int Droprandom =  Random.Range(0, 5);
+
+        var drop = EnemyDrop.Create(entity);
+        if (Droprandom == 0)
+        {
+            drop.isBlood = true;
+        }
+        else drop.isBlood = false;
+        drop.Send();
+    }
+
+    public override void OnEvent(EnemyDrop evnt)
+    {
+       
+        if (evnt.isBlood) {
+            DropBlood();
+        }
+        DropMoney();
+
+        BoltNetwork.Destroy(this.gameObject);
+    }
+
+
+    void DropBlood() {
+        Instantiate(bloodprefab, transform.position, Quaternion.identity).GetComponent<BloodFire>().bloodamount = dropamount; 
+    }
+
+    void DropMoney() {
+        Instantiate(moneyprefab, transform.position, Quaternion.identity).GetComponent<SoulFire>().moneyamount = dropamount;
+    }
 }

@@ -14,15 +14,27 @@ public abstract class ItemClass : MonoBehaviour
     //player gameobject
     private GameObject playerObject;
     private Vector3 setHeight;
+
+    public static AudioSource PickUpSource;
+    public static AudioClip PickUpSound;
+
+   
+
     //set the icon for item
+
     public void SetIcon()
     {
+
+        GameObject pickUp = GameObject.Find("PickUpItem");
+
+        PickUpSource = pickUp.GetComponent<AudioSource>();
+       
         this.GetComponent<SpriteRenderer>().sprite = icon;
         GetComponent<Transform>().eulerAngles = new Vector3(85, 0, 0);
 
         setHeight = GetComponent<Transform>().position;
 
-        setHeight.y = 3;
+        setHeight.y = 1;
     
         GetComponent<Transform>().position = setHeight;
     }
@@ -50,12 +62,16 @@ public abstract class ItemClass : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+           
+
             playerObject = other.gameObject;
             collected = true;
             other.GetComponent<ItemMananger>().ReceiveItem(this);
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            PickUpSource.Play();
         }
     }
 

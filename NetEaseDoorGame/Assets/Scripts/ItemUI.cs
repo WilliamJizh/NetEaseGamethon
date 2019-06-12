@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ItemUI : MonoBehaviour
+public class ItemUI : Bolt.EntityBehaviour
 {
    public ItemMananger itemMan;
     public GameObject cv;
@@ -15,6 +15,7 @@ public class ItemUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!entity.IsOwner) return;
         itemMan = GetComponent<ItemMananger>();
         cv = GameObject.Find("Canvas");
         itemIconUIholder = GameObject.Find("ItemIcons");
