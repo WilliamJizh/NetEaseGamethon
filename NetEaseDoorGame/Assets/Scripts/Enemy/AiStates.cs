@@ -11,7 +11,7 @@ public enum AIstate
 
 }
 
-public class AiStates : Bolt.EntityBehaviour<IEnemyState>
+public class AiStates : Bolt.EntityEventListener<IEnemyState>
 {
     
 
@@ -193,10 +193,11 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         health -= dmg;
         aistate = AIstate.OnHit;
         StartCoroutine(HitRecover());
-        if (health <= 0 && BoltNetwork.IsServer) {
+        if (health <= 0) {
+
             Drop();
             Debug.Log("Enemy Down");
-            BoltNetwork.Destroy(this.gameObject);
+            
             
         }
         
@@ -220,12 +221,27 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
 
     void Drop() {
         int Droprandom =  Random.Range(0, 5);
+
+        var drop = EnemyDrop.Create(entity);
         if (Droprandom == 0)
         {
+            drop.isBlood = true;
+        }
+        else drop.isBlood = false;
+        drop.Send();
+    }
+
+    public override void OnEvent(EnemyDrop evnt)
+    {
+       
+        if (evnt.isBlood) {
             DropBlood();
         }
         DropMoney();
+
+        BoltNetwork.Destroy(this.gameObject);
     }
+
 
     void DropBlood() {
         Instantiate(bloodprefab, transform.position, Quaternion.identity).GetComponent<BloodFire>().bloodamount = dropamount; 
