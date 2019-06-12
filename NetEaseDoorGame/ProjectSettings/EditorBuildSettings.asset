@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/JayScene.unity
     guid: 598d292e20de04a1cb34abed715f6642
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MasterScene.unity
     guid: f98e3ec0fe4ce4d3684591ad0bfb274b
   - enabled: 0
