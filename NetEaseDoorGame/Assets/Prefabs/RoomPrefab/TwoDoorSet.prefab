@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cf07a65fe534a5d84e3a7a31361d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TeleportPosition: {fileID: 0}
   opentime: 1
 --- !u!65 &1650218934385606258
 BoxCollider:
@@ -664,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cf07a65fe534a5d84e3a7a31361d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TeleportPosition: {fileID: 0}
   opentime: 1
 --- !u!65 &5686697083055321215
 BoxCollider:
@@ -730,6 +732,7 @@ MonoBehaviour:
   doorlocktime: 3
   doorlock: 0
   timer: 0
+  todoor: 0
 --- !u!114 &8792231783442459174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: -36112512, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneGuid: 
+  _sceneGuid: d74d127d-9ff2-4692-8c82-9f3562173470
   _serializerGuid: 16cec207-4e76-4f94-a2a1-4ed82bf26b16
   _prefabId: 3
   _updateRate: 1
