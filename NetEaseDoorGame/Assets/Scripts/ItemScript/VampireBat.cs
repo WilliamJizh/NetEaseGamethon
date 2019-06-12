@@ -12,13 +12,7 @@ public class VampireBat : ItemClass
     public float blood;
     float CountDownTimer;
     
-    void Awake()
-    {
-    	  pstats = GetComponent<PlayerStats>();
 
-        others = GetComponent<Projectile>();
-    }
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +25,14 @@ public class VampireBat : ItemClass
     // Update is called once per frame
     void Update()
     {
-    	while(collected){
+    	if(collected){
     	   setPlayer();
     	   CountDownTimer -= Time.deltaTime;
     	   if(CountDownTimer>0f && CountDownTimer< 10f){
     	   		
     	   		diffHealth = pstats.maxHealth - pstats.currentHealth;
     	   		blood = 0.4f*others.targetstat.dmg;
-    	   		CountDownTimer -= Time.deltaTime;
+    	   		//CountDownTimer -= Time.deltaTime;
     	   		
     	   		if(others.successfulhit){
 					

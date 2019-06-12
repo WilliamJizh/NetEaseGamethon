@@ -10,12 +10,6 @@ public class SpeedBoost : ItemClass
     private ItemMananger itemMananger;
 
 
-    void Awake()
-    {
-        //temp implementation (player should get from collision)
-
-
-    }
     // Start is called before the first frame update
     void Start()
     {

@@ -15,12 +15,13 @@ public abstract class ItemClass : MonoBehaviour
     private GameObject playerObject;
     private Vector3 setHeight;
 
-    public AudioSource PickUpSource;
-    public AudioClip PickUpSound;
+    public static AudioSource PickUpSource;
+    public static AudioClip PickUpSound;
 
    
 
     //set the icon for item
+
     public void SetIcon()
     {
 
