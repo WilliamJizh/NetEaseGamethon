@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class DoorManager : MonoBehaviour
+public class DoorManager : Bolt.EntityEventListener<IDoorState>
 {
 
 
@@ -13,9 +13,13 @@ public class DoorManager : MonoBehaviour
 
     public float timer;
 
-
+    public int todoor;
+    
+    
     DoorTeleport door1;
     DoorTeleport door2;
+
+    ItemDropManager itemmanager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,7 @@ public class DoorManager : MonoBehaviour
         door1.opentime = dooropentime;
         door2.opentime = dooropentime;
 
-       
+        itemmanager = GameObject.Find("DropManager").GetComponent<ItemDropManager>();
     }
 
     // Update is called once per frame
@@ -41,9 +45,32 @@ public class DoorManager : MonoBehaviour
     }
 
     public void SetDoorLock() {
+
+        var doorlockevent = DoorOpen.Create(entity);
+        if (todoor == 1) {
+            doorlockevent.ItemSpawn = door2.TeleportPosition.position;
+        }
+        else
+        {
+            doorlockevent.ItemSpawn = door1.TeleportPosition.position;
+        }
+
+
+        doorlockevent.Itemid = itemmanager.RandomDrop();
+        doorlockevent.Send();
+        
+    }
+
+    public override void OnEvent(DoorOpen evnt)
+    {
         doorlock = true;
         timer = doorlocktime;
+        itemmanager.ItemSpawn((int)evnt.Itemid,evnt.ItemSpawn);
     }
+
+   
+
+   
 
     /*public IEnumerator DoorUnlock() {
 
