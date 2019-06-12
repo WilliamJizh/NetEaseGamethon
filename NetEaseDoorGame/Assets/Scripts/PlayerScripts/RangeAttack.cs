@@ -34,14 +34,14 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     string rightjoystickx = "Mouse X";
     string rightjoysticky = "Mouse Y";
 
-    AudioSource attackSound;
+   AudioSource attackSound;
 
     public override void Attached()
     {
         GameObject Att = GameObject.Find("AttackSound");
         attackSound = Att.GetComponent<AudioSource>();
 
-        offset = 2f;
+        offset = 1.6f;
 
         playerstat = GetComponent<PlayerStats>();
         
@@ -99,6 +99,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     // on rangeattack event callback
     public override void OnEvent(RangeAttackEvent evnt)
     {
+        attackSound.Play();
         FireAction();
     }
 
@@ -106,7 +107,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
-        attackSound.Play();
+     
 
         Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject);
