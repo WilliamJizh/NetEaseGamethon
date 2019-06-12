@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
-  
+    public BufferRoomManager BRM;
     // Start is called before the first frame update
     void Start()
     {
-
+        BRM = GameObject.Find("BufferRoomManager").GetComponent<BufferRoomManager>();
     }
 
     // Update is called once per frame
@@ -18,11 +18,6 @@ public class NextScene : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
-        {
-
-            SceneManager.LoadScene("MasterLevel2");
-
-        }
+        BRM.enterBuffer(other.gameObject);
     }
 }
