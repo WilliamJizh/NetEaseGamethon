@@ -52,7 +52,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     private void Awake()
     {
         joystick = GameObject.Find("Dynamic Joystick L").GetComponent<Joystick>();
-        if (joystick != null) Debug.Log("found!");
+
 
         charactercontroller = GetComponent<CharacterController>();
         playerstats = GetComponent<PlayerStats>();
@@ -98,7 +98,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
     }
 
     void RollActivate() {
-        if (Input.GetButtonDown(rollinput) && playerstats.currStamina> playerstats.rollcost) {
+        if (Input.GetButtonDown(rollinput) && playerstats.currStamina > playerstats.rollcost) {
             Debug.Log("Roll!");
             playerstats.currState = PlayerState.Roll;
             playerstats.immune = true;
