@@ -1,0 +1,117 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/11 12:23:52: >>>> [PUNCH] >>>> Create Socket
+2019/6/11 12:23:52: >>>> [PUNCH] >>>> Created Socket
+2019/6/11 12:23:52: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/11 12:23:53: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/11 12:23:53: Physical socket bound to 0.0.0.0:0
+2019/6/11 12:23:53: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+2019/6/11 12:23:53: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/11 12:23:53: Connecting to Region Master us
+2019/6/11 12:23:53: >>>> Received Stun Info: 172.218.172.27:49504
+2019/6/11 12:23:53: Joined to Lobby 
+2019/6/11 12:23:58: Changing Connect State: Idle => JoinRoomPending
+2019/6/11 12:23:58: Joining to room: 85b390b0-a510-4872-be1c-18964fc5ac8c
+2019/6/11 12:23:58: Connecting to a Photon Session
+2019/6/11 12:23:59: Trying to connect via punch through
+2019/6/11 12:23:59: Changing Connect State: JoinRoomPending => DirectPending
+2019/6/11 12:23:59: Received PunchInfo from Player 1
+2019/6/11 12:23:59: >>> LocalPunchInfo: 192.168.1.65:49504|172.218.172.27:49504
+2019/6/11 12:23:59: Sent PING to Player 1 at 192.168.1.65:52602
+2019/6/11 12:23:59: Incoming PONG from Player 1
+2019/6/11 12:23:59: Incoming PING from Player 1
+2019/6/11 12:23:59: Sent PONG to Player 1 at 192.168.1.65:52602
+2019/6/11 12:23:59: [PUNCH SUCCESS] Local Player 2 with Remote Player 1
+2019/6/11 12:23:59: Added Player 1 to whitelist
+2019/6/11 12:23:59: Connecting to [EndPoint 192.168.1.65:52602 | 52602]
+2019/6/11 12:23:59: Connect to [EndPoint 192.168.1.65:52602 | 52602] accepted
+2019/6/11 12:23:59: Correct connection id #2 received from server
+2019/6/11 12:23:59: [EndPoint 192.168.1.65:52602 | 52602] connected
+2019/6/11 12:23:59: Incoming PONG from Player 1
+Assigned id 2 from server
+Assigned id 2 from server
+2019/6/11 12:23:59: Changing Connect State: DirectPending => DirectSuccess
+2019/6/11 12:23:59: Changing Connect State: DirectSuccess => Connected
+Loading Bolt.SceneLoadState (KLDMS Scene)
+2019/6/11 12:23:59: Incoming PING from Player 1
+2019/6/11 12:23:59: Incoming PONG from Player 1
+2019/6/11 12:23:59: Incoming PING from Player 1
+FRAME FORWARD: 10
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] (Token: NULL)
+Created [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState] on [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+FRAME FORWARD: 11
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+Attached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] (Token: NULL)
+Received [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] from [Connection [EndPoint 192.168.1.65:52602 | 52602]]
+recv event [RangeAttackEvent Attackdirection=(0.0, 0.0, -0.2)]
+Raising [RangeAttackEvent Attackdirection=(0.0, 0.0, -0.2)]
+recv event [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.6)]
+Raising [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.6)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.2)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.2)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+recv event [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, 0.3)]
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState]
+recv event [RangeAttackEvent Attackdirection=(0.9, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, 0.3)]
+recv event [RangeAttackEvent Attackdirection=(0.6, 0.0, 0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.6, 0.0, 0.5)]
+Bolt.Exceptions.BoltAssertFailedException: Assert Failed: 
+  at Bolt.Exceptions.Assert.True (System.Boolean condition, System.String message) [0x00010] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at Bolt.Entity.Detach () [0x00018] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at BoltCore.DestroyForce (Bolt.Entity entity) [0x00001] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at EntityChannel.DestroyIncommingProxy (EntityProxy proxy, Bolt.IProtocolToken token) [0x0001f] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at EntityChannel.ReadUpdate (Bolt.Packet packet) [0x0009a] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at EntityChannel.Read (Bolt.Packet packet) [0x00010] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+  at BoltConnection.PacketReceived (UdpKit.UdpPacket udpPacket) [0x00073] in <3ef79ffecdf849bbbd5ae7fcff0db26e>:0 
+Exception thrown while unpacking data from [EndPoint 192.168.1.65:52602 | 52602], disconnecting
+2019/6/11 12:24:06: [EndPoint 192.168.1.65:52602 | 52602] disconnected
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-2] PlayerState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/11 12:24:06: Changing Connect State: Connected => DisconnectPending
+2019/6/11 12:24:06: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

@@ -311,7 +311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2550873222514271298}
-  - component: {fileID: 537718585192576132}
+  - component: {fileID: 3815770175827899592}
   m_Layer: 0
   m_Name: TwoDoorSet
   m_TagString: Untagged
@@ -335,7 +335,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &537718585192576132
+--- !u!114 &3815770175827899592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,7 +344,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6321910712794871520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cf07a65fe534a5d84e3a7a31361d53, type: 3}
+  m_Script: {fileID: 11500000, guid: b59bf43f0801f314da867a0d5a0bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opentime: 1
+  dooropentime: 1
+  doorlocktime: 0
+  doorlock: 0

@@ -1,0 +1,78 @@
+Bolt starting with a simulation rate of 60 steps per second
+2019/6/11 14:50:09: >>>> [PUNCH] >>>> Create Socket
+2019/6/11 14:50:09: >>>> [PUNCH] >>>> Created Socket
+2019/6/11 14:50:09: >>>> Requesting STUN info
+Creating Global Behaviour: 'BoltConsole'
+Creating Global Behaviour: 'BoltPoll'
+Creating Global Behaviour: 'BoltSend'
+Creating Global Behaviour: 'BoltSceneLoader'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior+PhotonBoltBehavior'
+Creating Global Behaviour: 'Bolt.Photon.PhotonCloudGlobalBehavior'
+Creating Global Behaviour: 'NetworkCallbacks'
+Creating Global Behaviour: 'BoltRuntimeConfigs'
+Registered token class Bolt.Tokens.BoltDisconnectToken as id 1
+2019/6/11 14:50:09: Binding physical socket using platform 'PhotonPlatform' with IP [EndPoint 0.0.0.0:0 | 0]
+2019/6/11 14:50:09: Physical socket bound to 0.0.0.0:0
+2019/6/11 14:50:09: LAN endpoint resolved as [EndPoint 192.168.1.65:0 | 0]
+Loading Bolt.SceneLoadState (KLDMS Scene)
+2019/6/11 14:50:09: Connecting to Photon Cloud using AppId: 6943e566-7f43-4f5b-b307-e5e96e83b153
+2019/6/11 14:50:09: Connecting to Region Master us
+2019/6/11 14:50:09: >>>> Received Stun Info: 172.218.172.27:54822
+2019/6/11 14:50:10: Joined to Lobby 
+2019/6/11 14:50:10: Creating new room: dc530178-7ad3-41ff-a050-eeed4825bae5
+Found 0 Scene Objects
+Attached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState] (Token: NULL)
+Attached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState] (Token: NULL)
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, -0.1)]
+Raising [RangeAttackEvent Attackdirection=(0.7, 0.0, -0.4)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.3)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.4)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, -0.4)]
+Raising [RangeAttackEvent Attackdirection=(0.7, 0.0, -0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.4, 0.0, -0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.3, 0.0, -0.5)]
+Detached [Entity [NetworkId 0-0-0-3-0-0-0-1] EnemyState]
+Raising [RangeAttackEvent Attackdirection=(0.3, 0.0, -0.5)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.3)]
+Detached [Entity [NetworkId 0-0-0-6-0-0-0-1] EnemyState]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, 0.5)]
+Raising [RangeAttackEvent Attackdirection=(0.9, 0.0, 0.1)]
+Raising [RangeAttackEvent Attackdirection=(1.0, 0.0, -0.3)]
+Raising [RangeAttackEvent Attackdirection=(0.6, 0.0, -0.7)]
+Raising [RangeAttackEvent Attackdirection=(0.2, 0.0, -0.7)]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.3)]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.1)]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.1)]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, -0.1)]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, 0.0)]
+Detached [Entity [NetworkId 0-0-0-5-0-0-0-1] EnemyState]
+Raising [RangeAttackEvent Attackdirection=(-1.0, 0.0, 0.3)]
+Raising [RangeAttackEvent Attackdirection=(-0.8, 0.0, 0.6)]
+Detached [Entity [NetworkId 0-0-0-4-0-0-0-1] EnemyState]
+Raising [RangeAttackEvent Attackdirection=(-0.3, 0.0, 0.9)]
+Raising [RangeAttackEvent Attackdirection=(-0.2, 0.0, 0.9)]
+Detached [Entity [NetworkId 0-0-0-7-0-0-0-1] EnemyState]
+Raising [RangeAttackEvent Attackdirection=(0.0, 0.0, 1.0)]
+Raising [RangeAttackEvent Attackdirection=(-0.4, 0.0, 0.9)]
+Raising [RangeAttackEvent Attackdirection=(-0.1, 0.0, 0.9)]
+Raising [RangeAttackEvent Attackdirection=(0.1, 0.0, 0.8)]
+Raising [RangeAttackEvent Attackdirection=(0.4, 0.0, 0.7)]
+Detached [Entity [NetworkId 0-0-0-1-0-0-0-1] PlayerState]
+Detached [Entity [NetworkId 0-0-0-2-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-8-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-9-0-0-0-1] EnemyState]
+Detached [Entity [NetworkId 0-0-0-A-0-0-0-1] EnemyState]
+Behaviour not available in this dispatcher, ignoring call to Remove.
+2019/6/11 14:50:33: Changing Connect State: Idle => DisconnectPending
+2019/6/11 14:50:33: Disconnecting...
+Behaviour not available in this dispatcher, ignoring call to Remove.
+Behaviour not available in this dispatcher, ignoring call to Remove.

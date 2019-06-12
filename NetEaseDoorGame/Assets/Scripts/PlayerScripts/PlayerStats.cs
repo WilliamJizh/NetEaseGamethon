@@ -33,6 +33,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     SimpleHealthBar healthBar;
     SimpleHealthBar armourBar;
     SimpleHealthBar staminaBar;
+    MoneyUI moneyui;
 
 
     public float rolllasttime = 1f;
@@ -72,15 +73,18 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
         staminaBar = GameObject.Find("Staminabar Fill 01").GetComponent<SimpleHealthBar>();
         if (staminaBar != null) Debug.Log("staminabar found!");
+
+        moneyui = GameObject.Find("MoneyUI").GetComponent<MoneyUI>();
         //currentArmour = initialArmour;
         /*armourBar = GameObject.Find("Armourbar Fill 01").GetComponent<SimpleArmourBar>();
         if (armourBar != null) Debug.Log("bar found!");*/
 
 
-        
+        moneyui.SetPlayer(this);
 
 
         playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
+        
         playercamera.transform.LookAt(Vector3.zero);
         playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
 
@@ -93,7 +97,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         staminaBar.UpdateBar(currStamina, maxStamina);
         //armourBar.UpdateBar(currentArmour, maxArmour);
 
-        DeathDetection();
+        HealthStatDetection();
     }
 
     //Local Actions here
@@ -113,8 +117,11 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         }
     }
 
-    public void DeathDetection()
+    public void HealthStatDetection()
     {
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
         if (currentHealth <= 0)
         {
             death = true;
@@ -141,6 +148,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         }
     }
 
+    
 }
 
 

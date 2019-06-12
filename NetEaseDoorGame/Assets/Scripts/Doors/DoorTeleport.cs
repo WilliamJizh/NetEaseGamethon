@@ -9,14 +9,17 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
     bool foundPlayer; 
     private  Transform TeleportPosition;
     GameObject playerTrans;
-
+    DoorManager doormanager;
     
-    public  float opentime;
+    public float opentime;
  
-    void Start()
+    void Awake()
     {
+        doormanager = transform.parent.gameObject.GetComponent<DoorManager>();
+        opentime = doormanager.dooropentime;
+
         bool foundPlayer = false;
-        Lock = false;
+        
         //First check if this is door 1 or door 2, then get the corresponding teleport position;
         if (this.gameObject.name == "Door1")
         {
@@ -35,22 +38,25 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
         }
 
     }
+
+
+
+
     // detect wether player has entered the door collider or not
     private void OnTriggerStay(Collider other)
     {
+        
         //check if it's player or not, and is the doo unlocked, and press E to teleport;
-        if(other.gameObject.tag == "Player" && !Lock)
+        if (other.gameObject.tag == "Player")
         {
-            CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
 
-            if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) && !doormanager.doorlock)
             {
-               player.OpenDoor(opentime, TeleportPosition);
-               
-               
-                }
+                CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
+                player.OpenDoor(opentime, TeleportPosition,doormanager);
+            }
         }
     }
 
-    
+
 }

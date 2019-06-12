@@ -6,23 +6,25 @@ public enum AIstate
 {
     Wander,
     Chase,
-    Attack
+    Attack,
+    OnHit,
 
 }
 
-public class AiStates : Bolt.EntityBehaviour<IEnemyState>
+public class AiStates : Bolt.EntityEventListener<IEnemyState>
 {
     
 
     AIstate aistate = AIstate.Wander;
     CharacterController aicontroller;
 
-    [SerializeField]
+   
     GameObject[] players;
     [SerializeField]
     GameObject currtarget;
 
-
+    [SerializeField]
+    int dropamount;
  
     public float threatmodifier = 1;
 
@@ -53,13 +55,19 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     [SerializeField]
     string effect = "None";
 
-
+    [SerializeField]
+    float onhitstun = 0.3f;
 
     
 
     [SerializeField]
     float attackinterval = 3;
     float nextburst = 0;
+
+    [SerializeField]
+    GameObject bloodprefab;
+    [SerializeField]
+    GameObject moneyprefab;
 
     // Start is called before the first frame update
     public override void Attached()
@@ -69,7 +77,7 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         speed *= threatmodifier;
         transform.localScale *= threatmodifier;
         health *= threatmodifier ;
-
+        dropamount = (int)Mathf.Ceil((float)dropamount* threatmodifier) ;
 
         currspeed = speed;
         state.SetTransforms(state.EnemyTransform, transform);
@@ -183,15 +191,24 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
     public void Hitreaction(float dmg, string effect) {
         Debug.Log("Enemy hit " + dmg);
         health -= dmg;
+        aistate = AIstate.OnHit;
+        StartCoroutine(HitRecover());
         if (health <= 0) {
+
+            Drop();
             Debug.Log("Enemy Down");
-            Destroy(this.gameObject);
+            
+            
         }
         
 
 
     }
 
+    IEnumerator HitRecover() {
+        yield return new WaitForSeconds(onhitstun);
+        aistate = AIstate.Attack;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -202,4 +219,35 @@ public class AiStates : Bolt.EntityBehaviour<IEnemyState>
         }
     }
 
+    void Drop() {
+        int Droprandom =  Random.Range(0, 5);
+
+        var drop = EnemyDrop.Create(entity);
+        if (Droprandom == 0)
+        {
+            drop.isBlood = true;
+        }
+        else drop.isBlood = false;
+        drop.Send();
+    }
+
+    public override void OnEvent(EnemyDrop evnt)
+    {
+       
+        if (evnt.isBlood) {
+            DropBlood();
+        }
+        DropMoney();
+
+        BoltNetwork.Destroy(this.gameObject);
+    }
+
+
+    void DropBlood() {
+        Instantiate(bloodprefab, transform.position, Quaternion.identity).GetComponent<BloodFire>().bloodamount = dropamount; 
+    }
+
+    void DropMoney() {
+        Instantiate(moneyprefab, transform.position, Quaternion.identity).GetComponent<SoulFire>().moneyamount = dropamount;
+    }
 }

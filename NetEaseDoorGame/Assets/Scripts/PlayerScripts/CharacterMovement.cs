@@ -8,6 +8,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
 {
     CharacterController charactercontroller;
 
+    [SerializeField]
     Vector3 movedirection;
 
     [SerializeField]
@@ -74,7 +75,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
                 break;
 
             case PlayerState.OpenDoor:
-                
+                RollActivate();
                 Opening();
 
                 break;
@@ -146,10 +147,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
             movedirection *= playerstats.Speed;
             
         }
-        if (playerstats.currState == PlayerState.OpenDoor && movedirection != Vector3.zero)
-        {
-            playerstats.currState = PlayerState.Normal;
-        }
+        
 
         movedirection.y -= gravity * Time.deltaTime;
         charactercontroller.Move(movedirection * Time.deltaTime);
@@ -180,15 +178,18 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         opendoortimer -= Time.deltaTime;
         if (opendoortimer <= 0) {
             teleported = true;
+            currdoor.SetDoorLock();
             playerstats.currState = PlayerState.Normal;
         }
     }
 
-    public void OpenDoor(float opentime, Transform targettransform) {
+    DoorManager currdoor;
+    public void OpenDoor(float opentime, Transform targettransform, DoorManager doormanager) {
         playerstats.currState = PlayerState.OpenDoor;
         opendoortimer = opentime;
         teleportPosition = targettransform;
-        movedirection = Vector3.zero;
+        currdoor = doormanager;
+        
     }
 
 
