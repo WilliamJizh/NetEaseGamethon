@@ -51,7 +51,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public float firearate = 0.4f;
     public float existtime = 0.5f;
 
-    public int money = 0;
+    public float money = 0;
 
     public bool immune = false;
 

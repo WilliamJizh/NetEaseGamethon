@@ -9,13 +9,10 @@ public class DiscountDiamond : ItemClass
     public GameObject player;
     private ItemMananger itemMananger;
     private PlayerStats playerstat;
-    public float DiscountRate;
+    private Shop shop;
 
 
-    void Awake()
-    {
 
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +23,7 @@ public class DiscountDiamond : ItemClass
     }
 
     void ChangeBack(){
-    DiscountRate = 1.0f;
+    shop.DiscountRate = 1.0f;
     }
 
     // Update is called once per frame
@@ -45,12 +42,13 @@ public class DiscountDiamond : ItemClass
     void ChangeRate()
     {
         //30% off for next purchase.
-        DiscountRate = 0.7f;
+        shop.DiscountRate = 0.7f;
     }
         void setPlayer()
     {
         player = getPlayer();
         playerstat = player.GetComponent<PlayerStats>();
         itemMananger = player.GetComponent<ItemMananger>();
+        shop = player.GetComponent<Shop>();
     }
 }
