@@ -22,6 +22,9 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
     GameObject[] players;
     [SerializeField]
     GameObject currtarget;
+    Vector3 currtargetLastPos;
+    //用来记录攻击开始的时候玩家的位置
+    bool flag;
 
     [SerializeField]
     int dropamount;
@@ -171,10 +174,14 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
 
     void Attack() {
         Debug.Log("Burst!");
-
+        if (flag)
+        {
+            currtargetLastPos = currtarget.transform.position;
+            flag = false;
+        }
         // attack action
         currspeed = burstspeed;
-        Movement(currtarget.transform.position);
+        Movement(currtargetLastPos);
         
         StartCoroutine(Attacklast());
     }
@@ -182,6 +189,7 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
     IEnumerator Attacklast()
     {
         yield return new WaitForSeconds(attackactionlast);
+        flag = true;
         currspeed = speed;
         nextburst = Time.time + attackinterval;
         EnemySearch();
@@ -212,7 +220,7 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player"&& aistate== AIstate.Attack)
         {
             collision.gameObject.GetComponent<PlayerStats>().Hitreaction(dmg, effect);
             nextburst = Time.time + attackinterval;

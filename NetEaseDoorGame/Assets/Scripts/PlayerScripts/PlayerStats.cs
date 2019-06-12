@@ -56,6 +56,9 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public bool immune = false;
 
+    public bool successfulhit;
+    public GameObject lasthit;
+
     AudioSource PlayerHit;
 
     public override void Attached()
@@ -88,7 +91,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         moneyui.SetPlayer(this);
 
 
-        playercamera = Instantiate(playercameraprefab, new Vector3(0, 15, 0), Quaternion.identity);
+        playercamera = Instantiate(playercameraprefab, new Vector3(0, 50, 0), Quaternion.identity);
         
         playercamera.transform.LookAt(Vector3.zero);
         playercamera.GetComponent<CameraPosFollow>().GetPlayer(this.gameObject);
@@ -154,8 +157,16 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         currentArmour -= dmg;
         }
     }
+    //检测玩家打到了人或者小怪
+    public void detectHitPlayerEnemy(GameObject hit)
+    {
+       
+        successfulhit = true;
+        lasthit = hit;
 
+    }
     
+
 }
 
 
