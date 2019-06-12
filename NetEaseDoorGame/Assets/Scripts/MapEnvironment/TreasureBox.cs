@@ -30,8 +30,8 @@ public class TreasureBox : MonoBehaviour
 
         //adjust spawn position
         temPos = transform.position;
-        temPos.z -= 2f;
-        temPos.x -= 2f;
+        temPos.z -= 1f;
+
     }
 
     void Update()
