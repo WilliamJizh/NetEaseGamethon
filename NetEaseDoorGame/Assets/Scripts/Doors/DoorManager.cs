@@ -13,10 +13,13 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
 
     public float timer;
 
+    public int todoor;
     
     
     DoorTeleport door1;
     DoorTeleport door2;
+
+    ItemDropManager itemmanager;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,7 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
         door1.opentime = dooropentime;
         door2.opentime = dooropentime;
 
-       
+        itemmanager = GameObject.Find("ItemManager").GetComponent<ItemDropManager>();
     }
 
     // Update is called once per frame
@@ -44,8 +47,16 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
     public void SetDoorLock() {
 
         var doorlockevent = DoorOpen.Create(entity);
-        doorlockevent.ItemSpawn = Vector3.zero;
-        doorlockevent.Itemid = 0;
+        if (todoor == 1) {
+            doorlockevent.ItemSpawn = door2.TeleportPosition.position;
+        }
+        else
+        {
+            doorlockevent.ItemSpawn = door1.TeleportPosition.position;
+        }
+
+
+        doorlockevent.Itemid = itemmanager.RandomDrop();
         doorlockevent.Send();
         
     }
@@ -54,7 +65,10 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
     {
         doorlock = true;
         timer = doorlocktime;
+        itemmanager.ItemSpawn((int)evnt.Itemid,evnt.ItemSpawn);
     }
+
+   
 
    
 

@@ -7,7 +7,7 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
     //Door is locked or not
     bool Lock;
     bool foundPlayer; 
-    private  Transform TeleportPosition;
+    public  Transform TeleportPosition;
     GameObject playerTrans;
     DoorManager doormanager;
     
@@ -15,6 +15,7 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
 
     AudioSource DoorOpenSource;
 
+    int todoornum;
     void Awake()
     {
         GameObject DoorSound = GameObject.Find("DoorOpen");
@@ -29,10 +30,12 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
         //First check if this is door 1 or door 2, then get the corresponding teleport position;
         if (this.gameObject.name == "Door1")
         {
+            todoornum = 2;
             TeleportPosition = this.transform.parent.gameObject.transform.Find("Door2").Find("TeleportPosition");
         }
         if (this.gameObject.name == "Door2")
         {
+            todoornum = 1;
             TeleportPosition = this.transform.parent.gameObject.transform.Find("Door1").Find("TeleportPosition");
         }
     }
@@ -60,7 +63,7 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
             {
                 CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
                 player.OpenDoor(opentime, TeleportPosition,doormanager);
-
+                doormanager.todoor = todoornum;
                 DoorOpenSource.Play();
             }
         }

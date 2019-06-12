@@ -31,13 +31,23 @@ public class ItemDropManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p")) {
-            int i = RandomDrop(itemdroprate);
-            Instantiate(items[i], Vector3.zero, Quaternion.identity);
-        }
+        
     }
 
-    int RandomDrop(float[] droprate) {
+    public int RandomDrop(float[] droprate) {
+
+        // normalize droprate
+        float tdr = 0;
+        foreach (float d in droprate)
+        {
+            tdr += d;
+        }
+        for (int i = 0; i < itemdroprate.Length; i++)
+        {
+
+            droprate[i] = droprate[i] / tdr;
+        }
+
 
         float randomfactor = Random.value;
         int returnvalue = Random.Range(0, items.Length-1);
@@ -56,6 +66,34 @@ public class ItemDropManager : MonoBehaviour
         return returnvalue;
 
     }
+    public int RandomDrop()
+    {
+
+        float randomfactor = Random.value;
+        int returnvalue = Random.Range(0, items.Length - 1);
+
+        Debug.Log("random " + randomfactor);
+
+        float currend = 0;
+        for (int i = 0; i < itemdroprate.Length; i++)
+        {
+            currend += itemdroprate[i];
+            if (currend >= randomfactor)
+            {
+                returnvalue = i;
+                break;
+            }
+        }
+        Debug.Log("return " + returnvalue);
+        return returnvalue;
+
+    }
+
+    public void ItemSpawn(int itemid, Vector3 pos) {
+
+        Instantiate(items[itemid], pos, Quaternion.identity);
+    }
+
 
 
 }
