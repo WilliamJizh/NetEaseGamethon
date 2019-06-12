@@ -138,7 +138,6 @@ MonoBehaviour:
   firearate: 0.4
   nextfire: 0
   turntime: 0.1
-  attackSound: {fileID: -2168616409078439372}
 --- !u!114 &260048849028624720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +210,8 @@ MonoBehaviour:
   existtime: 0.5
   money: 0
   immune: 0
+  successfulhit: 0
+  lasthit: {fileID: 0}
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0
