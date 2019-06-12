@@ -6,19 +6,36 @@ using UnityEngine;
 public class NetworkCallbacks : Bolt.GlobalEventListener
 {
     Vector3 spawnPosition;
-
+    Vector3[] spawnpos;
+    int playernum = 0;
+    GameObject[] playerlist;
 
     public override void SceneLoadLocalDone(string map)
     {
-        spawnPosition  = new Vector3(Random.Range(-1, 1), 20, Random.Range(-1, 1));
+       
+        spawnpos = new Vector3[20];
+
+        GameObject[] playerspawns = GameObject.FindGameObjectsWithTag("PlayerSpawn");
+        for (int i = 0; i < playerspawns.Length; i++)
+        {
+            Debug.Log("Spawnpos added");
+            spawnpos[i] = playerspawns[i].transform.position;
+        }
+        UpdatePlayerNum();
         PlayerSpawn();
         EnemySpawn();
         
     }
 
+    void UpdatePlayerNum() {
+        playerlist =  GameObject.FindGameObjectsWithTag("Player");
+        playernum = playerlist.Length;
+        Debug.Log(playernum);
+    }
+
     void PlayerSpawn() {
         Debug.Log("instantiate player");
-        BoltNetwork.Instantiate(BoltPrefabs.Player, spawnPosition, Quaternion.identity);
+        BoltNetwork.Instantiate(BoltPrefabs.Player, spawnpos[playernum], Quaternion.identity);
         GameObject.Find("Network").SetActive(false);
     }
 
