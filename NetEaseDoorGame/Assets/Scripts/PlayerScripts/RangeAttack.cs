@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
 {
@@ -33,6 +34,8 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     string rightjoystickx = "Mouse X";
     string rightjoysticky = "Mouse Y";
+
+    public AudioSource attackSound;
 
     public override void Attached()
     {
@@ -79,6 +82,8 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
                 shoot.Attackdirection = lookdir;
                 shoot.Send();
 
+
+
                 
 
                 nextfire = Time.time + playerstat.firearate;
@@ -98,7 +103,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     void FireAction()
     {
         playerstat.currStamina -= playerstat.attackcost;
-
+        attackSound.Play();
 
         Instantiate(Projectileprefeb, transform.position + transform.forward * offset, transform.rotation)
             .GetComponent<Projectile>().SetShooter(this.gameObject);
