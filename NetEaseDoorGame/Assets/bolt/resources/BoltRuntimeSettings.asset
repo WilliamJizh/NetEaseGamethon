@@ -44,11 +44,11 @@ MonoBehaviour:
     connectionRequestAttempts: 20
     disableAutoSceneLoading: 0
     EnableIPv6: 0
-  debugClientCount: 10
+  debugClientCount: 2
   debugStartPort: 50538
-  debugStartMapName: KLDMS Scene
+  debugStartMapName: PhotonGame
   debugPlayAsServer: 0
-  showDebugInfo: 0
+  showDebugInfo: 1
   overrideTimeScale: 1
   logUncaughtExceptions: 0
   debugEditorMode: 1

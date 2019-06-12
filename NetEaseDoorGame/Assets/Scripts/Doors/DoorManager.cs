@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class DoorManager : MonoBehaviour
+public class DoorManager : Bolt.EntityEventListener<IDoorState>
 {
 
 
@@ -13,7 +13,8 @@ public class DoorManager : MonoBehaviour
 
     public float timer;
 
-
+    
+    
     DoorTeleport door1;
     DoorTeleport door2;
     // Start is called before the first frame update
@@ -41,6 +42,16 @@ public class DoorManager : MonoBehaviour
     }
 
     public void SetDoorLock() {
+
+        var doorlockevent = DoorOpen.Create(entity);
+        doorlockevent.ItemSpawn = Vector3.zero;
+        doorlockevent.Itemid = 0;
+        doorlockevent.Send();
+        
+    }
+
+    public override void OnEvent(DoorOpen evnt)
+    {
         doorlock = true;
         timer = doorlocktime;
     }
