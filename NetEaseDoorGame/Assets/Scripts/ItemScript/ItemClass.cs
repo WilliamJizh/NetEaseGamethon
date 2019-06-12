@@ -34,7 +34,7 @@ public abstract class ItemClass : MonoBehaviour
 
         setHeight = GetComponent<Transform>().position;
 
-        setHeight.y = 1;
+       // setHeight.y = 1;
     
         GetComponent<Transform>().position = setHeight;
     }

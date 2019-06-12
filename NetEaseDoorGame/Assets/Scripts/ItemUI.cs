@@ -19,12 +19,7 @@ public class ItemUI : Bolt.EntityBehaviour
         itemMan = GetComponent<ItemMananger>();
         cv = GameObject.Find("Canvas");
         itemIconUIholder = GameObject.Find("ItemIcons");
-        // width = cv.GetComponent<RectTransform>().rect.width;
-        // height = cv.GetComponent<RectTransform>().rect.height;
-        //   print(width/2);
-        //  print(height/5);
-
-        // cv= SceneManager.GetActiveScene().
+ 
         imagePos = new Vector3(-620,400,0);
     }
 
@@ -46,8 +41,7 @@ public class ItemUI : Bolt.EntityBehaviour
         for (int i = 0; i < items.Count; i++)
             {
          
-
-            GameObject img = new GameObject();
+                GameObject img = new GameObject();
                 var icon = img.AddComponent(typeof(Image));
                 img.GetComponent<Image>().sprite = items[i].icon;
                 //让图标的位置并排列开

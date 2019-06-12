@@ -22,13 +22,14 @@ public class ItemMananger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (items.Capacity > 0)
+        if (items.Count >= 0)
         {
             if (refresh)
             {
 
-                itemUI.displayUI(items);
 
+                itemUI.displayUI(items);
+               
 
             }
         }
@@ -37,8 +38,24 @@ public class ItemMananger : MonoBehaviour
     public void ReceiveItem(ItemClass item) 
     {
 
-        refresh=true;
         items.Add(item);
-       
+
+        refresh = true;
+
+    }
+    public void RemoveItem(string name )
+    {
+
+        for(int i = 0; i < items.Count; i++)
+        {
+            print(i);
+            print(items[i].names);
+
+            if (items[i].names.Equals(name))
+            {
+                items.RemoveAt(i);
+            }
+        }
+        refresh = true;
     }
 }
