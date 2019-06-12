@@ -29,7 +29,7 @@ public class DoorManager : Bolt.EntityEventListener<IDoorState>
         door1.opentime = dooropentime;
         door2.opentime = dooropentime;
 
-        itemmanager = GameObject.Find("ItemManager").GetComponent<ItemDropManager>();
+        itemmanager = GameObject.Find("DropManager").GetComponent<ItemDropManager>();
     }
 
     // Update is called once per frame
