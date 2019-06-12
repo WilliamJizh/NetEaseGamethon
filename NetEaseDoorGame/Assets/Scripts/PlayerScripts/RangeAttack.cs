@@ -34,10 +34,13 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     string rightjoystickx = "Mouse X";
     string rightjoysticky = "Mouse Y";
 
-    public AudioSource attackSound;
+    AudioSource attackSound;
 
     public override void Attached()
     {
+        GameObject Att = GameObject.Find("AttackSound");
+        attackSound = Att.GetComponent<AudioSource>();
+
         offset = 2f;
 
         playerstat = GetComponent<PlayerStats>();
