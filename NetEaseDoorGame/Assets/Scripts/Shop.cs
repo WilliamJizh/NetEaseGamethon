@@ -29,25 +29,26 @@ public class Shop : MonoBehaviour
     bool wantbuy = false;
     void Start()
     {
-
-      
+        SetCollider();
         //adjust spawn position
         temPos = transform.position;
         temPos.z -= 3.5f;
-        temPos.y -= 3f;
+        temPos.y -= 6f;
     }
     
     // Update is called once per frame
     void Update()
     {
 
+       
         if (arrived)
         {
            
             whatToSpawn = Random.Range(1, 8);
 
 
-            SetCollider();
+            
+            
             arrived = false;
 
             //NEED TO REVISE PRICE FOR EACH ITEM 
@@ -105,9 +106,9 @@ public class Shop : MonoBehaviour
     
     void SetCollider()
     {
-        
+
         this.gameObject.AddComponent<BoxCollider>();
-        this.gameObject.GetComponent<BoxCollider>().size = new Vector3(1, 1, 1);
+        this.gameObject.GetComponent<BoxCollider>().size = new Vector3(1f, 1f, 1f);
         this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
 
     }
