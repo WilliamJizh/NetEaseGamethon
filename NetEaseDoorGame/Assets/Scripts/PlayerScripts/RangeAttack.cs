@@ -12,8 +12,7 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
     public Joystick joystick;
     // Temp instantiate position modifier 
     [SerializeField]
-    float offset = 1;
-
+    float offset;
     // Fire rate package
     [SerializeField]
     public float firearate = 0.4f;
@@ -36,7 +35,8 @@ public class RangeAttack : Bolt.EntityEventListener<IPlayerState>
 
     public override void Attached()
     {
- 
+        offset = 2f;
+
         playerstat = GetComponent<PlayerStats>();
         
         joystick = GameObject.Find("Dynamic Joystick R").GetComponent<Joystick>();

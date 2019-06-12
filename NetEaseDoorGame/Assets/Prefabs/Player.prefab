@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 260048849028624721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9376862, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5776, y: 1.5776, z: 1.5776}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -200,8 +200,8 @@ MonoBehaviour:
   rollcost: 30
   playercameraprefab: {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}
-  projectileSpeed: 15
-  projectileSize: 0.5
+  projectileSpeed: 30
+  projectileSize: 1
   dmg: 5
   attackeffect: none
   attackcost: 10

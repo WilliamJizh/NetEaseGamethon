@@ -10,7 +10,7 @@ public class NetworkCallbacks : Bolt.GlobalEventListener
 
     public override void SceneLoadLocalDone(string map)
     {
-        spawnPosition  = new Vector3(Random.Range(-1, 1), 10, Random.Range(-1, 1));
+        spawnPosition  = new Vector3(Random.Range(-1, 1), 20, Random.Range(-1, 1));
         PlayerSpawn();
         EnemySpawn();
         

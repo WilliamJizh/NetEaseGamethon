@@ -62,8 +62,10 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<AiStates>().Hitreaction(dmg, effect);
         }
 
-
-        Destroy(this.gameObject);
+        if (collision.gameObject != playerstat.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
