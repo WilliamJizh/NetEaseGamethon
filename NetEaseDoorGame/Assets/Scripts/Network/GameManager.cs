@@ -153,12 +153,10 @@ public class GameManager : Bolt.GlobalEventListener
     IEnumerator FinalDoorTimer() {
         yield return new WaitForSeconds(finaldoortimer);
         finaldoorlock = false;
-        
-        foreach (GameObject fd in finaldoors) {
-            
-            foreach (GameObject finaldoor in finaldoors) {
-                finaldoor.GetComponent<NextScene>().SetDoorUnlock();
-            }
+                  
+       foreach (GameObject finaldoor in finaldoors) {
+        finaldoor.GetComponent<NextScene>().SetDoorUnlock();
         }
+       
     }
 }

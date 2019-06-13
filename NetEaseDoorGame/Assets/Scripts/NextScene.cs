@@ -32,12 +32,7 @@ public class NextScene : Bolt.EntityEventListener
             portalon.SetActive(true);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!doorlock) BRM.enterBuffer(other.gameObject);
-        var finaldoor = FinalDoorPassed.Create(entity);
-        finaldoor.Send();
-    }
+    
 
     public void SetDoorUnlock() {
         var dooropen = DoorOpen.Create(entity);
@@ -49,9 +44,5 @@ public class NextScene : Bolt.EntityEventListener
         Debug.Log("unlock");
         doorlock = false;
     }
-    public override void OnEvent(FinalDoorPassed evnt)
-    {
-        maxplayernum--;
-        if (maxplayernum <= 0) doorlock = true;
-    }
+  
 }
