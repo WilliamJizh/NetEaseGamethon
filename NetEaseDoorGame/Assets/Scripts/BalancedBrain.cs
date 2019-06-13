@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class BalancedBrain : ItemClass
 {
-    [SerializeField]
-    float setSize = 1f;
-    [SerializeField]
-    float setSpeed = 15f;
+
 
     public GameObject Player;
     private PlayerStats playerstat;
@@ -29,10 +26,10 @@ public class BalancedBrain : ItemClass
         {
            
             setPlayer();
-            playerstat.projectileSize = setSize;
-            playerstat.projectileSpeed = setSpeed;
+            playerstat.projectileSize *= 1.25f;
+            playerstat.firearate *= 1.15f;
             
-             
+             collected =false;
         }
     }
 

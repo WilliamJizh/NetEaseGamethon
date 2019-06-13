@@ -10,7 +10,7 @@ public class mushroomHealth : ItemClass
     private PlayerStats playerstat;
     private ItemMananger itemManager;
 
-    public float mushroomHealthGen = 1f;
+    public float mushroomHealthGen = 0.8f;
 
     public Vector3 playerPos;
     public Vector3 playerCurrentPos;

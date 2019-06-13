@@ -5434,7 +5434,7 @@ GameObject:
   - component: {fileID: 7548240713508538249}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5775,7 +5775,7 @@ GameObject:
   - component: {fileID: 370652972105389553}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6613,7 +6613,7 @@ Transform:
   m_Children:
   - {fileID: 4536015084487260442}
   - {fileID: 5382470437355895660}
-  - {fileID: 694655498}
+  - {fileID: 1974350336560659784}
   - {fileID: 1865683740132110165}
   - {fileID: 7358041638737812758}
   - {fileID: 130683369412808707}
@@ -7724,6 +7724,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1206769327958770677}
     m_Modifications:
+    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
+        type: 3}
+      propertyPath: m_Name
+      value: MainCameraPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1974350335903885255, guid: c1a447a55e92e384095885a13b5a8470,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7794,22 +7804,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1111112
       objectReference: {fileID: 0}
-    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
-        type: 3}
-      propertyPath: m_Name
-      value: MainCameraPos
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470, type: 3}
     - {fileID: 1109402600, guid: c1a447a55e92e384095885a13b5a8470, type: 3}
     - {fileID: 1109402599, guid: c1a447a55e92e384095885a13b5a8470, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c1a447a55e92e384095885a13b5a8470, type: 3}
---- !u!4 &694655498 stripped
+--- !u!4 &1974350336560659784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1974350335903885255, guid: c1a447a55e92e384095885a13b5a8470,
     type: 3}

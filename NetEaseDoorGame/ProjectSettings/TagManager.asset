@@ -18,6 +18,7 @@ TagManager:
   - BufferSpawn
   - NormDoor
   - FinalDoor
+  - Floor
   layers:
   - Default
   - TransparentFX

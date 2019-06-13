@@ -36,7 +36,7 @@ public class Eye : ItemClass
     //increase player's attack range after collecting eye item
     void IncreaseAttackRange()
     {
-        playerStats.existtime += 0.3f;
+        playerStats.existtime *= 1.5f;
     }
 
     //设置具体是哪个player拿到了，并且access那个player的stats

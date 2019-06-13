@@ -8,13 +8,14 @@ public class healthPlus : ItemClass
     public GameObject Player;
     private PlayerStats playerstat;
     private ItemMananger itemManager;
+    public float meatHealthGen = 0.6f;
 
     // Start is called before the first frame update
     void Start()
     {
         playerstat = GetComponent<PlayerStats>();
         collected = false;
-
+		 name="鸡腿";
         SetIcon();
         Collect();
     }
@@ -25,13 +26,10 @@ public class healthPlus : ItemClass
         if(collected == true)
         {
             setPlayer();
-            playerstat.currentHealth += 20;
-            if (playerstat.currentHealth >= playerstat.maxHealth)
-            {
-                playerstat.currentHealth = playerstat.maxHealth;
-            }
+            playerstat.currentHealth += meatHealthGen * Time.deltaTime;
 
-            collected = false;
+
+       
         }
     }
    
