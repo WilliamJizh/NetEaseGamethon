@@ -141,10 +141,11 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
             if (life <= 0)
             {
                 death = true;
+               BoltNetwork.Destroy(gameObject);
             }
             else
             {
-                itemMan.RemoveItem("复活鸡蛋");
+                itemMan.RemoveItem("Easter Egg");
                 currentHealth = maxHealth;
             }
         }
