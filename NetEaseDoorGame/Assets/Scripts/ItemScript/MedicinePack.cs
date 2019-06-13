@@ -13,7 +13,7 @@ public class MedicinePack : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "抚灵丹";
+        names = "MedicinePack";
         SetIcon();
         Collect();
 
@@ -32,13 +32,15 @@ public class MedicinePack : ItemClass
 
             IncreaseHealth();
 
+			   itemMananger.RemoveItem("MedicinePack");
             collected = false;
+            
         }
     }
     void IncreaseHealth()
     {
-        //increase player's health by 20
-			pstats.currentHealth += 20f;
+        //increase player's health by 15
+			pstats.currentHealth += 15f;
     }
 
     void setPlayer()

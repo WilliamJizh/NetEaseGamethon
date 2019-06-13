@@ -25,11 +25,8 @@ public class healthPlus : ItemClass
         if(collected == true)
         {
             setPlayer();
-            playerstat.currentHealth += 20;
-            if (playerstat.currentHealth >= playerstat.maxHealth)
-            {
-                playerstat.currentHealth = playerstat.maxHealth;
-            }
+            playerstat.maxHealth += 20f;
+
 
             collected = false;
         }
