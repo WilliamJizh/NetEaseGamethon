@@ -213,6 +213,7 @@ MonoBehaviour:
   immune: 0
   successfulhit: 0
   lasthit: {fileID: 0}
+  hitstun: 0.1
 --- !u!114 &-8190708396857538472
 MonoBehaviour:
   m_ObjectHideFlags: 0

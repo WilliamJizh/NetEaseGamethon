@@ -35,6 +35,7 @@ public abstract class ItemClass : MonoBehaviour
         setHeight = GetComponent<Transform>().position;
 
        // setHeight.y = 1;
+
     
         GetComponent<Transform>().position = setHeight;
     }
@@ -48,6 +49,12 @@ public abstract class ItemClass : MonoBehaviour
     //give the item a box collider 
     public void Collect()
     {
+        this.gameObject.AddComponent<Rigidbody>();
+        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+        this.gameObject.AddComponent<CapsuleCollider>();
+        this.gameObject.GetComponent<CapsuleCollider>().radius=0.3f;
+        this.gameObject.GetComponent<CapsuleCollider>().height = 0.3f;
         this.gameObject.AddComponent<BoxCollider>();
         this.gameObject.GetComponent<BoxCollider>().size= new Vector3(1, 1, 1);
         this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
