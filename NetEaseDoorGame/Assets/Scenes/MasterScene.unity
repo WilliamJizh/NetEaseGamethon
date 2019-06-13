@@ -5178,11 +5178,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: 0
-  maxplayer: 1
+  maxplayer: 2
   dooropentimer: 5
-  zoningtimer: 10
+  zoningtimer: 100
   finaldoortimer: 200
-  enemyspawninterval: 30
+  enemyspawninterval: 60
   countdowntimer: 0
   playernum: 0
   finaldoorlock: 1
