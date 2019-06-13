@@ -32,10 +32,13 @@ public class ItemUI : Bolt.EntityBehaviour
 
     public void displayUI(List<ItemClass> items)
     {
-       /*foreach (RectTransform child in itemIconUIholder.GetComponent<RectTransform>())
-        {
-            Destroy(child.gameObject);
+        if (itemIconUIholder.GetComponent<RectTransform>() != null) {
+            foreach (RectTransform child in itemIconUIholder.GetComponent<RectTransform>())
+            {
+                Destroy(child.gameObject);
+            }
         }
+
 
         //itemUI.displayUI();
         for (int i = 0; i < items.Count; i++)
@@ -56,7 +59,7 @@ public class ItemUI : Bolt.EntityBehaviour
                    itemMan.refresh = false;
                 }
 
-            }*/
+            }
         }
 
 }
