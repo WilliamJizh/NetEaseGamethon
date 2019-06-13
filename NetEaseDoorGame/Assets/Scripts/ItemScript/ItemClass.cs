@@ -78,6 +78,7 @@ public abstract class ItemClass : MonoBehaviour
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
 
             PickUpSource.Play();
         }
