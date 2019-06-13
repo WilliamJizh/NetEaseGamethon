@@ -10,6 +10,7 @@ public class ItemUI : Bolt.EntityBehaviour
     public GameObject cv;
     public GameObject itemIconUIholder;
     public Object textPrefab;
+    public Object button;
     Vector3 imagePos;
     float width;
     float height;
@@ -54,9 +55,10 @@ public class ItemUI : Bolt.EntityBehaviour
                 imagePos = new Vector3(-620+ i * 100, 400, 0);
                 iconUI.GetComponent<RectTransform>().localPosition = imagePos;
                 Destroy(img);
-    
+                GameObject buttons= (GameObject)Instantiate(button, imagePos, Quaternion.identity, iconUI.GetComponent<RectTransform>());
+                buttons.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
                 GameObject discription =(GameObject) Instantiate(textPrefab, imagePos, Quaternion.identity, iconUI.GetComponent<RectTransform>());
-                //discription.GetComponent<RectTransform>().localPosition = imagePos;
+                discription.GetComponent<RectTransform>().localPosition = new Vector3(200,-200,0);
                 discription.GetComponent<Text>().text = items[i].discription;
 
             if (i == items.Count - 1)
