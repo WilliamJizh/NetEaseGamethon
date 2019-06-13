@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Network/Menu.unity
     guid: b81d246e174c6844ba27fa483773c22a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KLDMS Scene.unity
     guid: 480bde81cae3fa243a841dd61669b786
   - enabled: 1
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MagicScene.unity
     guid: 47813b13ce49eb6478ab1522067f767c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MasterLevel2.unity
     guid: fba7ea5de18594a7dbe0fa33a5eb95de
   m_configObjects: {}

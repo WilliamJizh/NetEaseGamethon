@@ -5349,7 +5349,7 @@ PrefabInstance:
     - target: {fileID: 2550873222514271298, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 111.65984
+      value: 62.6
       objectReference: {fileID: 0}
     - target: {fileID: 2550873222514271298, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
@@ -5359,7 +5359,7 @@ PrefabInstance:
     - target: {fileID: 2550873222514271298, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 257.36
+      value: -51.74
       objectReference: {fileID: 0}
     - target: {fileID: 2550873222514271298, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
@@ -8533,10 +8533,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: 0
-  maxplayer: 1
+  maxplayer: 3
   dooropentimer: 5
   zoningtimer: 100
-  finaldoortimer: 5
+  finaldoortimer: 200
   enemyspawninterval: 60
   countdowntimer: 0
   playernum: 0
