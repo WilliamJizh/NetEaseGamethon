@@ -17,7 +17,7 @@ public class BufferRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxPlayerNum = 3;
+        maxPlayerNum = 2;
 
 
         bufferSpawn = GameObject.FindGameObjectsWithTag("BufferSpawn");
