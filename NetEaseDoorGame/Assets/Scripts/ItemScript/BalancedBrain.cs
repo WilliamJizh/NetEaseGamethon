@@ -15,6 +15,8 @@ public class BalancedBrain : ItemClass
     // Start is called before the first frame update
     void Start()
     {
+        names = "Magic Fish";
+        discription = "Increased size of attack, slowed attack speed";
         SetIcon();
         Collect();
     }

@@ -9,6 +9,7 @@ public class ItemUI : Bolt.EntityBehaviour
     public ItemMananger itemMan;
     public GameObject cv;
     public GameObject itemIconUIholder;
+    public Object textPrefab;
     Vector3 imagePos;
     float width;
     float height;
@@ -19,8 +20,8 @@ public class ItemUI : Bolt.EntityBehaviour
         itemMan = GetComponent<ItemMananger>();
         cv = GameObject.Find("Canvas");
         itemIconUIholder = GameObject.Find("ItemIcons");
- 
-        imagePos = new Vector3(-620,300,0);
+       
+        imagePos = new Vector3(-620,400,0);
     }
 
     // Update is called once per frame
@@ -50,20 +51,22 @@ public class ItemUI : Bolt.EntityBehaviour
                 img.GetComponent<Image>().sprite = items[i].icon;
                 //让图标的位置并排列开
                 GameObject iconUI = Instantiate(img, imagePos, Quaternion.identity, itemIconUIholder.GetComponent<RectTransform>());
-                imagePos = new Vector3(-700+ i * 100, 320, 0);
+                imagePos = new Vector3(-620+ i * 100, 400, 0);
                 iconUI.GetComponent<RectTransform>().localPosition = imagePos;
                 Destroy(img);
-                GameObject discriptionText = new GameObject();
-           // discriptionText
-              //  GameObject text = Instantiate(discriptionText)
+    
+                GameObject discription =(GameObject) Instantiate(textPrefab, imagePos, Quaternion.identity, iconUI.GetComponent<RectTransform>());
+                //discription.GetComponent<RectTransform>().localPosition = imagePos;
+                discription.GetComponent<Text>().text = items[i].discription;
 
-
-                if (i == items.Count - 1)
+            if (i == items.Count - 1)
                 {
                    itemMan.refresh = false;
                 }
 
             }
         }
+
+    
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class ItemClass : MonoBehaviour
 {
+
     [SerializeField]
     public string names;
     [SerializeField]
