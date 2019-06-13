@@ -16,7 +16,7 @@ public class NextScene : Bolt.EntityEventListener
     {
         BRM = GameObject.Find("BufferRoomManager").GetComponent<BufferRoomManager>();
         portaloff = transform.GetChild(1).GetChild(1).gameObject;
-        portaloff = transform.GetChild(1).GetChild(0).gameObject;
+        portalon = transform.GetChild(1).GetChild(0).gameObject;
     }
 
     // Update is called once per frame

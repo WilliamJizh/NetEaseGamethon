@@ -12,8 +12,8 @@ public class PortalControl : MonoBehaviour
     {
         
         dm = transform.parent.gameObject.transform.parent.gameObject.GetComponent<DoorManager>();
-        closed = transform.GetChild(0).gameObject;
-        on = transform.GetChild(1).gameObject;
+        closed = transform.GetChild(1).gameObject;
+        on = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame

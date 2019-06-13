@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 178014702397339750}
   - component: {fileID: 178014702397339801}
   - component: {fileID: 178014702397339746}
+  - component: {fileID: 6338650978959474686}
   m_Layer: 0
   m_Name: NextLevelDoor
   m_TagString: Untagged
@@ -121,7 +122,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798861a644c3a4c39a6f4be6cdc252be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorlock: 1
   BRM: {fileID: 0}
+  maxplayernum: 2
+--- !u!114 &6338650978959474686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178014702397339800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -36112512, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneGuid: 
+  _serializerGuid: 16cec207-4e76-4f94-a2a1-4ed82bf26b16
+  _prefabId: 5
+  _updateRate: 1
+  _autoFreezeProxyFrames: 0
+  _clientPredicted: 1
+  _allowInstantiateOnClient: 1
+  _persistThroughSceneLoads: 0
+  _sceneObjectDestroyOnDetach: 1
+  _sceneObjectAutoAttach: 1
+  _alwaysProxy: 0
+  _detachOnDisable: 1
+  _allowFirstReplicationWhenFrozen: 0
+  _autoRemoveChildEntities: 0
+  _entityBehaviourQueryOption: 0
+  _entityPriorityCalculatorQueryOption: 0
+  _entityReplicationFilterQueryOption: 0
 --- !u!1001 &178014701506832350
 PrefabInstance:
   m_ObjectHideFlags: 0

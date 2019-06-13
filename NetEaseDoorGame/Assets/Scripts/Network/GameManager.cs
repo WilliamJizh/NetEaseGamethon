@@ -156,7 +156,9 @@ public class GameManager : Bolt.GlobalEventListener
         
         foreach (GameObject fd in finaldoors) {
             if (!BoltNetwork.IsServer) break;
-            //unlock final door
+            foreach (GameObject finaldoor in finaldoors) {
+                finaldoor.GetComponent<NextScene>().SetDoorUnlock();
+            }
         }
     }
 }
