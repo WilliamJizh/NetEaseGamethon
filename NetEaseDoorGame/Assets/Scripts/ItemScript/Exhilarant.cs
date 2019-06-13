@@ -20,7 +20,8 @@ public class Exhilarant : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-    	names = "兴奋剂";
+    	names = "Stimulant";
+        discription = "Increase attack speed";
         SetIcon();
         Collect();
     }

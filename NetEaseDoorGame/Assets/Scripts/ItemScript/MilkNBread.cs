@@ -17,7 +17,8 @@ public class MilkNBread : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "牛奶面包";
+        names = "Milk bread";
+        discription = "Increase maximum health";
         SetIcon();
         Collect();
 

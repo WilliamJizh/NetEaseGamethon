@@ -13,7 +13,8 @@ public class Weapon : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "青龙偃月刀";
+        names = "Green Dragon Crescent Blade";
+        discription = "Increase attack power";
         SetIcon();
         Collect();
 

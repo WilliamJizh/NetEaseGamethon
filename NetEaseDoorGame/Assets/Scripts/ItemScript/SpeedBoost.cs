@@ -13,7 +13,8 @@ public class SpeedBoost : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "加速鞋";
+        names = "Boost Shoe";
+        discription = "Increase movement speed";
         SetIcon();
         Collect();
 
