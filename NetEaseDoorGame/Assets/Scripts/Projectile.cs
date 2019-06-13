@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<AiStates>().Hitreaction(dmg, effect);
         }
 
-        if (collision.gameObject != playerstat.gameObject)
+        if (collision.gameObject != playerstat.gameObject && collision.gameObject.tag != "Floor" )
         {
             Destroy(this.gameObject);
         }
