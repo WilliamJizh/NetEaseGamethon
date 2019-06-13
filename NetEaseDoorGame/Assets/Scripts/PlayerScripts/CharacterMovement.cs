@@ -178,7 +178,7 @@ public class CharacterMovement : Bolt.EntityBehaviour<IPlayerState>
         opendoortimer -= Time.deltaTime;
         if (opendoortimer <= 0) {
             teleported = true;
-            currdoor.SetDoorLock();
+            currdoor.SetDoorLock(this.gameObject);
             playerstats.currState = PlayerState.Normal;
         }
     }

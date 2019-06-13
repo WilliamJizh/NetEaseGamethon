@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemUI : Bolt.EntityBehaviour
 {
-   public ItemMananger itemMan;
+    public ItemMananger itemMan;
     public GameObject cv;
     public GameObject itemIconUIholder;
     Vector3 imagePos;
@@ -32,7 +32,7 @@ public class ItemUI : Bolt.EntityBehaviour
 
     public void displayUI(List<ItemClass> items)
     {
-        foreach (RectTransform child in itemIconUIholder.GetComponent<RectTransform>())
+       /*foreach (RectTransform child in itemIconUIholder.GetComponent<RectTransform>())
         {
             Destroy(child.gameObject);
         }
@@ -56,7 +56,7 @@ public class ItemUI : Bolt.EntityBehaviour
                    itemMan.refresh = false;
                 }
 
-            }
+            }*/
         }
 
 }
