@@ -32,6 +32,7 @@ public class ItemUI : Bolt.EntityBehaviour
 
     public void displayUI(List<ItemClass> items)
     {
+        if (!entity.IsOwner) return;
         if (itemIconUIholder.GetComponent<RectTransform>() != null) {
             foreach (RectTransform child in itemIconUIholder.GetComponent<RectTransform>())
             {
