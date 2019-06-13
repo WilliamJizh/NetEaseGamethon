@@ -18,6 +18,7 @@ public class ShopManager : MonoBehaviour
     GameObject plane;
     // Start is called before the first frame update
 
+    string interactionbutton = "Fire3";
     void Start()
     {
         displayicon = item.GetComponent<SpriteRenderer>().sprite;        
@@ -37,7 +38,7 @@ private void OnTriggerStay(Collider other)
         if (other.gameObject.tag == "Player")
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown(interactionbutton))
             {
                 Debug.Log("Buy");
                 

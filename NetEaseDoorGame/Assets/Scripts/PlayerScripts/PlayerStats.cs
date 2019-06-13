@@ -158,6 +158,17 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         else if(currentArmour >= dmg){
         currentArmour -= dmg;
         }
+        currState = PlayerState.Onhit;
+        StartCoroutine(HitRecover());
+    }
+
+    [SerializeField]
+    float hitstun = 0.1f;
+    IEnumerator HitRecover()
+    {
+        yield return new WaitForSeconds(hitstun);
+        currState = PlayerState.Normal;
+
     }
     //检测玩家打到了人或者小怪
     public void detectHitPlayerEnemy(GameObject hit)
