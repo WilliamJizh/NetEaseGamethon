@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemUI : Bolt.EntityBehaviour
 {
-   public ItemMananger itemMan;
+    public ItemMananger itemMan;
     public GameObject cv;
     public GameObject itemIconUIholder;
     Vector3 imagePos;
