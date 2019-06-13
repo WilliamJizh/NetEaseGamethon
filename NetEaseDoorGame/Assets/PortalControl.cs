@@ -10,6 +10,7 @@ public class PortalControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         dm = transform.parent.gameObject.transform.parent.gameObject.GetComponent<DoorManager>();
         closed = transform.GetChild(0).gameObject;
         on = transform.GetChild(1).gameObject;
