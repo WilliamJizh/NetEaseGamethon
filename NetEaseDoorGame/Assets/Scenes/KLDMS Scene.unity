@@ -345,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 8792231783442459174, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: _sceneGuid
-      value: 2ac3b301-4735-4655-9dba-2f1709e25f14
+      value: 92a9e43e-976a-4315-8b71-13339b318c0b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be4ad65d9cff445c98eb94f6ea18967, type: 3}
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 8792231783442459174, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: _sceneGuid
-      value: 686aaaba-458e-4cff-a5d6-91450f965b28
+      value: d97fceac-92f6-4c0c-a4f5-4a6f4847ea77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be4ad65d9cff445c98eb94f6ea18967, type: 3}
@@ -493,7 +493,7 @@ PrefabInstance:
     - target: {fileID: 8792231783442459174, guid: 4be4ad65d9cff445c98eb94f6ea18967,
         type: 3}
       propertyPath: _sceneGuid
-      value: a96d9687-9045-466d-a7fa-3c387427385f
+      value: 11041e5e-1d7b-41ce-afd9-58d974b141bc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be4ad65d9cff445c98eb94f6ea18967, type: 3}
@@ -1048,6 +1048,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8511592185855306165, guid: 29c0b4d12122a24479d9cde7602a7660,
+        type: 3}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8511592185855306165, guid: 29c0b4d12122a24479d9cde7602a7660,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: afea65bb-211c-41a4-b469-e790562a4d4b
+      objectReference: {fileID: 0}
     - target: {fileID: 8361039437560365945, guid: 29c0b4d12122a24479d9cde7602a7660,
         type: 3}
       propertyPath: m_Name
@@ -1306,6 +1316,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8511592185855306165, guid: 29c0b4d12122a24479d9cde7602a7660,
+        type: 3}
+      propertyPath: _serializerGuid
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -8511592185855306165, guid: 29c0b4d12122a24479d9cde7602a7660,
+        type: 3}
+      propertyPath: _sceneGuid
+      value: c879f3df-5d73-482d-abf6-e9e5a83ba174
+      objectReference: {fileID: 0}
     - target: {fileID: 8361039437560365945, guid: 29c0b4d12122a24479d9cde7602a7660,
         type: 3}
       propertyPath: m_Name

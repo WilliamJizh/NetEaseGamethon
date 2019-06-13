@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopManager : MonoBehaviour
+public class ShopManager : Bolt.EntityEventListener
 {
 
     public float price;
@@ -15,23 +15,27 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     Sprite displayicon;
 
-    GameObject plane;
+    
+    SpriteRenderer planetexture;
     // Start is called before the first frame update
 
     string interactionbutton = "Fire3";
     void Start()
     {
-        displayicon = item.GetComponent<SpriteRenderer>().sprite;        
-        
+        displayicon = item.GetComponent<SpriteRenderer>().sprite;
+        planetexture = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        planetexture.sprite = displayicon;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
-private void OnTriggerStay(Collider other)
+
+    private void OnTriggerStay(Collider other)
     {
 
         //check if it's player or not, and is the doo unlocked, and press E to teleport;
@@ -41,16 +45,23 @@ private void OnTriggerStay(Collider other)
             if (Input.GetButtonDown(interactionbutton))
             {
                 Debug.Log("Buy");
-                
+
                 PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
-               if (player.money >= price)
+                if (player.money >= price)
                 {
                     player.money -= price;
-                    Instantiate(item, transform.position + transform.forward * offset, Quaternion.identity);
+                    var storepurchase = StorePurchase.Create(entity);
+                    storepurchase.Send();
 
                 }
             }
         }
+    }
+
+
+    public override void OnEvent(StorePurchase evnt)
+    {
+        Instantiate(item, transform.position + transform.forward * offset, Quaternion.identity);
     }
 
 }
