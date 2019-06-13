@@ -394,7 +394,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d6ae08f16964c40dc8b2cccaecd46f6d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: abc98c8b268404b9c95383dffed86797, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -648,6 +648,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4337836074834191515}
     m_Modifications:
+    - target: {fileID: 22113990416540373, guid: 489702f8e3d99024dafaa78290111057,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 1324276279088869441, guid: 489702f8e3d99024dafaa78290111057,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,10 +708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 22113990416540373, guid: 489702f8e3d99024dafaa78290111057,
+    - target: {fileID: 4069521022077074844, guid: 489702f8e3d99024dafaa78290111057,
         type: 3}
-      propertyPath: m_Name
-      value: UI
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 489702f8e3d99024dafaa78290111057, type: 3}
@@ -723,6 +728,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4337836074834191515}
     m_Modifications:
+    - target: {fileID: 7003932741464760760, guid: 779bc77edf69ce648963c7a7016eed55,
+        type: 3}
+      propertyPath: m_Name
+      value: Network
+      objectReference: {fileID: 0}
     - target: {fileID: 8213001921886837967, guid: 779bc77edf69ce648963c7a7016eed55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -777,11 +787,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7003932741464760760, guid: 779bc77edf69ce648963c7a7016eed55,
-        type: 3}
-      propertyPath: m_Name
-      value: Network
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 779bc77edf69ce648963c7a7016eed55, type: 3}
