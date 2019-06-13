@@ -9,6 +9,7 @@ public abstract class ItemClass : MonoBehaviour
     [SerializeField]
     //2D sprite for icon
     public  Sprite icon;
+    public string discription;
     // bool for collected or not
     public bool collected = false;
     //player gameobject
@@ -18,7 +19,7 @@ public abstract class ItemClass : MonoBehaviour
     public static AudioSource PickUpSource;
     public static AudioClip PickUpSound;
 
-   
+    
 
     //set the icon for item
 
