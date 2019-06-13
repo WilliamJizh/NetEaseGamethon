@@ -46,6 +46,7 @@ public class NextScene : Bolt.EntityEventListener
 
     public override void OnEvent(DoorOpen evnt)
     {
+        Debug.Log("unlock");
         doorlock = false;
     }
     public override void OnEvent(FinalDoorPassed evnt)
