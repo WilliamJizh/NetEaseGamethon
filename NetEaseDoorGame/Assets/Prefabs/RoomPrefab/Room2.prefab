@@ -3912,8 +3912,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5702971668475257473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: 14.49, z: -16.16}
-  m_LocalScale: {x: 4.9997, y: 1, z: 3.85}
+  m_LocalPosition: {x: -27.4, y: 13.35, z: -16.16}
+  m_LocalScale: {x: 11.124833, y: 1, z: 3.85}
   m_Children: []
   m_Father: {fileID: 5382470437355895660}
   m_RootOrder: 20
@@ -3933,7 +3933,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5702971668475257473}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5492,16 +5492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1206769327958770677}
     m_Modifications:
-    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
-        type: 3}
-      propertyPath: m_Name
-      value: MainCameraPos
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1974350335903885255, guid: c1a447a55e92e384095885a13b5a8470,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5571,6 +5561,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1111112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
+        type: 3}
+      propertyPath: m_Name
+      value: MainCameraPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974350335903885250, guid: c1a447a55e92e384095885a13b5a8470,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1974350335903885252, guid: c1a447a55e92e384095885a13b5a8470, type: 3}
