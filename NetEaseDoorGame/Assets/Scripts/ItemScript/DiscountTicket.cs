@@ -17,7 +17,8 @@ public class DiscountTicket : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "印钞机";
+        names = "Cash Machine";
+        discription = "Gain money once a while";
         SetIcon();
         Collect();
 

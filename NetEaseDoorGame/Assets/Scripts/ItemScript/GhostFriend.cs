@@ -17,6 +17,8 @@ public class GhostFriend : ItemClass
     {
         SetIcon();
         Collect();
+        name = "Ghost Friend";
+        discription = "Call a ghost friend to help you, if it would like to";
 
         ghostFriendMovement = GetComponent<GhostFriendMovement>();
         ghostFriendMovement.enabled = false;

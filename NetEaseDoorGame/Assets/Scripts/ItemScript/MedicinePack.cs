@@ -14,6 +14,7 @@ public class MedicinePack : ItemClass
     void Start()
     {
         names = "MedicinePack";
+        discription = "Instantly gain health";
         SetIcon();
         Collect();
 

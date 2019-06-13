@@ -12,9 +12,10 @@ public class EasterEggItem : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "复活鸡蛋";
+        names = "Easter Egg";
         //如果要从文件读取sprite
         //使用 SetIcon(路径/“文件名”)；
+        discription = "Gain one extra life";
         SetIcon();
         Collect();
 
