@@ -53,6 +53,9 @@ public class ItemUI : Bolt.EntityBehaviour
                 imagePos = new Vector3(-620+ i * 100, 400, 0);
                 iconUI.GetComponent<RectTransform>().localPosition = imagePos;
                 Destroy(img);
+                GameObject discriptionText = new GameObject();
+           // discriptionText
+              //  GameObject text = Instantiate(discriptionText)
 
 
                 if (i == items.Count - 1)
