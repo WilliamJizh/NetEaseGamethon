@@ -736,6 +736,13 @@
       "Name": "ChestOpen",
       "Guid": "eef56c4f-9a12-444f-a468-b5c2858b8cda",
       "Groups": []
+    },
+    {
+      "$type": "Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [],
+      "Name": "FinalDoorPassed",
+      "Guid": "17e87223-2d35-4930-88b6-0894478bbb4c",
+      "Groups": []
     }
   ],
   "ActiveGroup": "Everything"
