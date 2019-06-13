@@ -15,7 +15,8 @@ public class healthPlus : ItemClass
     {
         playerstat = GetComponent<PlayerStats>();
         collected = false;
-		 name="鸡腿";
+		 name= "Drum Stick";
+        discription = "Regenerate health passively";
         SetIcon();
         Collect();
     }

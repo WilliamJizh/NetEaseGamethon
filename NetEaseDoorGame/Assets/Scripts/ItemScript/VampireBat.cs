@@ -16,7 +16,8 @@ public class VampireBat : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "吸血蝙蝠";
+        names = "Vampire Bat";
+        discription = "The damage you dual will heal you";
         SetIcon();
         Collect();
        

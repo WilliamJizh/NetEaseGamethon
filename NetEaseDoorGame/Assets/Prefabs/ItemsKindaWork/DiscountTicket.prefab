@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce50ed97e750b4b07852bca2b9eeb8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  names: "\u51A5\u5E9C\u901A"
+  names: "\u5370\u949E\u673A"
   icon: {fileID: 21300000, guid: b9c5aa4bd24bab248bc1f251995269ff, type: 3}
+  discription: 
   collected: 0
   player: {fileID: 0}
-  DiscountRate: 0

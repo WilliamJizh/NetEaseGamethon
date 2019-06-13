@@ -16,7 +16,8 @@ public class Eye : ItemClass
     // Start is called before the first frame update
     void Start()
     {
-        names = "眼睛";
+        names = "Evil Eye";
+        discription = "Increase attack range";
         SetIcon();
         Collect();
     }

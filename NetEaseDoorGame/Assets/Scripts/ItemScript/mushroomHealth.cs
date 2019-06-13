@@ -30,6 +30,8 @@ public class mushroomHealth : ItemClass
     {
         SetIcon();
         Collect();
+        name = "Regen Mushroom";
+        discription = "Regenerate health while standing still";
 
        
     }
