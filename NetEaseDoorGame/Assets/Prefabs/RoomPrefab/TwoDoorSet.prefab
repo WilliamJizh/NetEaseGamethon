@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 8792231783442459174}
   m_Layer: 0
   m_Name: TwoDoorSet
-  m_TagString: Untagged
+  m_TagString: NormDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59bf43f0801f314da867a0d5a0bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globallock: 1
   dooropentime: 1
   doorlocktime: 3
   doorlock: 0

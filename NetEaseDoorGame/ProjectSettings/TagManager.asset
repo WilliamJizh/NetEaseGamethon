@@ -16,6 +16,8 @@ TagManager:
   - effect
   - Item
   - BufferSpawn
+  - NormDoor
+  - FinalDoor
   layers:
   - Default
   - TransparentFX

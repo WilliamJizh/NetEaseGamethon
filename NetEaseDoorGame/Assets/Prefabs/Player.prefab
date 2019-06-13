@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: 0
   death: 0
+  life: 0
   initialHealth: 100
   maxHealth: 100
   currentHealth: 0

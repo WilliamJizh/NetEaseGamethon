@@ -10,7 +10,7 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
     public  Transform TeleportPosition;
     GameObject playerTrans;
     DoorManager doormanager;
-    
+    string interactionbutton = "Fire3";
     public float opentime;
 
     AudioSource DoorOpenSource;
@@ -59,7 +59,7 @@ public class DoorTeleport : Bolt.EntityBehaviour<IPlayerState>
         if (other.gameObject.tag == "Player")
         {
 
-            if (Input.GetKeyDown(KeyCode.E) && !doormanager.doorlock)
+            if (Input.GetButtonDown(interactionbutton) && !doormanager.doorlock)
             {
                 CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
                 player.OpenDoor(opentime, TeleportPosition,doormanager);

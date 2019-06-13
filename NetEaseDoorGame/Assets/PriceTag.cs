@@ -14,7 +14,7 @@ public class PriceTag : MonoBehaviour
         shopmanager = transform.parent.gameObject.transform.parent.GetComponent<ShopManager>();
         price = shopmanager.price;
         pricetag = GetComponent<Text>();
-        pricetag.text = "$" + price;
+        pricetag.text = price.ToString();
         
     }
 

@@ -18,6 +18,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
     public PlayerState currState;
 
     public bool death = false;
+    public int life;
     public float initialHealth;
     public float maxHealth;
     public float currentHealth;
@@ -59,6 +60,7 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
     public bool successfulhit;
     public GameObject lasthit;
+    public ItemMananger itemMan;
 
     AudioSource PlayerHit;
 
@@ -68,10 +70,11 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
 
         GameObject PlayerHitReact = GameObject.Find("PlayerHitReact");
         PlayerHit = PlayerHitReact.GetComponent<AudioSource>();
-
+        itemMan = GetComponent<ItemMananger>();
 
         if (!entity.IsOwner) return;
 
+        life = 1;
         currentHealth = initialHealth;
         currentArmour = initialArmour;
         currStamina = maxStamina;
@@ -134,7 +137,16 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         }
         if (currentHealth <= 0)
         {
-            death = true;
+            life -= 1;
+            if (life <= 0)
+            {
+                death = true;
+            }
+            else
+            {
+                itemMan.RemoveItem("复活鸡蛋");
+                currentHealth = maxHealth;
+            }
         }
     }
 
@@ -158,6 +170,17 @@ public class PlayerStats : Bolt.EntityEventListener<IPlayerState>
         else if(currentArmour >= dmg){
         currentArmour -= dmg;
         }
+        currState = PlayerState.Onhit;
+        StartCoroutine(HitRecover());
+    }
+
+    [SerializeField]
+    float hitstun = 0.1f;
+    IEnumerator HitRecover()
+    {
+        yield return new WaitForSeconds(hitstun);
+        currState = PlayerState.Normal;
+
     }
     //检测玩家打到了人或者小怪
     public void detectHitPlayerEnemy(GameObject hit)
