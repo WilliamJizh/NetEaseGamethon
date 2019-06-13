@@ -10,39 +10,36 @@ public class DiscountTicket : ItemClass
     private ItemMananger itemMananger;
     private PlayerStats playerstat;
     private Shop shop;
+    private float freemoney = 1;
+    private float i =1;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        names = "冥府通";
+        names = "印钞机";
         SetIcon();
         Collect();
 
-    }
-
-    void ChangeBack(){
-    shop.DiscountRate = 1.0f;
     }
    
     // Update is called once per frame
     void Update()
     {
-        if (collected)
-        {
-        		setPlayer();
-            ChangeRate();
-        }
-        if(!collected){
-        		setPlayer();
-        		ChangeBack();
-        }
+			setPlayer();
+			if(i>0){
+				 i -= Time.deltaTime;
+				 }
+			else if(i <= 0){
+			 playerstat.money += freemoney;
+					i = 5;
+				
+			}
+			
     }
-    void ChangeRate()
-    {
-        //100% off for next purchase.
-        shop.DiscountRate = 0.0f;
-    }
+
+
+
         void setPlayer()
     {
         player = getPlayer();

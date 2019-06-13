@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class nothing : MonoBehaviour
+public class iconDiscription : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class ItemClass : MonoBehaviour
 {
+
     [SerializeField]
     public string names;
     [SerializeField]
@@ -78,6 +79,7 @@ public abstract class ItemClass : MonoBehaviour
 
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
 
             PickUpSource.Play();
         }

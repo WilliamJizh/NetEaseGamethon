@@ -196,14 +196,18 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
 
     }
 
+    bool eventcalled = false;
+
     public void Hitreaction(float dmg, string effect) {
         Debug.Log("Enemy hit " + dmg);
         health -= dmg;
         aistate = AIstate.OnHit;
         StartCoroutine(HitRecover());
-        if (health <= 0) {
+        if (health <= 0 && !eventcalled) {
 
+            
             Drop();
+            eventcalled = true;
             Debug.Log("Enemy Down");
             
             
@@ -246,7 +250,7 @@ public class AiStates : Bolt.EntityEventListener<IEnemyState>
             DropBlood();
         }
         DropMoney();
-
+        
         BoltNetwork.Destroy(this.gameObject);
     }
 
